@@ -32,12 +32,17 @@
  nav a:hover { color: var(--forest); }
  .nav-cta { background: var(--sand) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 1px; letter-spacing: 0.14em !important; transition: background 0.25s !important; }
  .nav-cta:hover { background: var(--forest) !important; color: var(--white) !important; }
- .nav-burger { display:none; width:44px; height:44px; border:none; background:transparent; cursor:pointer; border-radius:0; align-items:center; justify-content:center; gap:5px; padding:0; }
- .nav-burger span { display:block; width:20px; height:2px; background:var(--ink); border-radius:2px; }
+ .nav-burger { display:none; width:40px; height:40px; border:1px solid rgba(196,154,82,0.3); background:transparent; cursor:pointer; border-radius:2px; align-items:center; justify-content:center; flex-direction:column; gap:5px; padding:0; transition: border-color 0.2s; }
+ .nav-burger:hover { border-color: rgba(196,154,82,0.7); }
+ .nav-burger span { display:block; width:18px; height:1.5px; background:var(--ink); border-radius:1px; transition: transform 0.3s ease, opacity 0.3s ease; }
+ .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+ .nav-burger.open span:nth-child(2) { opacity: 0; }
+ .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
  .nav-drawer { display:none; position:fixed; top:64px; left:0; right:0; background: rgba(245,237,224,0.98); border-bottom:1px solid var(--border); padding:18px 22px 22px; z-index:120; }
  .nav-drawer a { display:block; padding:12px 6px; text-decoration:none; color:var(--ink); letter-spacing:0.08em; text-transform:uppercase; font-size:0.72rem; border-top:1px solid rgba(196,154,82,0.12); }
  .nav-drawer a:first-child { border-top:none; }
  .nav-drawer .drawer-cta { margin-top:12px; background:var(--sand); color:var(--white); padding:12px 14px; border-radius:2px; text-align:center; }
+ .nav-drawer .drawer-airbnb { margin-top:6px; background: transparent; color: var(--sand); padding:10px 14px; border-radius:2px; text-align:center; border: 1px solid rgba(196,154,82,0.4); font-size:0.72rem; letter-spacing:0.1em; }
  .nav-drawer.open { display:block; }
  .hero { display: grid; grid-template-columns: 42% 58%; padding-top: 72px; }
  .hero-left { display: flex; flex-direction: column; justify-content: flex-start; padding: 100px 50px 80px 100px; background: var(--linen); position: relative; overflow: hidden; }
@@ -277,18 +282,19 @@
 <li><a href="#location">Location</a></li>
 <li><a href="#dining">Dining Guide</a></li>
 <li><a href="#reviews">Reviews</a></li>
-<li><a href="booking.html" class="nav-cta">Book Now</a></li>
+<li><a href="#booking" class="nav-cta">Book Now</a></li>
 </ul>
 <button class="nav-burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
   <span></span><span></span><span></span>
 </button>
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
-  <a href="#home" onclick="closeMenu()">The Suite</a>
-  <a href="#amenities" onclick="closeMenu()">Amenities</a>
-  <a href="#location" onclick="closeMenu()">Location</a>
-  <a href="#dining" onclick="closeMenu()">Dining Guide</a>
-  <a href="#reviews" onclick="closeMenu()">Reviews</a>
-  <a href="booking.html" class="drawer-cta" onclick="closeMenu()">Book Now</a>
+  <a href="#home" onclick="toggleMenu()">The Suite</a>
+  <a href="#amenities" onclick="toggleMenu()">Amenities</a>
+  <a href="#location" onclick="toggleMenu()">Location</a>
+  <a href="#dining" onclick="toggleMenu()">Dining Guide</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#booking" class="drawer-cta" onclick="toggleMenu()">Book Now</a>
+  <a href="https://www.airbnb.com.au/rooms/1554938675549327457" class="drawer-airbnb" target="_blank" onclick="toggleMenu()">Book on Airbnb ↗</a>
 </div>
 </nav>
 
@@ -566,7 +572,7 @@
 <p>A Japandi-inspired boutique guest suite in Miami, Gold Coast. Your coastal escape awaits.</p>
 </div>
 <div class="ft-col"><h4>Navigate</h4><ul><li><a href="#home">The Suite</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#location">Location</a></li><li><a href="#dining">Dining Guide</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
-<div class="ft-col"><h4>Book</h4><ul><li><a href="#booking">Direct Booking</a></li><li><a href="https://www.airbnb.com.au" target="_blank">Airbnb</a></li></ul></div>
+<div class="ft-col"><h4>Book</h4><ul><li><a href="#booking">Direct Booking</a></li><li><a href="https://www.airbnb.com.au/rooms/1554938675549327457" target="_blank">Airbnb</a></li></ul></div>
 <div class="ft-col"><h4>Contact</h4><ul><li><a href="#">Message via Airbnb</a></li><li><a href="/cdn-cgi/l/email-protection#eb838e878784ab9d8287878a8584898992c5888486"><span class="__cf_email__" data-cfemail="b6ded3dadad9f6c0dfdadad7d8d9d4d4cf98d5d9db">[email&#160;protected]</span></a></li></ul></div>
 </div>
 <div class="ft-bottom">
@@ -607,9 +613,11 @@ function toggleMenu() {
   var isOpen = drawer.classList.contains('open');
   if (isOpen) {
     drawer.classList.remove('open');
+    burger.classList.remove('open');
     burger.setAttribute('aria-expanded', 'false');
   } else {
     drawer.classList.add('open');
+    burger.classList.add('open');
     burger.setAttribute('aria-expanded', 'true');
   }
 }
@@ -753,7 +761,9 @@ document.addEventListener('keydown', function(e) {
 /* ===== MOBILE NAV TOGGLE ===== */
 function toggleNav() {
   var drawer = document.getElementById('navDrawer');
+  var burger = document.querySelector('.nav-burger');
   drawer.classList.toggle('open');
+  if (burger) burger.classList.toggle('open');
 }
 
 /* ===== SCROLL TO TOP ===== */
