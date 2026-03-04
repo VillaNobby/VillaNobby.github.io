@@ -170,8 +170,8 @@
  .reviews { background: var(--linen); }
  .reviews-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; }
  .reviews-slider { position: relative; overflow: hidden; margin-bottom: 32px; padding: 0 60px; }
- .reviews-track { display: grid; grid-template-columns: repeat(7, calc(33.333% - 16px)); gap: 24px; transition: transform 0.4s ease; }
- .review-card { padding: 18px 22px; border: 1px solid var(--border); transition: box-shadow 0.3s; background: var(--white); }
+ .reviews-track { display: flex; gap: 24px; transition: transform 0.4s ease; will-change: transform; }
+ .review-card { flex: 0 0 calc(33.333% - 16px); padding: 18px 22px; border: 1px solid var(--border); transition: box-shadow 0.3s; background: var(--white); }
  .review-card:hover { box-shadow: 0 8px 32px var(--shadow); }
  .review-stars { color: var(--sand); font-size: 0.68rem; letter-spacing: 2px; margin-bottom: 10px; }
  .review-text { font-size: 0.78rem; line-height: 1.5; color: var(--mist); margin-bottom: 12px; font-style: italic; font-weight: 300; }
