@@ -242,11 +242,6 @@
   .review-text { font-size: 0.98rem; line-height: 1.75; }
   .slider-btn { display: none; }
   .slider-dots { display: none; }
-  .btn-primary, .btn-outline { padding: 16px 28px; font-size: 0.78rem; min-height: 48px; }
-  .hero-actions { flex-direction: column; width: 100%; }
-  .hero-actions .btn-primary, .hero-actions .btn-outline { width: 100%; text-align: center; }
-  h1 { font-size: 2.2rem; line-height: 1.15; }
-  .hero-desc { font-size: 0.92rem; }
  }
  @media (max-width: 520px) {
   .frow { grid-template-columns: 1fr; }
@@ -259,12 +254,6 @@
   .nav-logo { gap: 10px; }
   .logo-main { font-size: 1.05rem; letter-spacing: 0.12em; }
   .logo-sub { font-size: 0.50rem; letter-spacing: 0.18em; margin-top: 2px; }
-  .lightbox img { max-width: 95%; max-height: 90vh; }
-  .lightbox-close { top: 10px; right: 10px; font-size: 2.5rem; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); border-radius: 50%; }
-  .lightbox-nav { width: 44px; height: 44px; font-size: 1.8rem; }
-  .lightbox-prev { left: 10px; }
-  .lightbox-next { right: 10px; }
-  .lightbox-counter { bottom: 16px; font-size: 0.65rem; }
  }
  @media (max-width: 380px) {
   .logo-main { font-size: 1.00rem; letter-spacing: 0.10em; }
@@ -288,7 +277,7 @@
 <li><a href="#location">Location</a></li>
 <li><a href="#dining">Dining Guide</a></li>
 <li><a href="#reviews">Reviews</a></li>
-<li><a href="#booking" class="nav-cta">Book Now</a></li>
+<li><a href="booking.html" class="nav-cta">Book Now</a></li>
 </ul>
 <button class="nav-burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
   <span></span><span></span><span></span>
@@ -299,7 +288,7 @@
   <a href="#location" onclick="closeMenu()">Location</a>
   <a href="#dining" onclick="closeMenu()">Dining Guide</a>
   <a href="#reviews" onclick="closeMenu()">Reviews</a>
-  <a href="#booking" class="drawer-cta" onclick="closeMenu()">Book Now</a>
+  <a href="booking.html" class="drawer-cta" onclick="closeMenu()">Book Now</a>
 </div>
 </nav>
 
@@ -310,7 +299,7 @@
 <p class="hero-desc">A design-led Japandi retreat offering refined comfort, complete privacy, and an outdoor shower beneath the stars — just moments from North Burleigh Beach.</p>
 <div class="hero-loc">Miami, Gold Coast, Queensland</div>
 <div class="hero-actions">
-<a href="#booking" class="btn-primary">Book Now</a>
+<a href="booking.html" class="btn-primary">Book Direct</a>
 <a href="#gallery" class="btn-outline">Explore the Suite</a>
 </div>
 </div>
@@ -337,13 +326,7 @@
   <div class="gallery-cta"><button class="btn-outline" type="button" onclick="openLightbox(0)">View Full Gallery →</button></div>
 </section>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">×</button>
-<button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navLightbox(-1)">‹</button>
-<img id="lightboxImg" src="" alt="">
-<button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navLightbox(1)">›</button>
-<div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
+
 
 <div class="save-banner">
 <p><strong>Book direct.</strong> Enquire now for personalised rates and direct hosting.</p>
@@ -551,13 +534,13 @@
 </div>
 <div class="reviews-slider">
 <div class="reviews-track" id="reviewsTrack">
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Absolutely stunning space. The attention to detail is incredible &mdash; from the outdoor shower to the Nespresso machine. We didn't want to leave!"</div><div class="review-author">Sarah &amp; James</div><div class="review-date">February 2025</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Perfect location, just a short walk to the beach and so many great cafes nearby. The hosts were incredibly responsive and helpful."</div><div class="review-author">Michael T.</div><div class="review-date">January 2025</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"The Japanese-inspired design is beautiful. Such a peaceful retreat. We loved walking to Paddock Bakery each morning."</div><div class="review-author">Emma L.</div><div class="review-date">December 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"A hidden gem on the Gold Coast. Everything was immaculate. The outdoor area with the tropical plants was our favourite spot."</div><div class="review-author">David &amp; Priya</div><div class="review-date">November 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Best Airbnb we've stayed at in Australia. The hosts think of everything &mdash; beach towels, snacks, even umbrellas for rainy days."</div><div class="review-author">Chris R.</div><div class="review-date">October 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Loved the king-size bed and the smart TV with Netflix. The outdoor shower after the beach was a real highlight!"</div><div class="review-author">Sophie M.</div><div class="review-date">September 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Valentino and Eric are wonderful hosts. The villa exceeded our expectations in every way. Already planning our return trip!"</div><div class="review-author">Tom &amp; Grace</div><div class="review-date">August 2024</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Great spot, nice hosts. Would stay again :)"</div><div class="review-author">Lachlan</div><div class="review-date">March 2026 &middot; Airbnb</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"The villa was very clean and tidy. It had everything you needed in it. The host was very responsive and went above and beyond to make the stay comfortable. Would definitely stay again."</div><div class="review-author">Alyssa</div><div class="review-date">March 2026 &middot; Airbnb</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Both Valentino and Eric were amazing hosts. The Airbnb was clean, homely, comfortable and the communication was easy. We couldn't recommend this little Airbnb more for a little get away."</div><div class="review-author">Zoe</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Such a beautiful stay at Villa Nobby. The space is even more stunning in person &mdash; light-filled, thoughtfully designed, and styled so effortlessly. Every corner felt calm, luxurious, and incredibly aesthetic."</div><div class="review-author">Kyra-Bae</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"We loved our stay here! Valentino was an amazing host. Super accommodating, helpful and very quick to respond with all inquiries. You can tell how much effort and thought has been put in to make this an incredible experience."</div><div class="review-author">Brianna</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Villa Nobby was exactly as shown in the photos, a very beautiful and clean space. Valentino's communication was amazing, friendly, responsive and very helpful. 100% worth the money. Would happily stay again."</div><div class="review-author">Jenalee</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"A gorgeous Japandi-inspired retreat just moments from the beach. The outdoor shower, the thoughtful touches, and the hosts' warmth made this stay truly special."</div><div class="review-author">Verified Guest</div><div class="review-date">Airbnb &middot; 5.0 &#9733; &mdash; 33 Reviews</div></div>
 </div>
 </div>
 <div class="slider-dots" id="sliderDots"></div>
@@ -583,8 +566,8 @@
 <p>A Japandi-inspired boutique guest suite in Miami, Gold Coast. Your coastal escape awaits.</p>
 </div>
 <div class="ft-col"><h4>Navigate</h4><ul><li><a href="#home">The Suite</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#location">Location</a></li><li><a href="#dining">Dining Guide</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
-<div class="ft-col"><h4>Book</h4><ul><li><a href="#booking">Book Direct</a></li><li><a href="mailto:contact@villanobby.com">Email Enquiry</a></li></ul></div>
-<div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:contact@villanobby.com">Email Us</a></li><li><a href="tel:+61XXXXXXXXXX">Call Us</a></li></ul></div>
+<div class="ft-col"><h4>Book</h4><ul><li><a href="#booking">Direct Booking</a></li><li><a href="https://www.airbnb.com.au" target="_blank">Airbnb</a></li></ul></div>
+<div class="ft-col"><h4>Contact</h4><ul><li><a href="#">Message via Airbnb</a></li><li><a href="/cdn-cgi/l/email-protection#eb838e878784ab9d8287878a8584898992c5888486"><span class="__cf_email__" data-cfemail="b6ded3dadad9f6c0dfdadad7d8d9d4d4cf98d5d9db">[email&#160;protected]</span></a></li></ul></div>
 </div>
 <div class="ft-bottom">
 <span>&copy; 2025 Villa Nobby. All rights reserved.</span>
@@ -615,7 +598,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ===== MOBILE NAV ===== */
 function toggleMenu() {
   var drawer = document.getElementById('navDrawer');
@@ -791,3 +774,17 @@ function toggleFAQ(el) {
     item.classList.add('open');
   }
 }
+
+/* ===== INIT ON LOAD ===== */
+window.addEventListener('DOMContentLoaded', function() {
+  initGallery();
+  filterDining('breakfast');
+  updateDots();
+});
+
+window.addEventListener('resize', function() {
+  updateDots();
+});
+</script>
+</body>
+</html>
