@@ -32,17 +32,12 @@
  nav a:hover { color: var(--forest); }
  .nav-cta { background: var(--sand) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 1px; letter-spacing: 0.14em !important; transition: background 0.25s !important; }
  .nav-cta:hover { background: var(--forest) !important; color: var(--white) !important; }
- .nav-burger { display:none; width:40px; height:40px; border:1px solid rgba(196,154,82,0.3); background:transparent; cursor:pointer; border-radius:2px; align-items:center; justify-content:center; flex-direction:column; gap:5px; padding:0; transition: border-color 0.2s; }
- .nav-burger:hover { border-color: rgba(196,154,82,0.7); }
- .nav-burger span { display:block; width:18px; height:1.5px; background:var(--ink); border-radius:1px; transition: transform 0.3s ease, opacity 0.3s ease; }
- .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
- .nav-burger.open span:nth-child(2) { opacity: 0; }
- .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+ .nav-burger { display:none; width:44px; height:44px; border:none; background:transparent; cursor:pointer; border-radius:0; align-items:center; justify-content:center; gap:5px; padding:0; }
+ .nav-burger span { display:block; width:20px; height:2px; background:var(--ink); border-radius:2px; }
  .nav-drawer { display:none; position:fixed; top:64px; left:0; right:0; background: rgba(245,237,224,0.98); border-bottom:1px solid var(--border); padding:18px 22px 22px; z-index:120; }
  .nav-drawer a { display:block; padding:12px 6px; text-decoration:none; color:var(--ink); letter-spacing:0.08em; text-transform:uppercase; font-size:0.72rem; border-top:1px solid rgba(196,154,82,0.12); }
  .nav-drawer a:first-child { border-top:none; }
  .nav-drawer .drawer-cta { margin-top:12px; background:var(--sand); color:var(--white); padding:12px 14px; border-radius:2px; text-align:center; }
- .nav-drawer .drawer-airbnb { margin-top:6px; background: transparent; color: var(--sand); padding:10px 14px; border-radius:2px; text-align:center; border: 1px solid rgba(196,154,82,0.4); font-size:0.72rem; letter-spacing:0.1em; }
  .nav-drawer.open { display:block; }
  .hero { display: grid; grid-template-columns: 42% 58%; padding-top: 72px; }
  .hero-left { display: flex; flex-direction: column; justify-content: flex-start; padding: 100px 50px 80px 100px; background: var(--linen); position: relative; overflow: hidden; }
@@ -174,16 +169,15 @@
  .form-note { font-size: 0.65rem; color: var(--mist); text-align: center; margin-top: 10px; line-height: 1.5; }
  .reviews { background: var(--linen); }
  .reviews-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; }
- .reviews-outer { position: relative; padding: 0 48px; }
- .reviews-slider { overflow: hidden; margin-bottom: 32px; }
- .reviews-track { display: flex; gap: 24px; transition: transform 0.4s ease; will-change: transform; width: max-content; }
- .review-card { flex: 0 0 auto; padding: 18px 22px; border: 1px solid var(--border); transition: box-shadow 0.3s; background: var(--white); }
+ .reviews-slider { position: relative; overflow: hidden; margin-bottom: 32px; padding: 0 60px; }
+ .reviews-track { display: grid; grid-template-columns: repeat(7, calc(33.333% - 16px)); gap: 24px; transition: transform 0.4s ease; }
+ .review-card { padding: 18px 22px; border: 1px solid var(--border); transition: box-shadow 0.3s; background: var(--white); }
  .review-card:hover { box-shadow: 0 8px 32px var(--shadow); }
  .review-stars { color: var(--sand); font-size: 0.68rem; letter-spacing: 2px; margin-bottom: 10px; }
  .review-text { font-size: 0.78rem; line-height: 1.5; color: var(--mist); margin-bottom: 12px; font-style: italic; font-weight: 300; }
  .review-author { font-size: 0.7rem; font-weight: 600; color: var(--ink); }
  .review-date { font-size: 0.64rem; color: var(--mist); }
- .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--border); color: var(--forest); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.6rem; line-height: 1; transition: all 0.2s; z-index: 10; display: flex; align-items: center; justify-content: center; }
+ .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--border); color: var(--forest); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; line-height: 1; transition: all 0.2s; z-index: 10; display: flex; align-items: center; justify-content: center; }
  .slider-btn:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
  .slider-btn.prev { left: 0; }
  .slider-btn.next { right: 0; }
@@ -242,9 +236,8 @@
   body { padding-bottom: 68px; }
   .mobile-cta { display:block; position:fixed; bottom:0; left:0; right:0; background: var(--sand); color: var(--white); text-align:center; padding: 14px 18px; z-index: 220; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration:none; }
   .ft-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
-  .reviews-outer { padding: 0; }
-  .reviews-slider { overflow-x: auto; padding: 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-  .reviews-track { display: flex; gap: 14px; transition: none; transform: none !important; width: max-content; }
+  .reviews-slider { overflow-x: auto; padding: 0 18px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .reviews-track { display: flex; gap: 14px; transition: none; transform: none !important; }
   .review-card { flex: 0 0 86%; scroll-snap-align: start; padding: 22px; }
   .review-text { font-size: 0.98rem; line-height: 1.75; }
   .slider-btn { display: none; }
@@ -267,7 +260,107 @@
   .logo-sub { font-size: 0.48rem; letter-spacing: 0.16em; }
  }
  @media (max-width: 420px) { .review-card { flex-basis: 92%; } }
+ /* ===== FLATPICKR OVERRIDES (Japandi theme) ===== */
+ .flatpickr-calendar {
+   font-family: 'Jost', sans-serif;
+   border: 1px solid var(--border);
+   border-radius: 2px;
+   box-shadow: 0 8px 32px var(--shadow);
+   background: var(--white);
+ }
+ .flatpickr-months .flatpickr-month {
+   background: var(--cream);
+   color: var(--ink);
+   height: 40px;
+ }
+ .flatpickr-current-month .flatpickr-monthDropdown-months,
+ .flatpickr-current-month input.cur-year {
+   font-family: 'Cormorant Garamond', serif;
+   font-size: 1.1rem;
+   font-weight: 400;
+   color: var(--ink);
+ }
+ .flatpickr-months .flatpickr-prev-month,
+ .flatpickr-months .flatpickr-next-month {
+   color: var(--mist);
+   fill: var(--mist);
+ }
+ .flatpickr-months .flatpickr-prev-month:hover,
+ .flatpickr-months .flatpickr-next-month:hover {
+   color: var(--forest);
+   fill: var(--forest);
+ }
+ span.flatpickr-weekday {
+   font-family: 'Jost', sans-serif;
+   font-size: 0.65rem;
+   font-weight: 500;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: var(--mist);
+   background: var(--cream);
+ }
+ .flatpickr-day {
+   font-family: 'Jost', sans-serif;
+   font-size: 0.82rem;
+   color: var(--ink);
+   border-radius: 1px;
+ }
+ .flatpickr-day:hover {
+   background: var(--cream);
+   border-color: var(--border);
+ }
+ .flatpickr-day.selected,
+ .flatpickr-day.selected:hover {
+   background: var(--sand);
+   border-color: var(--sand);
+   color: var(--white);
+ }
+ .flatpickr-day.today {
+   border-color: var(--sage);
+ }
+ .flatpickr-day.today:hover {
+   background: var(--cream);
+   border-color: var(--sage);
+ }
+ .flatpickr-day.flatpickr-disabled,
+ .flatpickr-day.flatpickr-disabled:hover {
+   color: rgba(138,125,106,0.3);
+   background: repeating-linear-gradient(
+     -45deg,
+     transparent,
+     transparent 3px,
+     rgba(138,125,106,0.06) 3px,
+     rgba(138,125,106,0.06) 5px
+   );
+   cursor: not-allowed;
+   text-decoration: line-through;
+ }
+ .flatpickr-day.inRange {
+   background: var(--cream);
+   border-color: var(--cream);
+   box-shadow: -5px 0 0 var(--cream), 5px 0 0 var(--cream);
+ }
+ .availability-note {
+   font-size: 0.6rem;
+   color: var(--sage);
+   margin-top: 6px;
+   letter-spacing: 0.04em;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+ }
+ .availability-note::before {
+   content: '';
+   display: inline-block;
+   width: 8px;
+   height: 8px;
+   background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(138,125,106,0.15) 2px, rgba(138,125,106,0.15) 3px);
+   border: 1px solid rgba(138,125,106,0.2);
+   border-radius: 1px;
+ }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
 
@@ -284,19 +377,18 @@
 <li><a href="#location">Location</a></li>
 <li><a href="#dining">Dining Guide</a></li>
 <li><a href="#reviews">Reviews</a></li>
-<li><a href="#booking" class="nav-cta">Book Now</a></li>
+<li><a href="booking.html" class="nav-cta">Book Now</a></li>
 </ul>
 <button class="nav-burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
   <span></span><span></span><span></span>
 </button>
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
-  <a href="#home" onclick="toggleMenu()">The Suite</a>
-  <a href="#amenities" onclick="toggleMenu()">Amenities</a>
-  <a href="#location" onclick="toggleMenu()">Location</a>
-  <a href="#dining" onclick="toggleMenu()">Dining Guide</a>
-  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
-  <a href="#booking" class="drawer-cta" onclick="toggleMenu()">Book Now</a>
-  <a href="https://www.airbnb.com.au/rooms/1554938675549327457" class="drawer-airbnb" target="_blank" onclick="toggleMenu()">Book on Airbnb ↗</a>
+  <a href="#home" onclick="closeMenu()">The Suite</a>
+  <a href="#amenities" onclick="closeMenu()">Amenities</a>
+  <a href="#location" onclick="closeMenu()">Location</a>
+  <a href="#dining" onclick="closeMenu()">Dining Guide</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="booking.html" class="drawer-cta" onclick="closeMenu()">Book Now</a>
 </div>
 </nav>
 
@@ -307,13 +399,13 @@
 <p class="hero-desc">A design-led Japandi retreat offering refined comfort, complete privacy, and an outdoor shower beneath the stars — just moments from North Burleigh Beach.</p>
 <div class="hero-loc">Miami, Gold Coast, Queensland</div>
 <div class="hero-actions">
-<a href="#booking" class="btn-primary">Book Direct</a>
+<a href="booking.html" class="btn-primary">Book Direct</a>
 <a href="#gallery" class="btn-outline">Explore the Suite</a>
 </div>
 </div>
 <div class="hero-right">
 <div class="hero-photos">
-<img src="20260225_002224497_iOS.jpg" alt="Villa Nobby serene bedroom">
+<img src="images/20260225_002224497_iOS.jpg" alt="Villa Nobby serene bedroom">
 </div>
 </div>
 </section>
@@ -321,20 +413,26 @@
 <section class="photo-gallery" id="gallery">
   <div class="gallery-strip">
     <div class="gallery-feature" onclick="openLightbox(0)">
-      <img src="20260225_001336246_iOS.jpg" alt="Villa Nobby entrance">
+      <img src="images/20260225_001336246_iOS.jpg" alt="Villa Nobby entrance">
       <div class="gallery-overlay">View Photo</div>
     </div>
     <div class="gallery-thumbs">
-      <div class="gallery-thumb" onclick="openLightbox(1)"><img src="20260225_002334952_iOS.jpg" alt="Bedroom"><div class="gallery-overlay">View Photo</div></div>
-      <div class="gallery-thumb" onclick="openLightbox(2)"><img src="20260225_001459963_iOS.jpg" alt="Bathroom"><div class="gallery-overlay">View Photo</div></div>
-      <div class="gallery-thumb" onclick="openLightbox(3)"><img src="20260225_001539190_iOS.jpg" alt="Mirror"><div class="gallery-overlay">View Photo</div></div>
-      <div class="gallery-thumb" onclick="openLightbox(4)"><img src="20260225_001820084_iOS.jpg" alt="Outdoor shower"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(1)"><img src="images/20260225_002334952_iOS.jpg" alt="Bedroom"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(2)"><img src="images/20260225_001459963_iOS.jpg" alt="Bathroom"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(3)"><img src="images/20260225_001539190_iOS.jpg" alt="Mirror"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(4)"><img src="images/20260225_001820084_iOS.jpg" alt="Outdoor shower"><div class="gallery-overlay">View Photo</div></div>
     </div>
   </div>
   <div class="gallery-cta"><button class="btn-outline" type="button" onclick="openLightbox(0)">View Full Gallery →</button></div>
 </section>
 
-
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">×</button>
+<button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)">‹</button>
+<img id="lightbox-img" src="" alt="">
+<button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)">›</button>
+<div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
 
 <div class="save-banner">
 <p><strong>Book direct.</strong> Enquire now for personalised rates and direct hosting.</p>
@@ -363,13 +461,14 @@
 <div class="book-card">
 <div class="book-card-title">Reserve Your Stay</div>
 <div class="book-card-sub">Approval is required prior to payment.</div>
-<form id="bookingForm" action="https://formspree.io/f/mnjbdbdj" method="POST" onsubmit="handleSubmit(event)">
+<form id="bookingForm" action="https://formspree.io/f/mnjbdbdj" method="POST" onsubmit="handleBooking(event)">
 <input type="hidden" name="_subject" value=" New Villa Nobby Booking Request">
 <input type="hidden" name="_replyto" id="replyto">
 <div class="frow">
-<div class="fg"><label>Check In</label><input type="date" id="checkin" name="Check In" required></div>
-<div class="fg"><label>Check Out</label><input type="date" id="checkout" name="Check Out" required></div>
+<div class="fg"><label>Check In</label><input type="text" id="checkin" name="Check In" placeholder="Select date" required readonly></div>
+<div class="fg"><label>Check Out</label><input type="text" id="checkout" name="Check Out" placeholder="Select date" required readonly></div>
 </div>
+<div class="availability-note">Strikethrough dates are unavailable</div>
 <div class="frow">
 <div class="fg"><label>Number of Guests</label><select name="Number of Guests"><option>1 guest</option><option>2 guests</option></select></div>
 <div class="fg"><label>Purpose of Stay</label><select name="Visit Type"><option>Leisure / Holiday</option><option>Couples Retreat</option><option>Work & Relax</option><option>Special Occasion</option><option>Long Stay</option></select></div>
@@ -535,20 +634,20 @@
 <section class="reviews" id="reviews">
 <div class="reviews-header">
 <div><div class="eyebrow">Guest Experiences</div><h2>What our guests say</h2></div>
-</div>
-<div class="reviews-outer">
+<div style="display:flex;gap:8px;">
 <button class="slider-btn prev" onclick="slideReviews(-1)">&#8249;</button>
 <button class="slider-btn next" onclick="slideReviews(1)">&#8250;</button>
+</div>
+</div>
 <div class="reviews-slider">
 <div class="reviews-track" id="reviewsTrack">
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Great spot, nice hosts. Would stay again :)"</div><div class="review-author">Lachlan</div><div class="review-date">March 2026 &middot; Airbnb</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"The villa was very clean and tidy. It had everything you needed in it. The host was very responsive and went above and beyond to make the stay comfortable. Would definitely stay again."</div><div class="review-author">Alyssa</div><div class="review-date">March 2026 &middot; Airbnb</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Both Valentino and Eric were amazing hosts. The Airbnb was clean, homely, comfortable and the communication was easy. We couldn't recommend this little Airbnb more for a little get away."</div><div class="review-author">Zoe</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Such a beautiful stay at Villa Nobby. The space is even more stunning in person &mdash; light-filled, thoughtfully designed, and styled so effortlessly. Every corner felt calm, luxurious, and incredibly aesthetic."</div><div class="review-author">Kyra-Bae</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"We loved our stay here! Valentino was an amazing host. Super accommodating, helpful and very quick to respond with all inquiries. You can tell how much effort and thought has been put in to make this an incredible experience."</div><div class="review-author">Brianna</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Villa Nobby was exactly as shown in the photos, a very beautiful and clean space. Valentino's communication was amazing, friendly, responsive and very helpful. 100% worth the money. Would happily stay again."</div><div class="review-author">Jenalee</div><div class="review-date">February 2026 &middot; Airbnb</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"A gorgeous Japandi-inspired retreat just moments from the beach. The outdoor shower, the thoughtful touches, and the hosts' warmth made this stay truly special."</div><div class="review-author">Verified Guest</div><div class="review-date">Airbnb &middot; 5.0 &#9733; &mdash; 33 Reviews</div></div>
-</div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Absolutely stunning space. The attention to detail is incredible &mdash; from the outdoor shower to the Nespresso machine. We didn't want to leave!"</div><div class="review-author">Sarah &amp; James</div><div class="review-date">February 2025</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Perfect location, just a short walk to the beach and so many great cafes nearby. The hosts were incredibly responsive and helpful."</div><div class="review-author">Michael T.</div><div class="review-date">January 2025</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"The Japanese-inspired design is beautiful. Such a peaceful retreat. We loved walking to Paddock Bakery each morning."</div><div class="review-author">Emma L.</div><div class="review-date">December 2024</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"A hidden gem on the Gold Coast. Everything was immaculate. The outdoor area with the tropical plants was our favourite spot."</div><div class="review-author">David &amp; Priya</div><div class="review-date">November 2024</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Best Airbnb we've stayed at in Australia. The hosts think of everything &mdash; beach towels, snacks, even umbrellas for rainy days."</div><div class="review-author">Chris R.</div><div class="review-date">October 2024</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Loved the king-size bed and the smart TV with Netflix. The outdoor shower after the beach was a real highlight!"</div><div class="review-author">Sophie M.</div><div class="review-date">September 2024</div></div>
+<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Valentino and Eric are wonderful hosts. The villa exceeded our expectations in every way. Already planning our return trip!"</div><div class="review-author">Tom &amp; Grace</div><div class="review-date">August 2024</div></div>
 </div>
 </div>
 <div class="slider-dots" id="sliderDots"></div>
@@ -574,8 +673,8 @@
 <p>A Japandi-inspired boutique guest suite in Miami, Gold Coast. Your coastal escape awaits.</p>
 </div>
 <div class="ft-col"><h4>Navigate</h4><ul><li><a href="#home">The Suite</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#location">Location</a></li><li><a href="#dining">Dining Guide</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
-<div class="ft-col"><h4>Book</h4><ul><li><a href="#booking">Direct Booking</a></li><li><a href="https://www.airbnb.com.au/rooms/1554938675549327457" target="_blank">Airbnb</a></li></ul></div>
-<div class="ft-col"><h4>Contact</h4><ul><li><a href="https://www.airbnb.com.au/rooms/1554938675549327457" target="_blank">Message via Airbnb</a></li><li><a href="/cdn-cgi/l/email-protection#eb838e878784ab9d8287878a8584898992c5888486"><span class="__cf_email__" data-cfemail="b6ded3dadad9f6c0dfdadad7d8d9d4d4cf98d5d9db">[email&#160;protected]</span></a></li></ul></div>
+<div class="ft-col"><h4>Book</h4><ul><li><a href="#booking">Direct Booking</a></li><li><a href="https://www.airbnb.com.au" target="_blank">Airbnb</a></li></ul></div>
+<div class="ft-col"><h4>Contact</h4><ul><li><a href="#">Message via Airbnb</a></li><li><a href="/cdn-cgi/l/email-protection#eb838e878784ab9d8287878a8584898992c5888486"><span class="__cf_email__" data-cfemail="b6ded3dadad9f6c0dfdadad7d8d9d4d4cf98d5d9db">[email&#160;protected]</span></a></li></ul></div>
 </div>
 <div class="ft-bottom">
 <span>&copy; 2025 Villa Nobby. All rights reserved.</span>
@@ -615,11 +714,9 @@ function toggleMenu() {
   var isOpen = drawer.classList.contains('open');
   if (isOpen) {
     drawer.classList.remove('open');
-    burger.classList.remove('open');
     burger.setAttribute('aria-expanded', 'false');
   } else {
     drawer.classList.add('open');
-    burger.classList.add('open');
     burger.setAttribute('aria-expanded', 'true');
   }
 }
@@ -700,36 +797,16 @@ function updateLightbox() {
 /* ===== REVIEWS SLIDER ===== */
 var reviewSlide = 0;
 
-function initReviews() {
-  var slider = document.querySelector('.reviews-slider');
-  var track = document.getElementById('reviewsTrack');
-  if (!slider || !track) return;
-  var cards = track.children;
-  if (!cards.length) return;
-  var gap = 24;
-  var visibleCount = window.innerWidth < 700 ? 1 : 3;
-  var cardWidth = (slider.offsetWidth - (gap * (visibleCount - 1))) / visibleCount;
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].style.width = cardWidth + 'px';
-  }
-  reviewSlide = 0;
-  track.style.transform = 'translateX(0)';
-  updateDots();
-}
-
 function slideReviews(dir) {
-  var slider = document.querySelector('.reviews-slider');
   var track = document.getElementById('reviewsTrack');
-  if (!track || !slider) return;
+  if (!track) return;
   var cards = track.children;
-  if (!cards.length) return;
   var visibleCount = window.innerWidth < 700 ? 1 : 3;
   var maxSlide = Math.max(0, cards.length - visibleCount);
   reviewSlide = reviewSlide + dir;
   if (reviewSlide < 0) reviewSlide = 0;
   if (reviewSlide > maxSlide) reviewSlide = maxSlide;
-  var gap = 24;
-  var cardWidth = cards[0].offsetWidth + gap;
+  var cardWidth = cards[0].offsetWidth + 24;
   track.style.transform = 'translateX(-' + (reviewSlide * cardWidth) + 'px)';
   updateDots();
 }
@@ -783,9 +860,7 @@ document.addEventListener('keydown', function(e) {
 /* ===== MOBILE NAV TOGGLE ===== */
 function toggleNav() {
   var drawer = document.getElementById('navDrawer');
-  var burger = document.querySelector('.nav-burger');
   drawer.classList.toggle('open');
-  if (burger) burger.classList.toggle('open');
 }
 
 /* ===== SCROLL TO TOP ===== */
@@ -807,15 +882,74 @@ function toggleFAQ(el) {
   }
 }
 
+/* ===== AVAILABILITY CALENDAR ===== */
+function expandDateRanges(blocked) {
+  var dates = [];
+  for (var i = 0; i < blocked.length; i++) {
+    var start = new Date(blocked[i].start + 'T00:00:00');
+    var end = new Date(blocked[i].end + 'T00:00:00');
+    var d = new Date(start);
+    while (d < end) {
+      dates.push(d.toISOString().split('T')[0]);
+      d.setDate(d.getDate() + 1);
+    }
+  }
+  return dates;
+}
+
+function initAvailabilityCalendar(blockedDates) {
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  var checkinPicker = flatpickr('#checkin', {
+    dateFormat: 'Y-m-d',
+    altInput: true,
+    altFormat: 'D, M j',
+    minDate: tomorrow,
+    disable: blockedDates,
+    disableMobile: true,
+    onChange: function(selectedDates) {
+      if (selectedDates.length > 0) {
+        var nextDay = new Date(selectedDates[0]);
+        nextDay.setDate(nextDay.getDate() + 1);
+        checkoutPicker.set('minDate', nextDay);
+        checkoutPicker.open();
+      }
+    }
+  });
+
+  var checkoutPicker = flatpickr('#checkout', {
+    dateFormat: 'Y-m-d',
+    altInput: true,
+    altFormat: 'D, M j',
+    minDate: tomorrow,
+    disable: blockedDates,
+    disableMobile: true
+  });
+}
+
+function loadAvailability() {
+  fetch('blocked-dates.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var blockedDates = expandDateRanges(data.blocked);
+      initAvailabilityCalendar(blockedDates);
+    })
+    .catch(function() {
+      initAvailabilityCalendar([]);
+    });
+}
+
 /* ===== INIT ON LOAD ===== */
 window.addEventListener('DOMContentLoaded', function() {
   initGallery();
-  filterDining('breakfast');
-  initReviews();
+  try { filterDistance('all'); } catch(e) {}
+  updateDots();
+  loadAvailability();
 });
 
 window.addEventListener('resize', function() {
-  initReviews();
+  updateDots();
 });
 </script>
 </body>
