@@ -181,6 +181,22 @@
  .reviews-rating-badge .rating-score { font-size: 1.6rem; font-weight: 700; color: var(--ink); }
  .reviews-rating-badge .rating-stars { color: var(--sand); font-size: 0.9rem; letter-spacing: 1px; }
  .reviews-rating-badge .rating-count { font-size: 0.78rem; color: var(--mist); }
+ .instagram { background: var(--white); text-align: center; }
+ .instagram .eyebrow { margin-bottom: 8px; }
+ .instagram h2 { margin-bottom: 12px; }
+ .instagram-handle { font-size: 1.1rem; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
+ .instagram-handle a { color: var(--forest); text-decoration: none; transition: color 0.2s; }
+ .instagram-handle a:hover { color: var(--sand); }
+ .instagram-desc { font-size: 0.82rem; color: var(--mist); max-width: 520px; margin: 0 auto 36px; line-height: 1.6; }
+ .instagram-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 32px; }
+ .instagram-grid a { display: block; position: relative; aspect-ratio: 1; overflow: hidden; }
+ .instagram-grid a img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; }
+ .instagram-grid a:hover img { transform: scale(1.05); filter: brightness(0.85); }
+ .instagram-grid a::after { content: ''; position: absolute; inset: 0; background: rgba(58,79,60,0); transition: background 0.3s; }
+ .instagram-grid a:hover::after { background: rgba(58,79,60,0.15); }
+ .instagram-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1.5px solid var(--forest); color: var(--forest); text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s; }
+ .instagram-cta:hover { background: var(--forest); color: var(--cream); }
+ .instagram-cta svg { width: 18px; height: 18px; }
  .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--border); color: var(--forest); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; line-height: 1; transition: all 0.2s; z-index: 10; display: flex; align-items: center; justify-content: center; }
  .slider-btn:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
  .slider-btn.prev { left: 0; }
@@ -246,6 +262,7 @@
   .review-text { font-size: 0.98rem; line-height: 1.75; }
   .slider-btn { display: none; }
   .slider-dots { display: none; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
  }
  @media (max-width: 520px) {
   .frow { grid-template-columns: 1fr; }
@@ -653,6 +670,25 @@
 </div>
 </div>
 <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<section class="instagram" id="instagram">
+<div class="eyebrow">Follow the Journey</div>
+<h2>Villa Nobby on Instagram</h2>
+<div class="instagram-handle"><a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener">@villanobby</a></div>
+<p class="instagram-desc">From sun-drenched mornings to golden-hour cocktails, follow along for a glimpse into the Villa Nobby lifestyle and the latest from our boutique suite.</p>
+<div class="instagram-grid">
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_002224497_iOS.jpg" alt="Villa Nobby bedroom with tropical garden view" loading="lazy"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001459963_iOS.jpg" alt="Villa Nobby luxury bathroom with gold fixtures" loading="lazy"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001413025_iOS.jpg" alt="Welcome cocktails at Villa Nobby" loading="lazy"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001820084_iOS.jpg" alt="Villa Nobby tropical outdoor shower" loading="lazy"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001920293_iOS.jpg" alt="Villa Nobby private outdoor garden" loading="lazy"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_002334952_iOS.jpg" alt="Villa Nobby bedroom with timber panel wall" loading="lazy"></a>
+</div>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener" class="instagram-cta">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+Follow @villanobby
+</a>
 </section>
 
 <section class="rules" id="rules">
