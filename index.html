@@ -170,13 +170,17 @@
  .reviews { background: var(--linen); }
  .reviews-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; }
  .reviews-slider { position: relative; overflow: hidden; margin-bottom: 32px; padding: 0 60px; }
- .reviews-track { display: grid; grid-template-columns: repeat(7, calc(33.333% - 16px)); gap: 24px; transition: transform 0.4s ease; }
+ .reviews-track { display: grid; gap: 24px; transition: transform 0.4s ease; }
  .review-card { padding: 18px 22px; border: 1px solid var(--border); transition: box-shadow 0.3s; background: var(--white); }
  .review-card:hover { box-shadow: 0 8px 32px var(--shadow); }
  .review-stars { color: var(--sand); font-size: 0.68rem; letter-spacing: 2px; margin-bottom: 10px; }
  .review-text { font-size: 0.78rem; line-height: 1.5; color: var(--mist); margin-bottom: 12px; font-style: italic; font-weight: 300; }
  .review-author { font-size: 0.7rem; font-weight: 600; color: var(--ink); }
  .review-date { font-size: 0.64rem; color: var(--mist); }
+ .reviews-rating-badge { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+ .reviews-rating-badge .rating-score { font-size: 1.6rem; font-weight: 700; color: var(--ink); }
+ .reviews-rating-badge .rating-stars { color: var(--sand); font-size: 0.9rem; letter-spacing: 1px; }
+ .reviews-rating-badge .rating-count { font-size: 0.78rem; color: var(--mist); }
  .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--border); color: var(--forest); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; line-height: 1; transition: all 0.2s; z-index: 10; display: flex; align-items: center; justify-content: center; }
  .slider-btn:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
  .slider-btn.prev { left: 0; }
@@ -633,7 +637,11 @@
 
 <section class="reviews" id="reviews">
 <div class="reviews-header">
-<div><div class="eyebrow">Guest Experiences</div><h2>What our guests say</h2></div>
+<div>
+<div class="eyebrow">Guest Experiences</div>
+<h2>What our guests say</h2>
+<div class="reviews-rating-badge" id="reviewsBadge"></div>
+</div>
 <div style="display:flex;gap:8px;">
 <button class="slider-btn prev" onclick="slideReviews(-1)">&#8249;</button>
 <button class="slider-btn next" onclick="slideReviews(1)">&#8250;</button>
@@ -641,13 +649,7 @@
 </div>
 <div class="reviews-slider">
 <div class="reviews-track" id="reviewsTrack">
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Absolutely stunning space. The attention to detail is incredible &mdash; from the outdoor shower to the Nespresso machine. We didn't want to leave!"</div><div class="review-author">Sarah &amp; James</div><div class="review-date">February 2025</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Perfect location, just a short walk to the beach and so many great cafes nearby. The hosts were incredibly responsive and helpful."</div><div class="review-author">Michael T.</div><div class="review-date">January 2025</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"The Japanese-inspired design is beautiful. Such a peaceful retreat. We loved walking to Paddock Bakery each morning."</div><div class="review-author">Emma L.</div><div class="review-date">December 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"A hidden gem on the Gold Coast. Everything was immaculate. The outdoor area with the tropical plants was our favourite spot."</div><div class="review-author">David &amp; Priya</div><div class="review-date">November 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Best Airbnb we've stayed at in Australia. The hosts think of everything &mdash; beach towels, snacks, even umbrellas for rainy days."</div><div class="review-author">Chris R.</div><div class="review-date">October 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Loved the king-size bed and the smart TV with Netflix. The outdoor shower after the beach was a real highlight!"</div><div class="review-author">Sophie M.</div><div class="review-date">September 2024</div></div>
-<div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Valentino and Eric are wonderful hosts. The villa exceeded our expectations in every way. Already planning our return trip!"</div><div class="review-author">Tom &amp; Grace</div><div class="review-date">August 2024</div></div>
+<!-- Reviews loaded dynamically from reviews.json -->
 </div>
 </div>
 <div class="slider-dots" id="sliderDots"></div>
@@ -939,11 +941,53 @@ function loadAvailability() {
     });
 }
 
+/* ===== LOAD REVIEWS ===== */
+function loadReviews() {
+  fetch('reviews.json')
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      var track = document.getElementById('reviewsTrack');
+      var badge = document.getElementById('reviewsBadge');
+      if (!track) return;
+
+      // Show rating badge
+      if (badge && data.rating) {
+        badge.innerHTML = '<span class="rating-score">' + data.rating.toFixed(1) + '</span>' +
+          '<span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>' +
+          '<span class="rating-count">' + data.totalReviews + ' reviews on Airbnb</span>';
+      }
+
+      // Render review cards
+      var reviews = data.reviews || [];
+      var html = '';
+      var count = Math.min(reviews.length, 12);
+      for (var i = 0; i < count; i++) {
+        var r = reviews[i];
+        var stars = '';
+        for (var s = 0; s < r.rating; s++) stars += '&#9733;';
+        var text = r.text.replace(/\n/g, ' ');
+        if (text.length > 180) text = text.substring(0, 177) + '...';
+        html += '<div class="review-card">' +
+          '<div class="review-stars">' + stars + '</div>' +
+          '<div class="review-text">"' + text.replace(/"/g, '&quot;').replace(/</g, '&lt;') + '"</div>' +
+          '<div class="review-author">' + r.name.replace(/</g, '&lt;') + '</div>' +
+          '<div class="review-date">' + r.date + '</div></div>';
+      }
+      track.innerHTML = html;
+      track.style.gridTemplateColumns = 'repeat(' + count + ', calc(33.333% - 16px))';
+      reviewSlide = 0;
+      updateDots();
+    })
+    .catch(function() {
+      console.log('Could not load reviews');
+    });
+}
+
 /* ===== INIT ON LOAD ===== */
 window.addEventListener('DOMContentLoaded', function() {
   initGallery();
   try { filterDistance('all'); } catch(e) {}
-  updateDots();
+  loadReviews();
   loadAvailability();
 });
 
