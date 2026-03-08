@@ -112,11 +112,9 @@
  .event-cost { font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
  .event-cost.free { background: rgba(58,79,60,0.1); color: var(--forest); }
  .event-cost.paid { background: rgba(196,154,82,0.12); color: var(--sand); }
- .event-link { display: inline-block; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sand); text-decoration: none; font-weight: 500; margin-top: 10px; transition: color 0.2s; position: relative; z-index: 2; }
+ .event-link { display: inline-block; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sand); text-decoration: none; font-weight: 500; margin-top: 10px; transition: color 0.2s; }
  .event-link:hover { color: var(--forest); }
  .event-link::after { content: ' \2192'; }
- .event-link::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
- .event-card .event-link::before { top: -999px; left: -999px; right: -999px; bottom: -999px; }
 
  /* ===== SHOW MORE (mobile) ===== */
  .show-more-mobile { display: none; text-align: center; margin-top: 16px; }
@@ -877,6 +875,18 @@ function toggleShowMore(btn) {
       div.innerHTML = '<button onclick="toggleShowMore(this)">Show ' + (cards.length - limit) + ' more</button>';
       grid.parentNode.insertBefore(div, grid.nextSibling);
     }
+  }
+})();
+
+/* ===== CLICKABLE CARDS ===== */
+(function() {
+  var cards = document.querySelectorAll('.event-card');
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function(e) {
+      if (e.target.closest('a')) return;
+      var link = this.querySelector('.event-link');
+      if (link) link.click();
+    });
   }
 })();
 
