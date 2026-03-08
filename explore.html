@@ -92,17 +92,26 @@
  .activity-detail { font-size: 0.68rem; color: var(--sage); letter-spacing: 0.06em; }
  .activity-card.host-pick { border-left: 3px solid var(--sand); }
 
- /* ===== SEASONAL ===== */
- .seasonal { background: var(--cream); }
- .season-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
- .season-card { background: var(--white); padding: 32px 28px; border-top: 3px solid var(--sand); transition: box-shadow 0.3s; }
- .season-card:hover { box-shadow: 0 8px 32px var(--shadow); }
- .season-icon { font-size: 1.4rem; margin-bottom: 10px; }
- .season-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--ink); margin-bottom: 4px; }
- .season-months { font-size: 0.66rem; color: var(--sand); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
- .season-highlights { list-style: none; }
- .season-highlights li { font-size: 0.78rem; color: var(--mist); line-height: 1.7; padding-left: 16px; position: relative; }
- .season-highlights li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--sand); border-radius: 50%; }
+ /* ===== WHAT'S ON ===== */
+ .whats-on { background: var(--cream); }
+ .whats-on-intro { font-size: 0.88rem; color: var(--mist); line-height: 1.7; max-width: 600px; margin-bottom: 12px; font-weight: 300; }
+ .whats-on-updated { font-size: 0.62rem; color: var(--sage); letter-spacing: 0.08em; margin-bottom: 40px; }
+ .events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 0; }
+ .event-card { background: var(--white); border: 1px solid var(--border); overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+ .event-card:hover { box-shadow: 0 8px 32px var(--shadow); transform: translateY(-2px); }
+ .event-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+ .event-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+ .event-date { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 6px; }
+ .event-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
+ .event-desc { font-size: 0.76rem; color: var(--mist); line-height: 1.6; margin-bottom: 12px; flex: 1; }
+ .event-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+ .event-location { font-size: 0.66rem; color: var(--sage); }
+ .event-cost { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
+ .event-cost.free { background: rgba(58,79,60,0.1); color: var(--forest); }
+ .event-cost.paid { background: rgba(196,154,82,0.12); color: var(--sand); }
+ .events-category { margin-top: 48px; }
+ .events-category:first-of-type { margin-top: 0; }
+ .events-category-title { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 
  /* ===== BACK LINK ===== */
  .back-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border: 1px solid var(--border); color: var(--ink); text-decoration: none; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; margin-top: 48px; }
@@ -135,7 +144,7 @@
   body { padding-bottom: 68px; }
   .mobile-cta { display:block; position:fixed; bottom:0; left:0; right:0; background: var(--sand); color: var(--white); text-align:center; padding: 14px 18px; z-index: 220; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration:none; }
   .ft-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
-  .season-grid { grid-template-columns: 1fr; }
+  .events-grid { grid-template-columns: 1fr; }
  }
  @media (max-width: 520px) {
   .dining-panel.active { grid-template-columns: 1fr; }
@@ -190,7 +199,7 @@
 <div class="section-nav">
 <a href="#dining">Dining Guide</a>
 <a href="#things-to-do">Things to Do</a>
-<a href="#seasonal">Seasonal Highlights</a>
+<a href="#whats-on">What's On</a>
 </div>
 
 <!-- ===== DINING GUIDE ===== -->
@@ -373,65 +382,243 @@
 </div>
 </section>
 
-<!-- ===== SEASONAL HIGHLIGHTS ===== -->
-<section class="seasonal" id="seasonal">
+<!-- ===== WHAT'S ON ===== -->
+<section class="whats-on" id="whats-on">
 <div class="eyebrow">What's On</div>
-<h2>Seasonal highlights</h2>
+<h2>March 2026 on the Gold Coast</h2>
+<p class="whats-on-intro">From international sport to beachfront markets and live music — here's what's happening near Villa Nobby this month.</p>
+<div class="whats-on-updated">Last updated: March 2026</div>
 
-<div class="season-grid">
+<!-- SPORT & OUTDOORS -->
+<div class="events-category">
+<div class="events-category-title">Sport &amp; Outdoors</div>
+<div class="events-grid">
 
-<div class="season-card">
-<div class="season-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
-<div class="season-name">Summer</div>
-<div class="season-months">December — February</div>
-<ul class="season-highlights">
-<li>Warm ocean swimming and beach days at North Burleigh</li>
-<li>Twilight markets and outdoor dining across Burleigh</li>
-<li>New Year's Eve fireworks over the Gold Coast skyline</li>
-<li>Outdoor showers at Villa Nobby are at their best</li>
-<li>Longer days — sunset around 7:30 PM</li>
-</ul>
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=360&fit=crop" alt="Women's football match" loading="lazy">
+<div class="event-body">
+<div class="event-date">5, 8 &amp; 19 March</div>
+<div class="event-name">AFC Women's Asian Cup 2026</div>
+<div class="event-desc">International women's football comes to the Gold Coast. Group stage and play-off matches at Cbus Super Stadium, with a potential Matildas appearance.</div>
+<div class="event-meta">
+<span class="event-location">Cbus Super Stadium, Robina</span>
+<span class="event-cost paid">From $20</span>
+</div>
+</div>
 </div>
 
-<div class="season-card">
-<div class="season-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8l4 4-4 4"/><path d="M3 12h18"/></svg></div>
-<div class="season-name">Autumn</div>
-<div class="season-months">March — May</div>
-<ul class="season-highlights">
-<li>Perfect weather — warm days, cooler evenings, less humidity</li>
-<li>Bleach* Festival — arts, music and culture across the coast</li>
-<li>Gold Coast Film Festival at various local venues</li>
-<li>Ideal conditions for coastal walks and hinterland trails</li>
-<li>Quieter beaches and lower accommodation demand</li>
-</ul>
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=360&fit=crop" alt="Triathlon swim start" loading="lazy">
+<div class="event-body">
+<div class="event-date">21 — 22 March</div>
+<div class="event-name">Gold Coast T100 Triathlon</div>
+<div class="event-desc">The inaugural Gold Coast T100 Triathlon with elite racing and a public 10K run on Sunday. Swim, bike, and run across the Gold Coast's flat, fast course.</div>
+<div class="event-meta">
+<span class="event-location">Broadwater Parklands to Surfers Paradise</span>
+<span class="event-cost free">Free to watch</span>
+</div>
+</div>
 </div>
 
-<div class="season-card">
-<div class="season-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0z"/></svg></div>
-<div class="season-name">Winter</div>
-<div class="season-months">June — August</div>
-<ul class="season-highlights">
-<li>Humpback whale watching from Burleigh Headland (free)</li>
-<li>Mild, sunny days — average highs around 21°C</li>
-<li>Gold Coast Marathon in July</li>
-<li>Cosy evenings with Netflix on the 55" Smart TV</li>
-<li>Best surf conditions of the year at nearby breaks</li>
-</ul>
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=600&h=360&fit=crop" alt="Surf life saving on beach" loading="lazy">
+<div class="event-body">
+<div class="event-date">21 — 29 March</div>
+<div class="event-name">Australian Surf Life Saving Championships</div>
+<div class="event-desc">Australia's premier surf life saving competition — "The Aussies." Thousands of competitors in ocean swims, board paddling, surf boats, and beach sprints across Gold Coast beaches.</div>
+<div class="event-meta">
+<span class="event-location">North Kirra, Miami &amp; Burleigh beaches</span>
+<span class="event-cost free">Free to watch</span>
+</div>
+</div>
 </div>
 
-<div class="season-card">
-<div class="season-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-<div class="season-name">Spring</div>
-<div class="season-months">September — November</div>
-<ul class="season-highlights">
-<li>Wildflower season in the hinterland national parks</li>
-<li>Last months of whale watching season (Sep–Nov)</li>
-<li>Warming ocean temps — perfect for swimming and SUP</li>
-<li>Cooly Rocks On festival — vintage cars, music and markets</li>
-<li>Jacaranda blooms across the coastal suburbs</li>
-</ul>
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1502680390548-bdbac40b0100?w=600&h=360&fit=crop" alt="Surfer riding a wave" loading="lazy">
+<div class="event-body">
+<div class="event-date">7 — 8 March</div>
+<div class="event-name">Australian Boardriders Battle Grand Final</div>
+<div class="event-desc">42 surf clubs from around Australia compete at iconic Burleigh Heads for the national boardriders title. A huge community surf event right on our doorstep.</div>
+<div class="event-meta">
+<span class="event-location">Burleigh Heads · 5 min drive</span>
+<span class="event-cost free">Free to watch</span>
+</div>
+</div>
 </div>
 
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&h=360&fit=crop" alt="Golf course at sunset" loading="lazy">
+<div class="event-body">
+<div class="event-date">19 — 22 March</div>
+<div class="event-name">Festival of Golf 2026</div>
+<div class="event-desc">Four days of golf, live music, pop-up bars, food, and kids' zones. Features the Australian WPGA Championship with $600K in prize money.</div>
+<div class="event-meta">
+<span class="event-location">Sanctuary Cove Golf Club</span>
+<span class="event-cost free">Free entry</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&h=360&fit=crop" alt="Beach volleyball" loading="lazy">
+<div class="event-body">
+<div class="event-date">6 — 15 March</div>
+<div class="event-name">Gold Coast Volleyslam</div>
+<div class="event-desc">Beach volleyball tournament and festival with competitive matches across multiple days on the Gold Coast's famous beaches.</div>
+<div class="event-meta">
+<span class="event-location">Gold Coast beaches</span>
+<span class="event-cost free">Free to watch</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ARTS, MUSIC & COMEDY -->
+<div class="events-category">
+<div class="events-category-title">Arts, Music &amp; Comedy</div>
+<div class="events-grid">
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1527224538127-308f8790e886?w=600&h=360&fit=crop" alt="Comedy microphone on stage" loading="lazy">
+<div class="event-body">
+<div class="event-date">13 — 22 March</div>
+<div class="event-name">GC Laughs Comedy Festival</div>
+<div class="event-desc">The Gold Coast's comedy festival featuring national and international stand-up acts at HOTA. Multiple shows across 10 nights.</div>
+<div class="event-meta">
+<span class="event-location">HOTA, Surfers Paradise</span>
+<span class="event-cost paid">Ticketed</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop" alt="Live music concert" loading="lazy">
+<div class="event-body">
+<div class="event-date">Saturday 28 March</div>
+<div class="event-name">Bernard Fanning — Tea &amp; Sympathy 20th Anniversary</div>
+<div class="event-desc">Former Powderfinger frontman performs the 20th anniversary celebration of his debut solo album. A special night for Australian music fans.</div>
+<div class="event-meta">
+<span class="event-location">HOTA, Surfers Paradise</span>
+<span class="event-cost paid">Ticketed</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=360&fit=crop" alt="Live band performing" loading="lazy">
+<div class="event-body">
+<div class="event-date">Wednesday 18 March, 6 PM</div>
+<div class="event-name">Electric Six (USA) — Greatest Hits Tour</div>
+<div class="event-desc">Detroit rock band Electric Six brings their high-energy Greatest Hits Tour to the Gold Coast's best live music venue — just 3 minutes from Villa Nobby.</div>
+<div class="event-meta">
+<span class="event-location">Miami Marketta · 3 min drive</span>
+<span class="event-cost paid">Ticketed</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop" alt="Ocean waves and coastline" loading="lazy">
+<div class="event-body">
+<div class="event-date">March 2026</div>
+<div class="event-name">Ocean Film Festival World Tour</div>
+<div class="event-desc">Over 2 hours of inspiring, educational, and entertaining ocean-themed films from independent filmmakers around the globe.</div>
+<div class="event-meta">
+<span class="event-location">HOTA, Surfers Paradise</span>
+<span class="event-cost paid">Ticketed</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- MARKETS & FOOD -->
+<div class="events-category">
+<div class="events-category-title">Markets &amp; Food</div>
+<div class="events-grid">
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Night food market with string lights" loading="lazy">
+<div class="event-body">
+<div class="event-date">Every Wed — Sat, from 5 PM</div>
+<div class="event-name">Miami Marketta</div>
+<div class="event-desc">The Gold Coast's original street food night market. Global street food vendors, boutique bars, and free live music in a laneway-style setting. No bookings needed.</div>
+<div class="event-meta">
+<span class="event-location">23 Hillcrest Pde, Miami · 3 min drive</span>
+<span class="event-cost free">Free entry</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=360&fit=crop" alt="Weekend lifestyle market stalls" loading="lazy">
+<div class="event-body">
+<div class="event-date">Sunday 1 &amp; 15 March, 8 AM — 1 PM</div>
+<div class="event-name">The Village Markets</div>
+<div class="event-desc">One of the Gold Coast's most popular lifestyle markets — fashion, art, design, handmade goods, food trucks, and live music. Held 1st and 3rd Sunday of the month.</div>
+<div class="event-meta">
+<span class="event-location">Burleigh Heads State School · 5 min drive</span>
+<span class="event-cost free">Free entry</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=360&fit=crop" alt="Fresh produce at farmers market" loading="lazy">
+<div class="event-body">
+<div class="event-date">Every Sunday, 6 AM — 11:30 AM</div>
+<div class="event-name">HOTA Farmers &amp; Artisan Markets</div>
+<div class="event-desc">Weekly farmers market with fresh local produce, artisan goods, specialty coffee, and live music in the HOTA arts precinct.</div>
+<div class="event-meta">
+<span class="event-location">HOTA, Surfers Paradise</span>
+<span class="event-cost free">Free entry</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=360&fit=crop" alt="Beachfront at sunset" loading="lazy">
+<div class="event-body">
+<div class="event-date">Every Wed, Fri &amp; Sat, 4 — 9 PM</div>
+<div class="event-name">Surfers Paradise Beachfront Markets</div>
+<div class="event-desc">Iconic beachfront markets with handmade arts, crafts, fashion, jewellery, and foodie treats along the esplanade. A classic Gold Coast experience.</div>
+<div class="event-meta">
+<span class="event-location">Surfers Paradise Esplanade</span>
+<span class="event-cost free">Free entry</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop" alt="Vintage clothing on rack" loading="lazy">
+<div class="event-body">
+<div class="event-date">Sunday 1 March, 11 AM — 4 PM</div>
+<div class="event-name">Second Life Markets</div>
+<div class="event-desc">Curated vintage, pre-loved, upcycled, and Y2K fashion market with around 40 stalls of sustainable clothing and jewellery. Good food, coffee, and music too.</div>
+<div class="event-meta">
+<span class="event-location">Miami Marketta · 3 min drive</span>
+<span class="event-cost paid">From $10</span>
+</div>
+</div>
+</div>
+
+<div class="event-card">
+<img class="event-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=360&fit=crop" alt="Outdoor movies under stars" loading="lazy">
+<div class="event-body">
+<div class="event-date">Every Sunday, 7 PM</div>
+<div class="event-name">Movies on the Esplanade</div>
+<div class="event-desc">Free outdoor cinema on the beachfront every Sunday night. Bring a picnic rug and enjoy a movie under the stars with ocean views.</div>
+<div class="event-meta">
+<span class="event-location">Surfers Paradise Esplanade</span>
+<span class="event-cost free">Free</span>
+</div>
+</div>
+</div>
+
+</div>
 </div>
 
 <a href="index.html#booking" class="back-link">&larr; Back to Villa Nobby</a>
