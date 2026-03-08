@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-08T10:00:00.000Z",
+  "updated": "2026-03-09T10:00:00.000Z",
   "rating": 5.0,
-  "totalReviews": 33,
+  "totalReviews": 34,
   "categories": {
     "cleanliness": 5.0,
     "accuracy": 5.0,
@@ -11,6 +11,13 @@
     "value": 5.0
   },
   "reviews": [
+    {
+      "id": "1632000000000000000",
+      "name": "Kai",
+      "date": "March 2026",
+      "rating": 5,
+      "text": "We just want to say a huge thank you. This was the most beautiful airbnb we have ever stayed at. You just made the whole stay so easy and relaxing and we appreciate you guys going above and beyond for us to make my birthday so special. I wish there was an option to give you a 10 star review ahaha. We appreciate you guys so much and we cannot wait to stay here again in the near future. Again, thank you guys so much for everything!!!"
+    },
     {
       "id": "1631570122718104594",
       "name": "Lachlan",
