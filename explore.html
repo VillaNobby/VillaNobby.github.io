@@ -96,19 +96,25 @@
  .whats-on { background: var(--cream); }
  .whats-on-intro { font-size: 0.88rem; color: var(--mist); line-height: 1.7; max-width: 600px; margin-bottom: 12px; font-weight: 300; }
  .whats-on-updated { font-size: 0.62rem; color: var(--sage); letter-spacing: 0.08em; margin-bottom: 40px; }
- .events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 0; }
+ .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 0; }
  .event-card { background: var(--white); border: 1px solid var(--border); overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
  .event-card:hover { box-shadow: 0 8px 32px var(--shadow); transform: translateY(-2px); }
- .event-img { width: 100%; height: 180px; object-fit: cover; display: block; }
- .event-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
- .event-date { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 6px; }
- .event-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
- .event-desc { font-size: 0.76rem; color: var(--mist); line-height: 1.6; margin-bottom: 12px; flex: 1; }
- .event-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
- .event-location { font-size: 0.66rem; color: var(--sage); }
- .event-cost { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
+ .event-img-wrap { position: relative; overflow: hidden; }
+ .event-img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(247,240,227,0.08) 0%, rgba(196,154,82,0.12) 100%); mix-blend-mode: multiply; pointer-events: none; }
+ .event-img { width: 100%; height: 160px; object-fit: cover; display: block; filter: saturate(0.82) brightness(0.97) contrast(1.02); transition: filter 0.3s; }
+ .event-card:hover .event-img { filter: saturate(0.92) brightness(1.0) contrast(1.02); }
+ .event-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+ .event-date { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 5px; }
+ .event-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; color: var(--ink); margin-bottom: 5px; line-height: 1.25; }
+ .event-desc { font-size: 0.7rem; color: var(--mist); line-height: 1.55; margin-bottom: 10px; flex: 1; }
+ .event-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+ .event-location { font-size: 0.6rem; color: var(--sage); }
+ .event-cost { font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
  .event-cost.free { background: rgba(58,79,60,0.1); color: var(--forest); }
  .event-cost.paid { background: rgba(196,154,82,0.12); color: var(--sand); }
+ .event-link { display: inline-block; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sand); text-decoration: none; font-weight: 500; margin-top: 10px; transition: color 0.2s; }
+ .event-link:hover { color: var(--forest); }
+ .event-link::after { content: ' \2192'; }
  .events-category { margin-top: 48px; }
  .events-category:first-of-type { margin-top: 0; }
  .events-category-title { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
@@ -137,6 +143,7 @@
   .dining-panel.active { grid-template-columns: repeat(2, 1fr); }
   .ft-top { grid-template-columns: 1fr 1fr; gap: 28px; }
   .activity-grid { grid-template-columns: repeat(2, 1fr); }
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
   .page-hero { padding: 120px 26px 48px; }
   .section-nav { padding: 0 26px 32px; }
  }
@@ -395,7 +402,7 @@
 <div class="events-grid">
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=360&fit=crop" alt="Women's football match" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=360&fit=crop" alt="Women's football match" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">5, 8 &amp; 19 March</div>
 <div class="event-name">AFC Women's Asian Cup 2026</div>
@@ -404,11 +411,12 @@
 <span class="event-location">Cbus Super Stadium, Robina</span>
 <span class="event-cost paid">From $20</span>
 </div>
+<a class="event-link" href="https://www.the-afc.com/competitions/afc-womens-asian-cup" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=360&fit=crop" alt="Triathlon swim start" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=360&fit=crop" alt="Triathlon swim start" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">21 — 22 March</div>
 <div class="event-name">Gold Coast T100 Triathlon</div>
@@ -417,11 +425,12 @@
 <span class="event-location">Broadwater Parklands to Surfers Paradise</span>
 <span class="event-cost free">Free to watch</span>
 </div>
+<a class="event-link" href="https://t100triathlon.com/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=600&h=360&fit=crop" alt="Surf life saving on beach" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=600&h=360&fit=crop" alt="Surf life saving on beach" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">21 — 29 March</div>
 <div class="event-name">Australian Surf Life Saving Championships</div>
@@ -430,11 +439,12 @@
 <span class="event-location">North Kirra, Miami &amp; Burleigh beaches</span>
 <span class="event-cost free">Free to watch</span>
 </div>
+<a class="event-link" href="https://sls.com.au/aussies/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?w=600&h=360&fit=crop" alt="Surfer riding a wave" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?w=600&h=360&fit=crop" alt="Surfer riding a wave" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">7 — 8 March</div>
 <div class="event-name">Australian Boardriders Battle Grand Final</div>
@@ -443,11 +453,12 @@
 <span class="event-location">Burleigh Heads · 5 min drive</span>
 <span class="event-cost free">Free to watch</span>
 </div>
+<a class="event-link" href="https://www.surfingaustralia.com/events/australian-boardriders-battle" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&h=360&fit=crop" alt="Golf course at sunset" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&h=360&fit=crop" alt="Golf course at sunset" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">19 — 22 March</div>
 <div class="event-name">Festival of Golf 2026</div>
@@ -456,11 +467,12 @@
 <span class="event-location">Sanctuary Cove Golf Club</span>
 <span class="event-cost free">Free entry</span>
 </div>
+<a class="event-link" href="https://www.festivalofgolf.com.au/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&h=360&fit=crop" alt="Beach volleyball" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&h=360&fit=crop" alt="Beach volleyball" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">6 — 15 March</div>
 <div class="event-name">Gold Coast Volleyslam</div>
@@ -469,6 +481,7 @@
 <span class="event-location">Gold Coast beaches</span>
 <span class="event-cost free">Free to watch</span>
 </div>
+<a class="event-link" href="https://www.volleyballaustralia.org.au/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
@@ -481,7 +494,7 @@
 <div class="events-grid">
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1611956425642-d5a8169abd63?w=600&h=360&fit=crop" alt="Stand-up comedian on stage" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1611956425642-d5a8169abd63?w=600&h=360&fit=crop" alt="Stand-up comedian on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">13 — 22 March</div>
 <div class="event-name">GC Laughs Comedy Festival</div>
@@ -490,11 +503,12 @@
 <span class="event-location">HOTA, Surfers Paradise</span>
 <span class="event-cost paid">Ticketed</span>
 </div>
+<a class="event-link" href="https://hota.com.au/whats-on/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop" alt="Live music concert" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop" alt="Live music concert" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Saturday 28 March</div>
 <div class="event-name">Bernard Fanning — Tea &amp; Sympathy 20th Anniversary</div>
@@ -503,11 +517,12 @@
 <span class="event-location">HOTA, Surfers Paradise</span>
 <span class="event-cost paid">Ticketed</span>
 </div>
+<a class="event-link" href="https://hota.com.au/whats-on/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=360&fit=crop" alt="Live band performing" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=360&fit=crop" alt="Live band performing" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Wednesday 18 March, 6 PM</div>
 <div class="event-name">Electric Six (USA) — Greatest Hits Tour</div>
@@ -516,11 +531,12 @@
 <span class="event-location">Miami Marketta · 3 min drive</span>
 <span class="event-cost paid">Ticketed</span>
 </div>
+<a class="event-link" href="https://miamimarketta.com/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop" alt="Ocean waves and coastline" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop" alt="Ocean waves and coastline" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">March 2026</div>
 <div class="event-name">Ocean Film Festival World Tour</div>
@@ -529,6 +545,7 @@
 <span class="event-location">HOTA, Surfers Paradise</span>
 <span class="event-cost paid">Ticketed</span>
 </div>
+<a class="event-link" href="https://www.oceanfilmfestival.com.au/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
@@ -541,7 +558,7 @@
 <div class="events-grid">
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Night food market with string lights" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Night food market with string lights" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Wed — Sat, from 5 PM</div>
 <div class="event-name">Miami Marketta</div>
@@ -550,11 +567,12 @@
 <span class="event-location">23 Hillcrest Pde, Miami · 3 min drive</span>
 <span class="event-cost free">Free entry</span>
 </div>
+<a class="event-link" href="https://miamimarketta.com/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=360&fit=crop" alt="Weekend lifestyle market stalls" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=360&fit=crop" alt="Weekend lifestyle market stalls" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Sunday 1 &amp; 15 March, 8 AM — 1 PM</div>
 <div class="event-name">The Village Markets</div>
@@ -563,11 +581,12 @@
 <span class="event-location">Burleigh Heads State School · 5 min drive</span>
 <span class="event-cost free">Free entry</span>
 </div>
+<a class="event-link" href="https://www.thevillagemarketsgc.com.au/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=360&fit=crop" alt="Fresh produce at farmers market" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=360&fit=crop" alt="Fresh produce at farmers market" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Sunday, 6 AM — 11:30 AM</div>
 <div class="event-name">HOTA Farmers &amp; Artisan Markets</div>
@@ -576,11 +595,12 @@
 <span class="event-location">HOTA, Surfers Paradise</span>
 <span class="event-cost free">Free entry</span>
 </div>
+<a class="event-link" href="https://hota.com.au/whats-on/farmers-artisan-markets/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=360&fit=crop" alt="Beachfront at sunset" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=360&fit=crop" alt="Beachfront at sunset" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Wed, Fri &amp; Sat, 4 — 9 PM</div>
 <div class="event-name">Surfers Paradise Beachfront Markets</div>
@@ -589,11 +609,12 @@
 <span class="event-location">Surfers Paradise Esplanade</span>
 <span class="event-cost free">Free entry</span>
 </div>
+<a class="event-link" href="https://www.surfersparadise.com/things-to-do/surfers-paradise-beachfront-markets" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1680362667647-c2a8c6994742?w=600&h=360&fit=crop" alt="Vintage clothing on rack" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1680362667647-c2a8c6994742?w=600&h=360&fit=crop" alt="Vintage clothing on rack" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Sunday 1 March, 11 AM — 4 PM</div>
 <div class="event-name">Second Life Markets</div>
@@ -602,11 +623,12 @@
 <span class="event-location">Miami Marketta · 3 min drive</span>
 <span class="event-cost paid">From $10</span>
 </div>
+<a class="event-link" href="https://miamimarketta.com/" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
 <div class="event-card">
-<img class="event-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=360&fit=crop" alt="Outdoor movies under stars" loading="lazy">
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=360&fit=crop" alt="Outdoor movies under stars" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Sunday, 7 PM</div>
 <div class="event-name">Movies on the Esplanade</div>
@@ -615,6 +637,7 @@
 <span class="event-location">Surfers Paradise Esplanade</span>
 <span class="event-cost free">Free</span>
 </div>
+<a class="event-link" href="https://www.surfersparadise.com/things-to-do/movies-under-the-stars" target="_blank" rel="noopener">Learn more</a>
 </div>
 </div>
 
