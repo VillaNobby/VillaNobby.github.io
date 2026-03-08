@@ -179,10 +179,8 @@
  .instagram-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1.5px solid var(--forest); color: var(--forest); text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s; }
  .instagram-cta:hover { background: var(--forest); color: var(--cream); }
  .instagram-cta svg { width: 18px; height: 18px; }
- .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--border); color: var(--forest); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; line-height: 1; transition: all 0.2s; z-index: 10; display: flex; align-items: center; justify-content: center; }
+ .slider-btn { background: var(--white); border: 1px solid var(--border); color: var(--forest); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; line-height: 1; transition: all 0.2s; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
  .slider-btn:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
- .slider-btn.prev { left: 0; }
- .slider-btn.next { right: 0; }
  .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
  .slider-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
  .slider-dot.active { background: var(--sand); width: 24px; border-radius: 4px; }
@@ -400,7 +398,7 @@
 <p class="hero-desc">A design-led Japandi retreat offering refined comfort, complete privacy, and an outdoor shower beneath the stars — just moments from North Burleigh Beach.</p>
 <div class="hero-loc">Miami, Gold Coast, Queensland</div>
 <div class="hero-actions">
-<a href="booking.html" class="btn-primary">Book Direct</a>
+<a href="#booking" class="btn-primary">Book Direct</a>
 <a href="#gallery" class="btn-outline">Explore the Suite</a>
 </div>
 </div>
@@ -426,14 +424,6 @@
   </div>
   <div class="gallery-cta"><button class="btn-outline" type="button" onclick="openLightbox(0)">View Full Gallery →</button></div>
 </section>
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">×</button>
-<button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)">‹</button>
-<img id="lightbox-img" src="" alt="">
-<button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)">›</button>
-<div class="lightbox-counter" id="lightbox-counter"></div>
-</div>
 
 <div class="save-banner">
 <p><strong>Book direct.</strong> Enquire now for personalised rates and direct hosting.</p>
@@ -623,11 +613,11 @@ Follow @villanobby
 <a href="#booking" class="mobile-cta">Enquire Now</a>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-<button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-<button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
-<img id="lightboxImg" src="" alt="Villa Nobby Gallery">
-<button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">&times;</button>
+<button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navLightbox(-1)">&#8249;</button>
+<img id="lightboxImg" src="" alt="Villa Nobby Gallery" onclick="event.stopPropagation()">
+<button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navLightbox(1)">&#8250;</button>
 <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
