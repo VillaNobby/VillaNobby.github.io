@@ -1,14 +1,14 @@
 {
-  "updated": "2026-03-09T10:00:00.000Z",
-  "rating": 5.0,
+  "updated": "2026-03-09T06:12:56.912Z",
+  "rating": 5,
   "totalReviews": 34,
   "categories": {
-    "cleanliness": 5.0,
-    "accuracy": 5.0,
-    "checkIn": 5.0,
-    "communication": 5.0,
+    "cleanliness": 5,
+    "accuracy": 5,
+    "checkIn": 5,
+    "communication": 5,
     "location": 4.9,
-    "value": 5.0
+    "value": 5
   },
   "reviews": [
     {
@@ -163,7 +163,7 @@
       "name": "Sebastian",
       "date": "December 2025",
       "rating": 5,
-      "text": "We truly loved every detail of the place \u2014 the beautiful and stylish interior, the thoughtful design, and especially the personal atmosphere. You can really feel how much love and passion has gone into creating the space. The lovingly personalized guest book was such a special touch and made us feel incredibly welcome. Everything felt carefully thought through, warm, and inviting. Thank you for creating such a special place."
+      "text": "We truly loved every detail of the place — the beautiful and stylish interior, the thoughtful design, and especially the personal atmosphere. You can really feel how much love and passion has gone into creating the space. The lovingly personalized guest book was such a special touch and made us feel incredibly welcome. Everything felt carefully thought through, warm, and inviting. Thank you for creating such a special place."
     },
     {
       "id": "1585958029493241390",
@@ -247,7 +247,7 @@
       "name": "Fabio",
       "date": "November 2025",
       "rating": 5,
-      "text": "Amazing stay! I had such a great stay here! The suite was spotless, beautifully designed, and really private. The bed was super comfortable, and the outdoor shower was honestly one of my favourite parts. The whole place felt like a little luxury escape. The location is super convenient \u2014 less than a 10-minute walk to the beach and close to great cafes and restaurants, yet still very private and peaceful. The host was warm, helpful, and quick to respond, which made everything so easy. I'd definitely stay here again \u2014 highly recommend!"
+      "text": "Amazing stay! I had such a great stay here! The suite was spotless, beautifully designed, and really private. The bed was super comfortable, and the outdoor shower was honestly one of my favourite parts. The whole place felt like a little luxury escape. The location is super convenient — less than a 10-minute walk to the beach and close to great cafes and restaurants, yet still very private and peaceful. The host was warm, helpful, and quick to respond, which made everything so easy. I'd definitely stay here again — highly recommend!"
     }
   ]
 }
