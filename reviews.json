@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-16T07:55:56.797Z",
+  "updated": "2026-03-21T18:00:00.000Z",
   "rating": 5,
-  "totalReviews": 34,
+  "totalReviews": 36,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,20 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1633000000000000001",
+      "name": "Charlotte",
+      "date": "March 2026",
+      "rating": 5,
+      "text": "Beautiful space, walkable to beach, restaurants, and markets. The hospitality from Valentino was wonderful, it was like we were guests of a 5 star hotel. The best I have experienced."
+    },
+    {
+      "id": "1633000000000000000",
+      "name": "Hazumi",
+      "date": "March 2026",
+      "rating": 5,
+      "text": "Stunning space and so conveniently located close to the beach. What really stood out was Valentino's attention to detail and how much care he put in for us."
+    },
     {
       "id": "1632000000000000000",
       "name": "Kai",
