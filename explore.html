@@ -1012,7 +1012,7 @@ fetch("https://assets.mailerlite.com/jsonp/2210061/forms/182525836964922586/take
   var overlay=document.getElementById('ml-popup-overlay');
   var closeBtn=document.getElementById('ml-popup-close');
   if(sessionStorage.getItem('ml-popup-closed'))return;
-  setTimeout(function(){overlay.style.display='flex';},5000);
+  setTimeout(function(){overlay.style.display='flex';},1000);
   closeBtn.addEventListener('click',function(){overlay.style.display='none';sessionStorage.setItem('ml-popup-closed','1');});
   overlay.addEventListener('click',function(e){if(e.target===overlay){overlay.style.display='none';sessionStorage.setItem('ml-popup-closed','1');}});
 })();
