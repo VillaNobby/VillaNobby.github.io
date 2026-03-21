@@ -932,14 +932,91 @@ function filterDistance(type, el) {
   }
 }
 </script>
-<!-- MailerLite Universal -->
+<!-- MailerLite Newsletter Popup -->
+<div id="ml-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(42,34,24,0.55);z-index:9999;align-items:center;justify-content:center;">
+<div style="position:relative;max-width:420px;width:90%;margin:auto;">
+<button id="ml-popup-close" style="position:absolute;top:-12px;right:-12px;width:32px;height:32px;border-radius:50%;border:none;background:var(--forest,#3a4f3c);color:#fff;font-size:18px;cursor:pointer;z-index:10000;display:flex;align-items:center;justify-content:center;line-height:1;">&times;</button>
+<style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773928");</style>
+<style type="text/css">
+.ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}
+.ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#fff #fff #fff transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}
+@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+#mlb2-38781269.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+#mlb2-38781269.ml-form-embedContainer h4,#mlb2-38781269.ml-form-embedContainer p,#mlb2-38781269.ml-form-embedContainer span,#mlb2-38781269.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper{background-color:#e7ded9;border-width:0;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:400px;width:100%}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{padding:20px 20px 0 20px}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px 0}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{color:#7a6200;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:30px;font-weight:400;margin:0 0 10px 0;text-align:center;word-break:break-word}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{color:#7a6200;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;margin:0 0 10px 0;text-align:left}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p:last-child,#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p:last-child{margin:0}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form{margin:0;width:100%}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent{margin:0 0 20px 0;width:100%}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{margin:0 0 10px 0;width:100%}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{margin:0}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{background-color:#fff!important;color:#333!important;border-color:#ccc;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin:0;padding:10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px 0;float:left;width:100%}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#7a6200!important;border:none!important;border-radius:4px!important;box-shadow:none!important;color:#fff!important;cursor:pointer;font-family:'Open Sans',Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333!important}
+#mlb2-38781269.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
+.ml-error input{border-color:red!important}
+@media only screen and (max-width:400px){.ml-form-embedWrapper.embedForm{width:100%!important}}
+</style>
+<div id="mlb2-38781269" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38781269">
+  <div class="ml-form-align-center">
+    <div class="ml-form-embedWrapper embedForm">
+      <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+        <div class="ml-form-embedContent" style="">
+          <h4>Villa Nobby VIP List</h4>
+          <p>Signup for news and special offers!</p>
+          <p>Get exclusive direct booking perks, early access to peak dates, and local Gold Coast tips.</p>
+        </div>
+        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2210061/forms/182525836964922586/subscribe" data-code="" method="post" target="_blank">
+          <div class="ml-form-formContent">
+            <div class="ml-form-fieldRow ml-last-item">
+              <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="ml-submit" value="1">
+          <div class="ml-form-embedSubmit">
+            <button type="submit" class="primary">Subscribe</button>
+            <button disabled="disabled" style="display:none;" type="button" class="loading">
+              <div class="ml-form-embedSubmitLoad"></div>
+              <span class="sr-only">Loading...</span>
+            </button>
+          </div>
+          <input type="hidden" name="anticsrf" value="true">
+        </form>
+      </div>
+      <div class="ml-form-successBody row-success" style="display:none">
+        <div class="ml-form-successContent">
+          <h4>Thank you!</h4>
+          <p>You have successfully joined our subscriber list.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2210061');
+function ml_webform_success_38781269(){var $=ml_jQuery||jQuery;$('.ml-subscribe-form-38781269 .row-success').show();$('.ml-subscribe-form-38781269 .row-form').hide();}
 </script>
-<!-- End MailerLite Universal -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+<script>
+fetch("https://assets.mailerlite.com/jsonp/2210061/forms/182525836964922586/takel");
+(function(){
+  var overlay=document.getElementById('ml-popup-overlay');
+  var closeBtn=document.getElementById('ml-popup-close');
+  if(sessionStorage.getItem('ml-popup-closed'))return;
+  setTimeout(function(){overlay.style.display='flex';},5000);
+  closeBtn.addEventListener('click',function(){overlay.style.display='none';sessionStorage.setItem('ml-popup-closed','1');});
+  overlay.addEventListener('click',function(e){if(e.target===overlay){overlay.style.display='none';sessionStorage.setItem('ml-popup-closed','1');}});
+})();
+</script>
+<!-- End MailerLite Newsletter Popup -->
 </body>
 </html>
