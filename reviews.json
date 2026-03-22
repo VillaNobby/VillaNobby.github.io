@@ -1,16 +1,30 @@
 {
-  "updated": "2026-03-21T18:00:00.000Z",
+  "updated": "2026-03-22T10:00:00.000Z",
   "rating": 5,
-  "totalReviews": 36,
+  "totalReviews": 38,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
     "checkIn": 5,
     "communication": 5,
-    "location": 4.9,
+    "location": 5,
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1646815320971117703",
+      "name": "Athena",
+      "date": "March 2026",
+      "rating": 5,
+      "text": "Valentino is very friendly and caring. The place is very clean and nicely decorated. High recommended!"
+    },
+    {
+      "id": "1645000000000000000",
+      "name": "Ashleigh",
+      "date": "March 2026",
+      "rating": 5,
+      "text": "We had a lovely stay at Valentino's place. He was incredibly helpful, offering great recommendations for local eats and activities. He made our stay comfortable and truly enjoyable, we'd happily stay again!"
+    },
     {
       "id": "1633000000000000001",
       "name": "Charlotte",
