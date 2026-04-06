@@ -793,7 +793,10 @@ function expandDateRanges(blocked) {
     var end = new Date(blocked[i].end + 'T00:00:00');
     var d = new Date(start);
     while (d < end) {
-      dates.push(d.toISOString().split('T')[0]);
+      var y = d.getFullYear();
+      var m = String(d.getMonth() + 1).padStart(2, '0');
+      var dy = String(d.getDate()).padStart(2, '0');
+      dates.push(y + '-' + m + '-' + dy);
       d.setDate(d.getDate() + 1);
     }
   }
