@@ -1,7 +1,7 @@
 {
   "updated": "2026-04-06T08:13:20.889Z",
   "rating": 5,
-  "totalReviews": 40,
+  "totalReviews": 42,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,13 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1650500000000000001",
+      "name": "Martha",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "Great place and amenities. They went above and beyond and place was perfect. We are already considering coming back! 100% would reccomend"
+    },
     {
       "id": "1649500000000000001",
       "name": "Sarah",
@@ -24,6 +31,13 @@
       "date": "March 2026",
       "rating": 5,
       "text": "Nobby Villa is truly a luxury 5-star retreat in an incredible location. The villa is exactly as pictured—an immaculate, peaceful oasis that is beautifully maintained. What truly elevates the experience is Valentino's exceptional hosting. He goes above and beyond as a host, adding thoughtful, personalised touches that made me feel genuinely cared for. I can't wait to stay again! Thank you Valentino!"
+    },
+    {
+      "id": "1649000000000000001",
+      "name": "Deepika",
+      "date": "March 2026",
+      "rating": 5,
+      "text": "Such a beautiful stay 💜\nEverything was so clean, peaceful and thoughtfully done. The space felt super relaxing and had such a lovely atmosphere. We had such a nice time staying here and would definitely recommend it to anyone wanting a little getaway ✨"
     },
     {
       "id": "1646815320971117703",
