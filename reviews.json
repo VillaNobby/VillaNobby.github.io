@@ -1,7 +1,7 @@
 {
-  "updated": "2026-04-13T05:33:06.480Z",
+  "updated": "2026-04-14T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 43,
+  "totalReviews": 44,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,13 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1650600000000000000",
+      "name": "Jennifer",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "We had an absolutely wonderful stay at Villa Nobby. The unit was cozy and exceptionally well appointed - it was clear that every detail was thoughtfully considered. We especially loved the private outdoor space; it was the perfect, relaxing spot to unwind each day. Valentino was an excellent communicator and incredibly accommodating, even allowing us to check in early, which we truly appreciated. The refreshments provided were an unexpected treat. We highly recommend Villa Nobby!"
+    },
     {
       "id": "1650500000000000001",
       "name": "Martha",
