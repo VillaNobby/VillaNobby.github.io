@@ -1,7 +1,7 @@
 {
-  "updated": "2026-04-20T05:32:49.346Z",
+  "updated": "2026-04-20T09:11:53.000Z",
   "rating": 5,
-  "totalReviews": 44,
+  "totalReviews": 45,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,13 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1650800000000000000",
+      "name": "Mathew",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "Had a brilliant stay with my wife - a beautiful stay that feels like paradise! All the bells and whistles along with the little touches to make feel right at home, will be staying here again in the future!"
+    },
     {
       "id": "1650600000000000000",
       "name": "Jennifer",
