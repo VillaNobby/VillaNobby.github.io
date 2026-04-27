@@ -1,7 +1,7 @@
 {
   "updated": "2026-04-27T05:45:51.741Z",
   "rating": 5,
-  "totalReviews": 45,
+  "totalReviews": 50,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,41 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1777276400000000005",
+      "name": "Emily",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "Had such a beautiful stay at Villa Nobby. It honestly felt like a little home away from home for us! We loved how peaceful and relaxing the space felt while also being close to everything. Valentino was amazing to deal with. Super friendly and responsive and made us feel welcome from the start. You can tell a lot of effort has gone into this amazing place and you really notice the tiny details! We made some amazing memories and will definitely be back."
+    },
+    {
+      "id": "1777276400000000004",
+      "name": "Ali",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "Lovely spot and great host! Definitely recommend this lovely spot and the Villa Nobby ! Such a peaceful place with great furniture and clean facilities! Very beach life style area and stay! The host very friendly and helpful with respect and lots of recommendations! Definitely coming back to stay again!"
+    },
+    {
+      "id": "1777276400000000003",
+      "name": "Tiahli",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "I just wanted to say a huge thankyou to Valentino. The stay was beyond 5 stars. There was so much attention detail that alot of hosts don't bother with, but Villa Nobby had it all. Things were smooth sailing, easy and accommodating. You can see they go above and beyond in preparation before each stay and this reflects whilst you are there. They've thought of everything. I look forward to returning to Villa Nobby. Absolutely incredible, my best experience on airbnb ever."
+    },
+    {
+      "id": "1777276400000000002",
+      "name": "Serina",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "It was such an amazing stay, Valentino was so friendly and accomodating the whole time. He made our stay so beautiful. I highly recommend villa nobbys to anyone coming to the Gold Coast."
+    },
+    {
+      "id": "1777276400000000001",
+      "name": "Angus",
+      "date": "April 2026",
+      "rating": 5,
+      "text": "One of the nicest Airbnbs I've stayed in"
+    },
     {
       "id": "1650800000000000000",
       "name": "Mathew",
@@ -44,7 +79,7 @@
       "name": "Breanna",
       "date": "March 2026",
       "rating": 5,
-      "text": "Nobby Villa is truly a luxury 5-star retreat in an incredible location. The villa is exactly as pictured—an immaculate, peaceful oasis that is beautifully maintained. What truly elevates the experience is Valentino's exceptional hosting. He goes above and beyond as a host, adding thoughtful, personalised touches that made me feel genuinely cared for. I can't wait to stay again! Thank you Valentino!"
+      "text": "Nobby Villa is truly a luxury 5-star retreat in an incredible location. The villa is exactly as pictured\u00e2\u20ac\u201dan immaculate, peaceful oasis that is beautifully maintained. What truly elevates the experience is Valentino's exceptional hosting. He goes above and beyond as a host, adding thoughtful, personalised touches that made me feel genuinely cared for. I can't wait to stay again! Thank you Valentino!"
     },
     {
       "id": "1648600000000000001",
@@ -58,7 +93,7 @@
       "name": "Deepika",
       "date": "March 2026",
       "rating": 5,
-      "text": "Such a beautiful stay 💜\nEverything was so clean, peaceful and thoughtfully done. The space felt super relaxing and had such a lovely atmosphere. We had such a nice time staying here and would definitely recommend it to anyone wanting a little getaway ✨"
+      "text": "Such a beautiful stay \u00f0\u0178\u2019\u0153\nEverything was so clean, peaceful and thoughtfully done. The space felt super relaxing and had such a lovely atmosphere. We had such a nice time staying here and would definitely recommend it to anyone wanting a little getaway \u00e2\u0153\u00a8"
     },
     {
       "id": "1646815320971117703",
@@ -240,7 +275,7 @@
       "name": "Sebastian",
       "date": "December 2025",
       "rating": 5,
-      "text": "We truly loved every detail of the place — the beautiful and stylish interior, the thoughtful design, and especially the personal atmosphere. You can really feel how much love and passion has gone into creating the space. The lovingly personalized guest book was such a special touch and made us feel incredibly welcome. Everything felt carefully thought through, warm, and inviting. Thank you for creating such a special place."
+      "text": "We truly loved every detail of the place \u00e2\u20ac\u201d the beautiful and stylish interior, the thoughtful design, and especially the personal atmosphere. You can really feel how much love and passion has gone into creating the space. The lovingly personalized guest book was such a special touch and made us feel incredibly welcome. Everything felt carefully thought through, warm, and inviting. Thank you for creating such a special place."
     },
     {
       "id": "1585958029493241390",
@@ -324,7 +359,7 @@
       "name": "Fabio",
       "date": "November 2025",
       "rating": 5,
-      "text": "Amazing stay! I had such a great stay here! The suite was spotless, beautifully designed, and really private. The bed was super comfortable, and the outdoor shower was honestly one of my favourite parts. The whole place felt like a little luxury escape. The location is super convenient — less than a 10-minute walk to the beach and close to great cafes and restaurants, yet still very private and peaceful. The host was warm, helpful, and quick to respond, which made everything so easy. I'd definitely stay here again — highly recommend!"
+      "text": "Amazing stay! I had such a great stay here! The suite was spotless, beautifully designed, and really private. The bed was super comfortable, and the outdoor shower was honestly one of my favourite parts. The whole place felt like a little luxury escape. The location is super convenient \u00e2\u20ac\u201d less than a 10-minute walk to the beach and close to great cafes and restaurants, yet still very private and peaceful. The host was warm, helpful, and quick to respond, which made everything so easy. I'd definitely stay here again \u00e2\u20ac\u201d highly recommend!"
     }
   ]
 }
