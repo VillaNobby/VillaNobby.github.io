@@ -1,7 +1,8 @@
 {
-  "updated": "2026-06-01T08:26:05.338Z",
+<<<<<<< HEAD
+  "updated": "2026-06-04T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 52,
+  "totalReviews": 57,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +12,20 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "1780531400000000002",
+      "name": "Leshelle",
+      "date": "June 2026",
+      "rating": 5,
+      "text": "An incredibly well thought out stay with some wonderful personal touches. As a host, Valentino goes above and beyond to create a calm and relaxing stay. The Villa itself, is beautiful and clean. Thank you for a wonderful stay."
+    },
+    {
+      "id": "1780531400000000001",
+      "name": "Stuart",
+      "date": "June 2026",
+      "rating": 5,
+      "text": "Villa Nobby was a very peaceful and private place to stay. Beautifully appointed and the hosts were excellent & responsive. It is a little oasis."
+    },
     {
       "id": "1778285109000000006",
       "name": "Grace",
