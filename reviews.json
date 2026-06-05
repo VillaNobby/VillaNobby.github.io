@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-04T00:00:00.000Z",
+  "updated": "2026-06-05T00:00:00.000Z",
   "rating": 5,
   "totalReviews": 57,
   "categories": {
@@ -24,6 +24,27 @@
       "date": "June 2026",
       "rating": 5,
       "text": "Villa Nobby was a very peaceful and private place to stay. Beautifully appointed and the hosts were excellent & responsive. It is a little oasis."
+    },
+    {
+      "id": "1780531400000000003",
+      "name": "Robert",
+      "date": "June 2026",
+      "rating": 5,
+      "text": "Astonishing Villa. Valentino has done an amazing job. Attention to detail and personalised touches made our stay magical. Can't recommend Villa Nobby more than enough and we will definitely be back in the future. & OMG that outdoor shower was Devine ✨ Thankyou"
+    },
+    {
+      "id": "1778285109000000008",
+      "name": "Patryk",
+      "date": "May 2026",
+      "rating": 5,
+      "text": "Everything looks brand new . great location"
+    },
+    {
+      "id": "1778285109000000009",
+      "name": "Tyler",
+      "date": "May 2026",
+      "rating": 5,
+      "text": "Valentino was an amazing host — super friendly, welcoming, and easy to communicate with. Everything matched the listing description perfectly, and the place was exactly as expected. Would definitely stay again and highly recommend"
     },
     {
       "id": "1778285109000000006",
