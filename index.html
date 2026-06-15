@@ -342,6 +342,42 @@
    cursor: not-allowed;
    text-decoration: line-through;
  }
+ /* Checkout-only days: greyed diagonal, no strikethrough, tooltip on hover */
+ .flatpickr-day.flatpickr-disabled.checkout-only,
+ .flatpickr-day.flatpickr-disabled.checkout-only:hover {
+   color: rgba(138,125,106,0.4);
+   text-decoration: none;
+   background: repeating-linear-gradient(
+     -45deg,
+     transparent,
+     transparent 4px,
+     rgba(138,125,106,0.12) 4px,
+     rgba(138,125,106,0.12) 6px
+   );
+   cursor: not-allowed;
+   position: relative;
+ }
+ .flatpickr-day.flatpickr-disabled.checkout-only::after {
+   content: 'Checkout only';
+   position: absolute;
+   bottom: 110%;
+   left: 50%;
+   transform: translateX(-50%);
+   background: var(--ink);
+   color: var(--white);
+   font-size: 0.58rem;
+   letter-spacing: 0.06em;
+   padding: 3px 8px;
+   border-radius: 2px;
+   white-space: nowrap;
+   pointer-events: none;
+   opacity: 0;
+   transition: opacity 0.15s;
+   z-index: 9999;
+ }
+ .flatpickr-day.flatpickr-disabled.checkout-only:hover::after {
+   opacity: 1;
+ }
  .flatpickr-day.inRange {
    background: var(--cream);
    border-color: var(--cream);
@@ -467,7 +503,7 @@
 <div class="fg"><label>Check In</label><input type="text" id="checkin" name="Check In" placeholder="Select date" required readonly></div>
 <div class="fg"><label>Check Out</label><input type="text" id="checkout" name="Check Out" placeholder="Select date" required readonly></div>
 </div>
-<div class="availability-note">Strikethrough dates are unavailable</div>
+<div class="availability-note">Strikethrough dates are unavailable &nbsp;·&nbsp; Diagonal-only dates are checkout only</div>
 <div class="frow">
 <div class="fg"><label>Number of Guests</label><select name="Number of Guests"><option>1 guest</option><option>2 guests</option></select></div>
 <div class="fg"><label>Purpose of Stay</label><select name="Visit Type"><option>Leisure / Holiday</option><option>Couples Retreat</option><option>Work & Relax</option><option>Special Occasion</option><option>Long Stay</option></select></div>
@@ -786,31 +822,66 @@ function toggleFAQ(el) {
 }
 
 /* ===== AVAILABILITY CALENDAR ===== */
-function expandDateRanges(blocked) {
-  var dates = [];
+function toYMD(d) {
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+function buildCalendarData(blocked) {
+  var startSet = {}, endSet = {};
   for (var i = 0; i < blocked.length; i++) {
-    var start = new Date(blocked[i].start + 'T00:00:00');
-    var end = new Date(blocked[i].end + 'T00:00:00');
-    var d = new Date(start);
-    while (d < end) {
-      dates.push(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
+    startSet[blocked[i].start] = true;
+    endSet[blocked[i].end] = true;
+  }
+
+  // Fully blocked: every night in [start, end)
+  var blockedDates = [];
+  for (var i = 0; i < blocked.length; i++) {
+    var s = new Date(blocked[i].start + 'T00:00:00');
+    var e = new Date(blocked[i].end + 'T00:00:00');
+    var d = new Date(s);
+    while (d < e) {
+      blockedDates.push(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
       d.setDate(d.getDate() + 1);
     }
   }
-  return dates;
+
+  // Checkout-only: end dates that are NOT the start of the next booking
+  var checkoutOnlyDates = [];
+  for (var dateStr in endSet) {
+    if (!startSet[dateStr]) {
+      var d = new Date(dateStr + 'T00:00:00');
+      checkoutOnlyDates.push(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
+    }
+  }
+
+  return { blockedDates: blockedDates, checkoutOnlyDates: checkoutOnlyDates };
 }
 
-function initAvailabilityCalendar(blockedDates) {
+function initAvailabilityCalendar(blockedDates, checkoutOnlyDates) {
   var tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
+
+  var checkoutOnlySet = {};
+  for (var i = 0; i < checkoutOnlyDates.length; i++) {
+    checkoutOnlySet[toYMD(checkoutOnlyDates[i])] = true;
+  }
+
+  var allDisabled = blockedDates.concat(checkoutOnlyDates);
+
+  function onDayCreate(dObj, dStr, fp, dayElem) {
+    if (checkoutOnlySet[toYMD(dayElem.dateObj)]) {
+      dayElem.classList.add('checkout-only');
+    }
+  }
 
   var checkinPicker = flatpickr('#checkin', {
     dateFormat: 'Y-m-d',
     altInput: true,
     altFormat: 'D, M j',
     minDate: tomorrow,
-    disable: blockedDates,
+    disable: allDisabled,
     disableMobile: true,
+    onDayCreate: onDayCreate,
     onChange: function(selectedDates) {
       if (selectedDates.length > 0) {
         var nextDay = new Date(selectedDates[0]);
@@ -826,8 +897,9 @@ function initAvailabilityCalendar(blockedDates) {
     altInput: true,
     altFormat: 'D, M j',
     minDate: tomorrow,
-    disable: blockedDates,
-    disableMobile: true
+    disable: allDisabled,
+    disableMobile: true,
+    onDayCreate: onDayCreate
   });
 }
 
@@ -835,11 +907,11 @@ function loadAvailability() {
   fetch('blocked-dates.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var blockedDates = expandDateRanges(data.blocked);
-      initAvailabilityCalendar(blockedDates);
+      var calData = buildCalendarData(data.blocked);
+      initAvailabilityCalendar(calData.blockedDates, calData.checkoutOnlyDates);
     })
     .catch(function() {
-      initAvailabilityCalendar([]);
+      initAvailabilityCalendar([], []);
     });
 }
 
