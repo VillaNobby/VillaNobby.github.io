@@ -1,0 +1,13 @@
+{
+  "name": "villa-nobby-analytics",
+  "version": "1.0.0",
+  "description": "Villa Nobby GA4 analytics dashboard generator",
+  "main": "analytics-dashboard.js",
+  "scripts": {
+    "dashboard": "node analytics-dashboard.js",
+    "report": "node analytics-report.js"
+  },
+  "dependencies": {
+    "@google-analytics/data": "^4.0.0"
+  }
+}
