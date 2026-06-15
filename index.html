@@ -826,47 +826,63 @@ function toYMD(d) {
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 
+// Classify calendar dates from blocked ranges using a NIGHT-occupancy model.
+// A booking {start, end} means the guest sleeps every night in [start, end)
+// and checks out on 'end' morning. For each date D we then ask only:
+//   occupied(D)   = is the night of D taken?
+//   occupied(D-1) = was the previous night taken?
+//   - occupied(D) false                     -> AVAILABLE  (new guest can check in)
+//   - occupied(D) true,  occupied(D-1) false -> CHECKOUT-ONLY (prev guest's last morning)
+//   - occupied(D) true,  occupied(D-1) true  -> FULLY BLOCKED (no check-in, no checkout)
+// This needs no special-casing for chained bookings, 1-night stays or the
+// long owner block — it falls out of the occupied-nights set automatically.
 function buildCalendarData(blocked) {
-  var startSet = {}, endSet = {};
-  for (var i = 0; i < blocked.length; i++) {
-    startSet[blocked[i].start] = true;
-    endSet[blocked[i].end] = true;
-  }
-
-  // Fully blocked: every night in [start, end)
-  var blockedDates = [];
+  var occupiedSet = {};
   for (var i = 0; i < blocked.length; i++) {
     var s = new Date(blocked[i].start + 'T00:00:00');
     var e = new Date(blocked[i].end + 'T00:00:00');
     var d = new Date(s);
     while (d < e) {
-      blockedDates.push(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
+      occupiedSet[toYMD(d)] = true;
       d.setDate(d.getDate() + 1);
     }
   }
 
-  // Checkout-only: end dates that are NOT the start of the next booking
+  function prevYMD(ymd) {
+    var p = new Date(ymd + 'T00:00:00');
+    p.setDate(p.getDate() - 1);
+    return toYMD(p);
+  }
+
+  var blockedDates = [];
   var checkoutOnlyDates = [];
-  for (var dateStr in endSet) {
-    if (!startSet[dateStr]) {
-      var d = new Date(dateStr + 'T00:00:00');
-      checkoutOnlyDates.push(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
+  for (var ymd in occupiedSet) {
+    var dt = new Date(ymd + 'T00:00:00');
+    var realDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+    if (occupiedSet[prevYMD(ymd)]) {
+      blockedDates.push(realDate);
+    } else {
+      checkoutOnlyDates.push(realDate);
     }
   }
 
-  return { blockedDates: blockedDates, checkoutOnlyDates: checkoutOnlyDates };
+  return { occupiedSet: occupiedSet, blockedDates: blockedDates, checkoutOnlyDates: checkoutOnlyDates };
 }
 
-function initAvailabilityCalendar(blockedDates, checkoutOnlyDates) {
+function initAvailabilityCalendar(calData) {
+  var occupiedSet = calData.occupiedSet;
   var tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
 
-  var checkoutOnlySet = {};
-  for (var i = 0; i < checkoutOnlyDates.length; i++) {
-    checkoutOnlySet[toYMD(checkoutOnlyDates[i])] = true;
-  }
+  // A new guest can never CHECK IN on an occupied night, so the check-in
+  // picker disables both fully-blocked and checkout-only dates. The
+  // checkout-only ones are just styled differently (light diagonal, tooltip).
+  var allOccupied = calData.blockedDates.concat(calData.checkoutOnlyDates);
 
-  var allDisabled = blockedDates.concat(checkoutOnlyDates);
+  var checkoutOnlySet = {};
+  for (var i = 0; i < calData.checkoutOnlyDates.length; i++) {
+    checkoutOnlySet[toYMD(calData.checkoutOnlyDates[i])] = true;
+  }
 
   function onDayCreate(dObj, dStr, fp, dayElem) {
     if (checkoutOnlySet[toYMD(dayElem.dateObj)]) {
@@ -874,32 +890,48 @@ function initAvailabilityCalendar(blockedDates, checkoutOnlyDates) {
     }
   }
 
-  var checkinPicker = flatpickr('#checkin', {
-    dateFormat: 'Y-m-d',
-    altInput: true,
-    altFormat: 'D, M j',
-    minDate: tomorrow,
-    disable: allDisabled,
-    disableMobile: true,
-    onDayCreate: onDayCreate,
-    onChange: function(selectedDates) {
-      if (selectedDates.length > 0) {
-        var nextDay = new Date(selectedDates[0]);
-        nextDay.setDate(nextDay.getDate() + 1);
-        checkoutPicker.set('minDate', nextDay);
-        checkoutPicker.open();
-      }
-    }
-  });
-
   var checkoutPicker = flatpickr('#checkout', {
     dateFormat: 'Y-m-d',
     altInput: true,
     altFormat: 'D, M j',
     minDate: tomorrow,
-    disable: allDisabled,
+    disable: allOccupied,
     disableMobile: true,
     onDayCreate: onDayCreate
+  });
+
+  var checkinPicker = flatpickr('#checkin', {
+    dateFormat: 'Y-m-d',
+    altInput: true,
+    altFormat: 'D, M j',
+    minDate: tomorrow,
+    disable: allOccupied,
+    disableMobile: true,
+    onDayCreate: onDayCreate,
+    onChange: function(selectedDates) {
+      if (!selectedDates.length) return;
+      var checkin = selectedDates[0];
+      var nextDay = new Date(checkin.getFullYear(), checkin.getMonth(), checkin.getDate() + 1);
+
+      // Checkout may land on any day up to AND INCLUDING the first occupied
+      // night after check-in (that night is the guest's valid checkout-only
+      // morning). Everything past it is unreachable, so cap maxDate there.
+      var maxCheckout = null;
+      var probe = new Date(nextDay);
+      for (var k = 0; k < 800; k++) {
+        if (occupiedSet[toYMD(probe)]) { maxCheckout = new Date(probe); break; }
+        probe.setDate(probe.getDate() + 1);
+      }
+
+      // Inside [nextDay, maxCheckout] every night is free except maxCheckout
+      // itself, so no fully-blocked date is reachable — clear the disable list
+      // and let min/max define the valid checkout window.
+      checkoutPicker.clear();
+      checkoutPicker.set('disable', []);
+      checkoutPicker.set('minDate', nextDay);
+      checkoutPicker.set('maxDate', maxCheckout);
+      checkoutPicker.open();
+    }
   });
 }
 
@@ -907,11 +939,10 @@ function loadAvailability() {
   fetch('blocked-dates.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var calData = buildCalendarData(data.blocked);
-      initAvailabilityCalendar(calData.blockedDates, calData.checkoutOnlyDates);
+      initAvailabilityCalendar(buildCalendarData(data.blocked));
     })
     .catch(function() {
-      initAvailabilityCalendar([], []);
+      initAvailabilityCalendar({ occupiedSet: {}, blockedDates: [], checkoutOnlyDates: [] });
     });
 }
 
