@@ -2,7 +2,7 @@
 
 **Live site:** https://www.villanobby.com  
 **GitHub repo:** https://github.com/VillaNobby/VillaNobby.github.io (GitHub Pages, `main` branch auto-deploys)  
-**Working directory:** `C:\Users\erics\OneDrive\00 OpenClaw\01 VillaNobby_Website`
+**Working directory:** `C:\Users\simzf\OneDrive\00 Claude AI\01 VillaNobby_Website`
 
 ---
 
@@ -44,6 +44,23 @@ Villa Nobby is a luxury Japandi-inspired guest suite in Miami, Gold Coast, Queen
 - `end` = checkout day (exclusive — first free day)
 - **NEVER remove the long owner block (Nov 2026 – Jun 2027)** — deliberately blocked by owner
 
+### How the website renders dates (night-occupancy model)
+
+The calendar in `index.html` derives **three** states per day from the set of
+occupied nights (the union of every `[start, end)` interval) — matching Airbnb:
+
+| State | Rule | Display |
+|---|---|---|
+| Available | night D is free | solid, selectable |
+| Checkout-only | night D occupied **and** night D−1 free | light diagonal, "Checkout only" tooltip, not selectable as check-in (but selectable as a checkout) |
+| Fully blocked | night D occupied **and** night D−1 occupied | strikethrough, disabled |
+
+This needs no special-casing for chained/back-to-back bookings, 1-night stays, or
+the owner block — it all falls out of the occupied-nights set. **If a date looks
+wrong on the live site, the data in `blocked-dates.json` is wrong (a sync gap) —
+not the display logic.** Both `blocked-dates.json` and `reviews.json` fetches are
+cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
+
 ---
 
 ## reviews.json format
@@ -68,11 +85,12 @@ Villa Nobby is a luxury Japandi-inspired guest suite in Miami, Gold Coast, Queen
 ## Automated routines
 
 ### 1. Daily Availability Sync (7:03 AM every day)
-- Opens Airbnb listing in Chrome, reads the calendar via JavaScript DOM
-- Extracts blocked date ranges using `td[aria-label]` + `data-is-day-blocked` attributes
-- CSS classes: `_emqv0i7` / `_1ytdkbl5` = blocked (line-through); `_18qb17hx` / `_1rl50hqv` = checkout-only (check-in boundary)
-- Clicks "Load more dates" to get up to 12 months of data
-- Writes updated `blocked-dates.json`, validates JSON, commits and pushes
+- Runs as a **remote routine** on claude.ai, scraping Airbnb via **Firecrawl** (listing page + `?modal=AVAILABILITY_CALENDAR`)
+- Maps Airbnb's **three** day-states: both **fully blocked** (`_emqv0i7`/`_1ytdkbl5`, strikethrough) **and checkout-only** (`_18qb17hx`/`_1rl50hqv`, light grey) count as **occupied nights** — checkout-only days must NOT be treated as available (doing so splits/shortens bookings)
+- Builds the occupied-nights set, then collapses each maximal consecutive run into `{ start: firstNight, end: lastNight + 1 day }`
+- Preserves the owner block exactly; makes **no** changes if the scrape returns no usable calendar data
+- Writes `blocked-dates.json`, validates JSON, auto-fixes conflict markers, commits and pushes
+- The iCal-based GitHub Action (`sync-availability.yml`, every 6 h) remains as a backup source
 
 ### 2. Weekly Reviews Sync (Monday 9:01 AM)
 - Uses Firecrawl to scrape https://www.airbnb.com.au/rooms/1554938675549327457
@@ -134,6 +152,7 @@ git push
 
 - **June 2026:** reviews.json had a `<<<<<<< HEAD` conflict marker on line 2 after a concurrent push from the GitHub Action and the local scheduled task. This caused the reviews section to silently break on the live site. Fixed 4 June 2026. All routines now include JSON validation + conflict marker auto-fix steps.
 - **GitHub Action vs local sync:** The GitHub Actions workflow (`sync-availability.yml`) runs every 6 hours and also pushes to the repo. If the local Claude routine pushes at a similar time, a rebase conflict can occur. Always `git pull --rebase` before pushing and validate JSON after rebase.
+- **June 2026 (calendar date logic):** the website previously classified availability by `start`/`end` date, which **inverted checkout-only days** and mislabelled chained-booking junctions (e.g. 20 Jun showed bookable when it was checkout-only). Rewrote `index.html` around the night-occupancy model (see *blocked-dates.json format → How the website renders dates*). Separately, a real **12–16 Jul** booking was missing from `blocked-dates.json` because the sync had not captured the checkout-only boundary — the Daily Availability Sync routine was rewritten to treat checkout-only days as occupied nights. Fixed 15 June 2026.
 
 ---
 
