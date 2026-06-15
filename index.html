@@ -936,7 +936,7 @@ function initAvailabilityCalendar(calData) {
 }
 
 function loadAvailability() {
-  fetch('blocked-dates.json')
+  fetch('blocked-dates.json?v=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       initAvailabilityCalendar(buildCalendarData(data.blocked));
@@ -948,7 +948,7 @@ function loadAvailability() {
 
 /* ===== LOAD REVIEWS ===== */
 function loadReviews() {
-  fetch('reviews.json')
+  fetch('reviews.json?v=' + Date.now())
     .then(function(res) { return res.json(); })
     .then(function(data) {
       var track = document.getElementById('reviewsTrack');
