@@ -98,14 +98,14 @@ cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
 - Adds new reviews to the top of the array, updates totalReviews and timestamp
 - Validates JSON, commits and pushes
 
-### 3. Weekly Explore Page Update (Sunday 8:06 AM)
-- Reads current `explore.html`
-- Removes expired events (end date before today)
-- Searches Must Do Gold Coast (https://www.mustdogoldcoast.com/whats-on) and HOTA (https://hota.com.au/whats-on/) for new events
-- Updates Top 4 picks for the coming week, adds new events to Arts/Culture section
-- **Always keeps** recurring markets: Sanctuary Markets, Surfers Paradise Beachfront Markets, HOTA Farmers Market, Palm Beach Farmers Market, Carrara Markets, Burleigh Heads Beachside Markets
-- Updates header (e.g. "Early June 2026") and last-updated date
-- Commits and pushes
+### 3. Daily Explore Page Update (8:06 AM every day)
+- Runs as a **remote routine** on claude.ai (model: `claude-sonnet-4-6`), scraping Must Do Gold Coast (https://www.mustdogoldcoast.com/whats-on) and HOTA (https://hota.com.au/whats-on/) via Firecrawl
+- **Edits only the What's On (`#whats-on`) section** of `explore.html` — leaves the Dining Guide and Things-to-Do sections untouched
+- Removes expired events (end date before today), refreshes the Top 4 picks for the next 7 days, adds new upcoming events to the Arts/Music/Culture grid, and matches the existing event-card HTML structure
+- **Always keeps** the 6 recurring markets: Sanctuary Markets, Surfers Paradise Beachfront Markets, HOTA Farmers Market, Palm Beach Farmers Market, Carrara Markets, Burleigh Heads Beachside Markets
+- Updates the header period (e.g. "Mid June 2026") and last-updated date
+- **Only commits when content actually changed** (`git diff --cached --quiet` guard) so daily runs don't create empty commits
+- Was weekly + Haiku before 20 Jun 2026; moved to daily + Sonnet for fresher events and better curation quality
 
 ### 4. Weekly Analytics Report (Monday 6:08 AM)
 - Runs `node analytics-dashboard.js`
