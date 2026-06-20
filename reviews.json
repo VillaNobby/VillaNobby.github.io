@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-15T08:49:30.599Z",
+  "updated": "2026-06-18T07:43:48.000Z",
   "rating": 5,
-  "totalReviews": 58,
+  "totalReviews": 59,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,13 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "imogen-june-2026",
+      "name": "Imogen",
+      "date": "June 2026",
+      "rating": 5,
+      "text": "An amazing and relaxing holiday, beautiful space and a very welcoming host. We will definitely be back."
+    },
     {
       "id": "kobie-june-2026",
       "name": "Kobie",
