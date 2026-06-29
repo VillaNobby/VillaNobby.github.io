@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-18T07:43:48.000Z",
+  "updated": "2026-06-29T07:22:10.234Z",
   "rating": 5,
-  "totalReviews": 59,
+  "totalReviews": 61,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,20 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "sarah-june-2026",
+      "name": "Sarah",
+      "date": "June 2026",
+      "rating": 5,
+      "text": "Perfect place to stay if you're wanting that calm, coastal atmosphere. Such a beautiful space with modern feels - would definitely recommend!!"
+    },
+    {
+      "id": "alexa-june-2026",
+      "name": "Alexa",
+      "date": "June 2026",
+      "rating": 5,
+      "text": "Valentino was such a caring, considerate, and engaging host. The place created such a beautiful atmosphere, with lush outdoors and a pristine interior. Summer or winter, the location was perfect, only walking distance from cafes, restaurants, and the beach. Cannot recommend enough."
+    },
     {
       "id": "imogen-june-2026",
       "name": "Imogen",
