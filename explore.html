@@ -12,6 +12,19 @@
   gtag('config', 'G-NG2NRQR5DC');
 </script>
 <title>Explore the Gold Coast — Villa Nobby</title>
+<meta name="description" content="Your hosts' curated Gold Coast guide — the best cafes, restaurants, beaches, markets and what's on this week, all near Villa Nobby in Miami.">
+<link rel="canonical" href="https://www.villanobby.com/explore.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#f7f0e3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Villa Nobby">
+<meta property="og:title" content="Explore the Gold Coast — Villa Nobby">
+<meta property="og:description" content="Curated by your hosts: the best dining, beaches, markets and events near Villa Nobby, Miami Gold Coast — updated weekly.">
+<meta property="og:url" content="https://www.villanobby.com/explore.html">
+<meta property="og:image" content="https://www.villanobby.com/north-burleigh-lookout.jpg">
+<meta property="og:locale" content="en_AU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -765,7 +778,7 @@
 <div class="ft-col"><h4>Connect</h4><ul><li><a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.airbnb.com.au/rooms/1554938675549327457" target="_blank" rel="noopener">Airbnb</a></li></ul></div>
 </div>
 <div class="ft-bottom">
-<span>&copy; 2025 Villa Nobby. All rights reserved.</span>
+<span>&copy; 2026 Villa Nobby. All rights reserved. &middot; <a href="privacy.html" style="color:inherit;">Privacy</a></span>
 <span>Miami, QLD 4220</span>
 </div>
 </footer>
@@ -947,10 +960,12 @@ fetch("https://assets.mailerlite.com/jsonp/2210061/forms/182525836964922586/take
 (function(){
   var overlay=document.getElementById('ml-popup-overlay');
   var closeBtn=document.getElementById('ml-popup-close');
-  if(sessionStorage.getItem('ml-popup-closed'))return;
-  setTimeout(function(){overlay.style.display='flex';},1000);
-  closeBtn.addEventListener('click',function(){overlay.style.display='none';sessionStorage.setItem('ml-popup-closed','1');});
-  overlay.addEventListener('click',function(e){if(e.target===overlay){overlay.style.display='none';sessionStorage.setItem('ml-popup-closed','1');}});
+  var closedAt=+(localStorage.getItem('ml-popup-closed')||0);
+  if(Date.now()-closedAt < 30*24*60*60*1000)return;
+  setTimeout(function(){overlay.style.display='flex';},9000);
+  function dismiss(){overlay.style.display='none';localStorage.setItem('ml-popup-closed',Date.now());}
+  closeBtn.addEventListener('click',dismiss);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)dismiss();});
 })();
 </script>
 <!-- End MailerLite Newsletter Popup -->
