@@ -494,7 +494,7 @@
 </div>
 <div class="hero-right">
 <div class="hero-photos">
-<img src="20260225_002224497_iOS.jpg" alt="Villa Nobby serene bedroom">
+<img src="20260225_002224497_iOS.jpg" alt="Villa Nobby serene bedroom" width="1372" height="896" fetchpriority="high">
 </div>
 </div>
 </section>
@@ -502,14 +502,14 @@
 <section class="photo-gallery" id="gallery">
   <div class="gallery-strip">
     <div class="gallery-feature" onclick="openLightbox(0)">
-      <img src="20260225_001336246_iOS.jpg" alt="Villa Nobby entrance">
+      <img src="20260225_001336246_iOS.jpg" alt="Villa Nobby entrance" width="1372" height="896" loading="lazy">
       <div class="gallery-overlay">View Photo</div>
     </div>
     <div class="gallery-thumbs">
-      <div class="gallery-thumb" onclick="openLightbox(1)"><img src="20260225_002334952_iOS.jpg" alt="Bedroom"><div class="gallery-overlay">View Photo</div></div>
-      <div class="gallery-thumb" onclick="openLightbox(2)"><img src="20260225_001459963_iOS.jpg" alt="Bathroom"><div class="gallery-overlay">View Photo</div></div>
-      <div class="gallery-thumb" onclick="openLightbox(3)"><img src="20260225_001539190_iOS.jpg" alt="Mirror"><div class="gallery-overlay">View Photo</div></div>
-      <div class="gallery-thumb" onclick="openLightbox(4)"><img src="20260225_001820084_iOS.jpg" alt="Outdoor shower"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(1)"><img src="20260225_002334952_iOS.jpg" alt="Bedroom" width="896" height="1372" loading="lazy"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(2)"><img src="20260225_001459963_iOS.jpg" alt="Bathroom" width="896" height="1372" loading="lazy"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(3)"><img src="20260225_001539190_iOS.jpg" alt="Mirror" width="1456" height="840" loading="lazy"><div class="gallery-overlay">View Photo</div></div>
+      <div class="gallery-thumb" onclick="openLightbox(4)"><img src="20260225_001820084_iOS.jpg" alt="Outdoor shower" width="896" height="1344" loading="lazy"><div class="gallery-overlay">View Photo</div></div>
     </div>
   </div>
   <div class="gallery-cta"><button class="btn-outline" type="button" onclick="openLightbox(0)">View Full Gallery →</button></div>
@@ -547,21 +547,21 @@
 <input type="hidden" name="_replyto" id="replyto">
 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div class="frow">
-<div class="fg"><label>Check In</label><input type="text" id="checkin" name="Check In" placeholder="Select date" required readonly></div>
-<div class="fg"><label>Check Out</label><input type="text" id="checkout" name="Check Out" placeholder="Select date" required readonly></div>
+<div class="fg"><label for="checkin">Check In</label><input type="text" id="checkin" name="Check In" placeholder="Select date" required readonly></div>
+<div class="fg"><label for="checkout">Check Out</label><input type="text" id="checkout" name="Check Out" placeholder="Select date" required readonly></div>
 </div>
 <div class="availability-note">Strikethrough dates are unavailable &nbsp;·&nbsp; Diagonal-only dates are checkout only</div>
 <div class="frow">
-<div class="fg"><label>Number of Guests</label><select name="Number of Guests"><option>1 guest</option><option>2 guests</option></select></div>
-<div class="fg"><label>Purpose of Stay</label><select name="Visit Type"><option>Leisure / Holiday</option><option>Couples Retreat</option><option>Work & Relax</option><option>Special Occasion</option><option>Long Stay</option></select></div>
+<div class="fg"><label for="guests">Number of Guests</label><select id="guests" name="Number of Guests"><option>1 guest</option><option>2 guests</option></select></div>
+<div class="fg"><label for="visitType">Purpose of Stay</label><select id="visitType" name="Visit Type"><option>Leisure / Holiday</option><option>Couples Retreat</option><option>Work & Relax</option><option>Special Occasion</option><option>Long Stay</option></select></div>
 </div>
 <div class="frow">
-<div class="fg"><label>First Name</label><input type="text" name="First Name" placeholder="Jane" required></div>
-<div class="fg"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required></div>
+<div class="fg"><label for="firstName">First Name</label><input type="text" id="firstName" name="First Name" placeholder="Jane" required></div>
+<div class="fg"><label for="lastName">Last Name</label><input type="text" id="lastName" name="Last Name" placeholder="Smith" required></div>
 </div>
-<div class="fg"><label>Email</label><input type="email" name="email" id="guestEmail" placeholder="jane@example.com" required oninput="document.getElementById('replyto').value=this.value"></div>
-<div class="fg"><label>Mobile Number</label><input type="tel" name="Mobile" placeholder="+61 4xx xxx xxx" required></div>
-<div class="fg"><label>Tell us about your stay</label><textarea name="About Your Stay" placeholder="Who are you travelling with? Any special occasion or requirements?"></textarea></div>
+<div class="fg"><label for="guestEmail">Email</label><input type="email" name="email" id="guestEmail" placeholder="jane@example.com" required oninput="document.getElementById('replyto').value=this.value"></div>
+<div class="fg"><label for="mobile">Mobile Number</label><input type="tel" id="mobile" name="Mobile" placeholder="+61 4xx xxx xxx" required></div>
+<div class="fg"><label for="aboutStay">Tell us about your stay</label><textarea id="aboutStay" name="About Your Stay" placeholder="Who are you travelling with? Any special occasion or requirements?"></textarea></div>
 <button type="submit" class="submit-btn" id="submitBtn">Submit Booking Request →</button>
 <div class="form-note">No card required now. Valentino replies within 24 hours. Max 2 guests.</div>
 </form>
@@ -660,12 +660,12 @@
 <div class="instagram-handle"><a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener">@villanobby</a></div>
 <p class="instagram-desc">From sun-drenched mornings to golden-hour cocktails, follow along for a glimpse into the Villa Nobby lifestyle and the latest from our boutique suite.</p>
 <div class="instagram-grid">
-<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_002224497_iOS.jpg" alt="Villa Nobby bedroom with tropical garden view" loading="lazy"></a>
-<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001459963_iOS.jpg" alt="Villa Nobby luxury bathroom with gold fixtures" loading="lazy"></a>
-<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001413025_iOS.jpg" alt="Welcome cocktails at Villa Nobby" loading="lazy"></a>
-<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001820084_iOS.jpg" alt="Villa Nobby tropical outdoor shower" loading="lazy"></a>
-<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001920293_iOS.jpg" alt="Villa Nobby private outdoor garden" loading="lazy"></a>
-<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_002334952_iOS.jpg" alt="Villa Nobby bedroom with timber panel wall" loading="lazy"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_002224497_iOS.jpg" alt="Villa Nobby bedroom with tropical garden view" loading="lazy" width="1372" height="896"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001459963_iOS.jpg" alt="Villa Nobby luxury bathroom with gold fixtures" loading="lazy" width="896" height="1372"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001413025_iOS.jpg" alt="Welcome cocktails at Villa Nobby" loading="lazy" width="896" height="1372"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001820084_iOS.jpg" alt="Villa Nobby tropical outdoor shower" loading="lazy" width="896" height="1344"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_001920293_iOS.jpg" alt="Villa Nobby private outdoor garden" loading="lazy" width="896" height="1372"></a>
+<a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener"><img src="20260225_002334952_iOS.jpg" alt="Villa Nobby bedroom with timber panel wall" loading="lazy" width="896" height="1372"></a>
 </div>
 <a href="https://www.instagram.com/villanobby/" target="_blank" rel="noopener" class="instagram-cta">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -713,7 +713,7 @@ Follow @villanobby
 </div>
 
 <!-- Modals -->
-<div class="modal-overlay" id="successModal">
+<div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-label="Booking enquiry sent confirmation">
 <div class="modal">
 <button class="modal-close" onclick="closeModal('successModal')">&times;</button>
 <div class="modal-ico">&#9993;</div>
@@ -1010,6 +1010,10 @@ function initAvailabilityCalendar(calData) {
       checkoutPicker.open();
     }
   });
+
+  // flatpickr's visible altInput doesn't inherit the field labels
+  if (checkinPicker.altInput) checkinPicker.altInput.setAttribute('aria-label', 'Check in date');
+  if (checkoutPicker.altInput) checkoutPicker.altInput.setAttribute('aria-label', 'Check out date');
 }
 
 function loadAvailability() {
