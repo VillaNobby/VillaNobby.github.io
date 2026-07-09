@@ -26,6 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  :root {
@@ -119,7 +120,7 @@
 
  /* ===== WHAT'S ON ===== */
  .whats-on { background: var(--cream); }
- .whats-on-intro { font-size: 0.88rem; color: var(--mist); line-height: 1.7; max-width: 600px; margin-bottom: 12px; font-weight: 300; }
+ .whats-on-intro { font-size: 0.9rem; color: var(--mist); line-height: 1.75; max-width: 860px; margin-bottom: 12px; font-weight: 300; }
  .whats-on-updated { font-size: 0.62rem; color: var(--sage); letter-spacing: 0.08em; margin-bottom: 40px; }
  .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 0; }
  .event-card { background: var(--white); border: 1px solid var(--border); overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; position: relative; cursor: pointer; }
@@ -183,6 +184,43 @@
  .ft-col a:hover { color: var(--sand); }
  .ft-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; font-size: 0.7rem; }
 
+ /* ===== LOCAL MAP ===== */
+ .local-map { background: var(--white); }
+ .map-intro { font-size: 0.88rem; color: var(--mist); line-height: 1.7; max-width: 620px; margin: 18px 0 0; font-weight: 300; }
+ .map-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 18px; }
+ .map-chip { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; background: var(--white); border: 1px solid var(--border); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.64rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); transition: all 0.2s; }
+ .map-chip i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+ .map-chip:hover { border-color: var(--sand); color: var(--ink); }
+ .map-chip.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+ #guideMap { height: 500px; border: 1px solid var(--border); border-radius: 2px; z-index: 1; background: var(--cream); }
+ #guideMap .leaflet-tile-pane { filter: sepia(0.15) saturate(1.02) contrast(0.98); }
+ #guideMap .leaflet-control-attribution { font-size: 9px; background: rgba(253,249,243,0.8); color: var(--mist); }
+ .leaflet-popup-content-wrapper { font-family: 'Jost', sans-serif; border-radius: 2px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(42,34,24,0.16); }
+ .leaflet-popup-content { margin: 13px 15px; font-size: 0.76rem; line-height: 1.5; }
+ .leaflet-popup-content .pop-cat { font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 3px; }
+ .leaflet-popup-content .pop-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1rem; margin-bottom: 3px; color: var(--ink); }
+ .leaflet-popup-content .pop-note { color: var(--mist); margin-bottom: 7px; }
+ .leaflet-popup-content a { color: var(--sand); text-decoration: none; font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+ .leaflet-tooltip.vn-tip { background: var(--ink); color: var(--cream); border: none; border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 0.66rem; letter-spacing: 0.04em; padding: 4px 10px; box-shadow: 0 3px 10px rgba(42,34,24,0.25); }
+ .leaflet-tooltip-top.vn-tip::before { border-top-color: var(--ink); }
+ .leaflet-tooltip.ring-label { background: transparent; border: none; box-shadow: none; color: var(--sage); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+ .leaflet-tooltip.ring-label::before { display: none; }
+ .map-note { font-size: 0.62rem; color: var(--sage); margin-top: 10px; letter-spacing: 0.04em; }
+ .villa-marker { background: transparent; border: none; }
+ .villa-marker .logo-badge { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #f7f0e3; border-radius: 50%; border: 2px solid #3a4f3c; box-shadow: 0 3px 12px rgba(42,34,24,0.35); }
+ .villa-marker::after { content: ''; position: absolute; left: 50%; top: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; border: 2px solid rgba(58,79,60,0.45); animation: vnPulse 2.8s ease-out infinite; pointer-events: none; }
+ @keyframes vnPulse { 0% { transform: scale(0.72); opacity: 0.9; } 70% { transform: scale(1.4); opacity: 0; } 100% { opacity: 0; } }
+
+  /* ===== HOST PICK NOTES ===== */
+ .pick-note { font-size: 0.68rem; font-style: italic; color: var(--sage); line-height: 1.5; margin-top: 7px; }
+
+ /* ===== BOOKING BRIDGE ===== */
+ .book-bridge { background: var(--forest); padding: 44px 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+ .book-bridge p { color: var(--cream); font-size: 0.95rem; font-weight: 300; line-height: 1.6; max-width: 560px; }
+ .book-bridge p strong { font-weight: 500; }
+ .book-bridge a { background: var(--sand); color: var(--white); text-decoration: none; padding: 14px 30px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 1px; transition: background 0.25s; white-space: nowrap; }
+ .book-bridge a:hover { background: var(--blush); color: var(--ink); }
+
  /* ===== RESPONSIVE ===== */
  @media (max-width: 1100px) {
   section { padding: 66px 26px; }
@@ -234,6 +272,13 @@
   .logo-main { font-size: 1.05rem; letter-spacing: 0.12em; }
   .logo-sub { font-size: 0.50rem; letter-spacing: 0.18em; margin-top: 2px; }
  }
+ @media (max-width: 1100px) {
+  .book-bridge { padding: 36px 26px; }
+ }
+ @media (max-width: 700px) {
+  #guideMap { height: 380px; }
+  .book-bridge { flex-direction: column; align-items: flex-start; padding: 32px 18px; }
+ }
  @media (max-width: 380px) {
   .logo-main { font-size: 1.00rem; letter-spacing: 0.10em; }
   .logo-sub { font-size: 0.48rem; letter-spacing: 0.16em; }
@@ -277,10 +322,28 @@
 
 <!-- Section Navigation -->
 <div class="section-nav">
+<a href="#map">Map</a>
 <a href="#dining">Dining Guide</a>
 <a href="#things-to-do">Things to Do</a>
 <a href="#whats-on">What's On</a>
 </div>
+
+<!-- ===== LOCAL MAP ===== -->
+<section class="local-map" id="map">
+<div class="eyebrow">Find Your Way</div>
+<h2>Your neighbourhood,<br>at a glance</h2>
+<p class="map-intro">Villa Nobby sits in Miami's quiet beachside pocket, with North Burleigh Beach a ten-minute stroll away and the best of the Gold Coast within a short drive. The dashed ring marks roughly ten minutes on foot.</p>
+<div class="map-chips" id="mapChips" role="group" aria-label="Filter map pins">
+<button class="map-chip active" data-cat="all"><i style="background:var(--forest)"></i>All</button>
+<button class="map-chip" data-cat="cafe"><i style="background:#c49a52"></i>Caf&eacute;s &amp; Sweets</button>
+<button class="map-chip" data-cat="rest"><i style="background:#3a4f3c"></i>Restaurants</button>
+<button class="map-chip" data-cat="bar"><i style="background:#96603a"></i>Bars &amp; Breweries</button>
+<button class="map-chip" data-cat="beach"><i style="background:#5b7f8f"></i>Beaches &amp; Nature</button>
+<button class="map-chip" data-cat="sight"><i style="background:#8a7d6a"></i>Markets &amp; Sights</button>
+</div>
+<div id="guideMap" aria-label="Map of Villa Nobby's neighbourhood with host-picked places"></div>
+<div class="map-note">Villa location shown approximately — the exact address is shared on booking. Hover or tap any dot; pin positions come from OpenStreetMap.</div>
+</section>
 
 <!-- ===== DINING GUIDE ===== -->
 <section class="dining" id="dining">
@@ -301,85 +364,90 @@
 
 <!-- BREAKFAST -->
 <div class="dining-panel active" id="panel-breakfast">
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/paddockbakery/" target="_blank" rel="noopener">Paddock Bakery</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Bakery / Caf&eacute;</div><div class="dining-dist">650m · 9 min walk</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/paddockbakery/" target="_blank" rel="noopener">Paddock Bakery</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Bakery / Caf&eacute;</div><div class="dining-dist">650m · 9 min walk</div><div class="pick-note">A Coast institution — wood-fired pastries in a garden cottage. Go early.</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/prettyhandsome_gc/" target="_blank" rel="noopener">Pretty Handsome</a></div><div class="dining-type">Breakfast / Lunch / Caf&eacute;</div><div class="dining-dist">550m · 8 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/nectar_espresso/" target="_blank" rel="noopener">Nectar Espresso</a></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">700m · 10 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/caffeinekings/" target="_blank" rel="noopener">Caffeine Kings</a></div><div class="dining-type">Breakfast / Lunch / Caf&eacute;</div><div class="dining-dist">550m · 8 min walk</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/velvetcafelounge/" target="_blank" rel="noopener">Velvet Cafe &amp; Lounge</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">1.3km · 3 min drive</div></div>
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/mohr_burleigh/" target="_blank" rel="noopener">Mohr Cafe &amp; Deli</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">950m · 10 min walk</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/tartebakery/" target="_blank" rel="noopener">Tarte Bakery &amp; Caf&eacute;</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Bakery / Caf&eacute;</div><div class="dining-dist">2.1km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/velvetcafelounge/" target="_blank" rel="noopener">Velvet Cafe &amp; Lounge</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">1.3km · 3 min drive</div><div class="pick-note">Our lazy-breakfast favourite — generous plates, lovely staff.</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/mohr_burleigh/" target="_blank" rel="noopener">Mohr Cafe &amp; Deli</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">950m · 10 min walk</div><div class="pick-note">Neighbourhood gem for coffee and deli-style breakfasts.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/tartebakery/" target="_blank" rel="noopener">Tarte Bakery &amp; Caf&eacute;</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Bakery / Caf&eacute;</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Pastry-case heaven — the croissants sell out for a reason.</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/palmspringsburleigh/" target="_blank" rel="noopener">Palm Springs Burleigh</a></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">900m · 12 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/communeespresso/" target="_blank" rel="noopener">Communal Cafe</a></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">900m · 12 min walk</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/litoburleighheads/" target="_blank" rel="noopener">Lito</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.2km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/litoburleighheads/" target="_blank" rel="noopener">Lito</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.2km · 5 min drive</div><div class="pick-note">Small, stylish and serious about coffee.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/bsktcafe/" target="_blank" rel="noopener">BSKT</a></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.2km · 5 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/buoy.cafe/" target="_blank" rel="noopener">Buoy</a></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.3km · 6 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/theholliday.coffee/" target="_blank" rel="noopener">The Holliday Coffee</a></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.6km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/bobbybangsgc/" target="_blank" rel="noopener">Bobby Bang&#39;s</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.3km · 6 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/bobbybangsgc/" target="_blank" rel="noopener">Bobby Bang&#39;s</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Caf&eacute;</div><div class="dining-dist">2.3km · 6 min drive</div><div class="pick-note">Punchy brunch plates with an Asian twist.</div></div>
 </div>
 
 <!-- LUNCH -->
 <div class="dining-panel" id="panel-lunch">
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/miamisubs_goldcoast/" target="_blank" rel="noopener">Miami Sub</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Sandwiches</div><div class="dining-dist">400m · 6 min walk</div></div>
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/sushitrainmiamione/" target="_blank" rel="noopener">Sushi Train</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Japanese Sushi</div><div class="dining-dist">450m · 6 min walk</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/miamisubs_goldcoast/" target="_blank" rel="noopener">Miami Sub</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Sandwiches</div><div class="dining-dist">400m · 6 min walk</div><div class="pick-note">Proper deli subs — perfect beach-picnic fuel.</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/sushitrainmiamione/" target="_blank" rel="noopener">Sushi Train</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Japanese Sushi</div><div class="dining-dist">450m · 6 min walk</div><div class="pick-note">Fresh, fast and six minutes away — our easy-lunch default.</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/streetfryer/" target="_blank" rel="noopener">Street Fryer</a></div><div class="dining-type">Lunch / Thai</div><div class="dining-dist">400m · 6 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name">Miami Rice</div><div class="dining-type">Malaysian Chinese</div><div class="dining-dist">600m · 9 min walk</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/costa_taco/" target="_blank" rel="noopener">Costa Taco Burleigh</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Mexican</div><div class="dining-dist">2.1km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/costa_taco/" target="_blank" rel="noopener">Costa Taco Burleigh</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Mexican</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Baja-style tacos and margaritas, always buzzing.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/mrhizolas/" target="_blank" rel="noopener">Mr Hizola's</a></div><div class="dining-type">Contemporary Cantonese</div><div class="dining-dist">2.1km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/piadaco/" target="_blank" rel="noopener">Piada Co</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Italian Street Food</div><div class="dining-dist">2.1km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/piadaco/" target="_blank" rel="noopener">Piada Co</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Italian Street Food</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Italian street food done right.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/morethai.restaurants/" target="_blank" rel="noopener">More Thai At Nobby</a></div><div class="dining-type">Lunch / Thai</div><div class="dining-dist">2km · 4 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/grilldburgers/" target="_blank" rel="noopener">Grill'd Burger</a></div><div class="dining-type">Burgers</div><div class="dining-dist">2km · 4 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/okazu_sushibar/" target="_blank" rel="noopener">Okazu Sushi Bar</a></div><div class="dining-type">Lunch / Japanese</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/theoxley1823/" target="_blank" rel="noopener">The Oxley 1823</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Food Precinct</div><div class="dining-dist">2km · 4 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/theoxley1823/" target="_blank" rel="noopener">The Oxley 1823</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Food Precinct</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">A laneway full of eats on the Nobby Beach strip.</div></div>
 </div>
 
 <!-- DINNER -->
 <div class="dining-panel" id="panel-dinner">
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/barmonteitalian/" target="_blank" rel="noopener">Bar Monte - Miami</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Italian</div><div class="dining-dist">500m · 7 min walk</div></div>
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/tidebarandkitchen/" target="_blank" rel="noopener">Tide Bar &amp; Kitchen</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Thai</div><div class="dining-dist">550m · 8 min walk</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/barmonteitalian/" target="_blank" rel="noopener">Bar Monte - Miami</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Italian</div><div class="dining-dist">500m · 7 min walk</div><div class="pick-note">Handmade pasta and negronis, walking distance home — our date-night pick.</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/tidebarandkitchen/" target="_blank" rel="noopener">Tide Bar &amp; Kitchen</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Thai</div><div class="dining-dist">550m · 8 min walk</div><div class="pick-note">Modern Thai with a lovely evening vibe, an easy stroll away.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/miamimarketta/" target="_blank" rel="noopener">Miami Marketta</a></div><div class="dining-type">Dinner / Food Precinct</div><div class="dining-dist">1.5km · 3 min drive</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/lightyearsasiandiner/" target="_blank" rel="noopener">Light Years</a></div><div class="dining-type">Modern Asian Fusion</div><div class="dining-dist">350m · 5 min walk</div></div>
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/crispyitalianbar/" target="_blank" rel="noopener">Crispy</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Italian Pizza</div><div class="dining-dist">1.2km · 15 min walk</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/crispyitalianbar/" target="_blank" rel="noopener">Crispy</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Italian Pizza</div><div class="dining-dist">1.2km · 15 min walk</div><div class="pick-note">Blistered wood-fired pizza — worth the walk, every time.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/jimmywahs.burleigh/" target="_blank" rel="noopener">Jimmy Wah's</a></div><div class="dining-type">Modern Asian Fusion</div><div class="dining-dist">2.1km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/imrickshores/" target="_blank" rel="noopener">Rick Shore</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Fine Dining / Asian Fusion</div><div class="dining-dist">2.2km · 6 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/eska.seafood/" target="_blank" rel="noopener">Eska</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Seafood</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/norte.restaurant/" target="_blank" rel="noopener">Norte</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Latin American</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/lars.barandgrill/" target="_blank" rel="noopener">Lars</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Steakhouse</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/babymama_bymamasan/" target="_blank" rel="noopener">Baby Mama</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Modern Asian Fusion</div><div class="dining-dist">2km · 4 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/imrickshores/" target="_blank" rel="noopener">Rick Shore</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Fine Dining / Asian Fusion</div><div class="dining-dist">2.2km · 6 min drive</div><div class="pick-note">The bucket-list dinner — beachfront Asian fine dining. Book ahead.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/eska.seafood/" target="_blank" rel="noopener">Eska</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Seafood</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Seafood with real finesse on the Nobby strip.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/norte.restaurant/" target="_blank" rel="noopener">Norte</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Latin American</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Latin American flavours with serious charcoal-grill energy.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/lars.barandgrill/" target="_blank" rel="noopener">Lars</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Steakhouse</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Steak done properly — settle in for the night.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/babymama_bymamasan/" target="_blank" rel="noopener">Baby Mama</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Modern Asian Fusion</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Playful modern Asian, made for sharing.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/limlayrestaurant/" target="_blank" rel="noopener">Limlay Thai</a></div><div class="dining-type">Dinner / Thai</div><div class="dining-dist">2.1km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/maman_barkitchen/" target="_blank" rel="noopener">Maman Bar &amp; Kitchen</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Mediterranean</div><div class="dining-dist">2.1km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/gemellinigc/" target="_blank" rel="noopener">Gemellini Nobby Beach</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Italian Pizza</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/haven_burleighheads/" target="_blank" rel="noopener">Haven Restaurant</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Seafood</div><div class="dining-dist">2.2km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/maman_barkitchen/" target="_blank" rel="noopener">Maman Bar &amp; Kitchen</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Mediterranean</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Mediterranean plates made for long dinners.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/gemellinigc/" target="_blank" rel="noopener">Gemellini Nobby Beach</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Italian Pizza</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Effortless Italian on the Nobby strip.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/haven_burleighheads/" target="_blank" rel="noopener">Haven Restaurant</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Dinner / Seafood</div><div class="dining-dist">2.2km · 5 min drive</div><div class="pick-note">Our pick for a special-occasion seafood dinner.</div></div>
 </div>
 
 <!-- DRINKS -->
 <div class="dining-panel" id="panel-drinks">
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/rojicat.beer/" target="_blank" rel="noopener">Roji Cat Beer Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Japanese Brewery</div><div class="dining-dist">450m · 6 min walk</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/rojicat.beer/" target="_blank" rel="noopener">Roji Cat Beer Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Japanese Brewery</div><div class="dining-dist">450m · 6 min walk</div><div class="pick-note">A tiny Japanese beer bar with big character — start your evening here.</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/precinctbrewing/" target="_blank" rel="noopener">Precinct Brewery</a></div><div class="dining-type">Brewery</div><div class="dining-dist">600m · 8 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/blackhopsbeer/" target="_blank" rel="noopener">Black Hops Brewery</a></div><div class="dining-type">Brewery</div><div class="dining-dist">850m · 12 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/hardfizzhq_taproom/" target="_blank" rel="noopener">Hard Fizz</a></div><div class="dining-type">Brewery</div><div class="dining-dist">700m · 10 min walk</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/rosellasbar/" target="_blank" rel="noopener">Rosella's</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/themalibu.burleigh/" target="_blank" rel="noopener">The Malibu Racquet Club</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/rosellasbar/" target="_blank" rel="noopener">Rosella's</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Burleigh rooftop cocktails at golden hour. Enough said.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/themalibu.burleigh/" target="_blank" rel="noopener">The Malibu Racquet Club</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Retro-cool cocktails, straight out of a Slim Aarons photo.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/palomawinebar/" target="_blank" rel="noopener">Paloma Wine Bar</a></div><div class="dining-type">Wine Bar</div><div class="dining-dist">2.1km · 5 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/apressurfbar/" target="_blank" rel="noopener">Apres Surf</a></div><div class="dining-type">Bar</div><div class="dining-dist">2.5km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/sueno.rooftop/" target="_blank" rel="noopener">Sueno Rooftop</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/m.o.u.s.t.a.c.h.e/" target="_blank" rel="noopener">Moustache</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km · 4 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/sueno.rooftop/" target="_blank" rel="noopener">Sueno Rooftop</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Sundowners with ocean air.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/m.o.u.s.t.a.c.h.e/" target="_blank" rel="noopener">Moustache</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">Moody little cocktail den — great for a nightcap.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/jujumermaidbeach/" target="_blank" rel="noopener">Juju</a></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km · 5 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/cambuswallace/" target="_blank" rel="noopener">The Cambus Wallace</a></div><div class="dining-type">Cocktail Bar w. Live Music</div><div class="dining-dist">2km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/terronia.burleigh/" target="_blank" rel="noopener">Terronia Cocktail Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/terronia.burleigh/" target="_blank" rel="noopener">Terronia Cocktail Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Inventive cocktails in the heart of Burleigh.</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/north_burleighslsc_supporters/" target="_blank" rel="noopener">North Burleigh Surf Club</a></div><div class="dining-type">Pub / Dinner</div><div class="dining-dist">650m · 9 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name">Miami Tavern</div><div class="dining-type">Pub / Dinner</div><div class="dining-dist">850m · 12 min walk</div></div>
 </div>
 
 <!-- DESSERT -->
 <div class="dining-panel" id="panel-dessert">
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/gelatogemelli/" target="_blank" rel="noopener">Gelato Gemelli</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Gelato</div><div class="dining-dist">2km · 4 min drive</div></div>
-<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/albaciogelatonaturale/" target="_blank" rel="noopener">Al Bacio Gelato</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Gelato</div><div class="dining-dist">1.2km · 15 min walk</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/gelatogemelli/" target="_blank" rel="noopener">Gelato Gemelli</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Gelato</div><div class="dining-dist">2km · 4 min drive</div><div class="pick-note">The best gelato on the Coast — trust us on the pistachio.</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/albaciogelatonaturale/" target="_blank" rel="noopener">Al Bacio Gelato</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Gelato</div><div class="dining-dist">1.2km · 15 min walk</div><div class="pick-note">Gelato naturale worth the beach walk.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/scoopgelati/" target="_blank" rel="noopener">Scoop Gelati</a></div><div class="dining-type">Gelato</div><div class="dining-dist">2.1km · 5 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/burleighgelatoco/" target="_blank" rel="noopener">Burleigh Gelato Co.</a></div><div class="dining-type">Gelato</div><div class="dining-dist">2.1km · 5 min drive</div></div>
-<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/yomgburgers/" target="_blank" rel="noopener">YOMG Burleigh Heads</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Froyo</div><div class="dining-dist">2.1km · 5 min drive</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/yomgburgers/" target="_blank" rel="noopener">YOMG Burleigh Heads</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Froyo</div><div class="dining-dist">2.1km · 5 min drive</div><div class="pick-note">Froyo happiness after a beach day.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/iloveyochi/" target="_blank" rel="noopener">Yo-Chi</a></div><div class="dining-type">Froyo</div><div class="dining-dist">2.1km · 5 min drive</div></div>
 </div>
 </section>
+
+<div class="book-bridge">
+<p><strong>Every spot in this guide is minutes from your door.</strong> Villa Nobby is a private Japandi suite for two in the heart of it all.</p>
+<a href="index.html#booking">Check availability &rarr;</a>
+</div>
 
 <!-- ===== THINGS TO DO ===== -->
 <section class="things-to-do" id="things-to-do">
@@ -524,7 +592,7 @@
 <div class="events-grid">
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=360&fit=crop" alt="Vibrant outdoor festival with live performance" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://static1.squarespace.com/static/606d7767cda2b31dcd2f381a/t/640919075b6a11110e4c421a/1678317831916/Surface-Festival-Web-210.jpg?format=800w" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=360&fit=crop'" alt="Vibrant outdoor festival with live performance" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">1 – 19 July · Miami, Nobby Beach &amp; Burleigh</div>
 <div class="event-name">SURFACE Street Art Festival</div>
@@ -538,7 +606,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&h=360&fit=crop" alt="Vintage-style live band on stage" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&h=360&fit=crop" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&h=360&fit=crop'" alt="Vintage-style live band on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Tuesday 7 July · HOTA</div>
 <div class="event-name">Scott Bradlee's Postmodern Jukebox</div>
@@ -552,7 +620,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop" alt="Solo performer in spotlight on stage" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600&h=360&fit=crop" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop'" alt="Solo performer in spotlight on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">8 – 12 July · HOTA</div>
 <div class="event-name">The Lark</div>
@@ -566,7 +634,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=360&fit=crop" alt="High-energy live performance on stage" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/360-ALLSTARS---1000x667---credit-Darren-Thomas.jpg?itok=_3hguIyE" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=360&fit=crop'" alt="High-energy live performance on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">30 June – 10 July · QPAC, Brisbane</div>
 <div class="event-name">360 Allstars</div>
@@ -580,7 +648,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=600&h=360&fit=crop" alt="Comedian performing stand-up on stage" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600&h=360&fit=crop" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=600&h=360&fit=crop'" alt="Comedian performing stand-up on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Friday 10 July · HOTA · Comedy</div>
 <div class="event-name">Tom Gleeson — Out of Touch</div>
@@ -594,7 +662,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&h=360&fit=crop" alt="Circus performers and colourful big top tent at night" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/C258F86F-6C16-4EFA-B96C-8EF28A85B12A.jpg?itok=fHBXcyb6" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&h=360&fit=crop'" alt="Circus performers and colourful big top tent at night" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">26 June – 12 July · Broadwater Parklands</div>
 <div class="event-name">Ashton's The Great Australian Circus</div>
@@ -608,7 +676,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=360&fit=crop" alt="Ballet dancers performing on stage" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Hamlet-26---1000-x-667px_4.jpg?itok=YtImFyTa" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=360&fit=crop'" alt="Ballet dancers performing on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">19 June – 18 July · Thomas Dixon Centre, Brisbane</div>
 <div class="event-name">Hamlet — Queensland Ballet</div>
@@ -622,7 +690,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&h=360&fit=crop" alt="Audience in an arts venue at a live screening" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=360&fit=crop" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&h=360&fit=crop'" alt="Audience in an arts venue at a live screening" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Friday 17 July · HOTA</div>
 <div class="event-name">Very Short Film Festival 2026</div>
@@ -636,7 +704,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=600&h=360&fit=crop" alt="Comedian performing stand-up on stage" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=600&h=360&fit=crop" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=600&h=360&fit=crop'" alt="Comedian performing stand-up on stage" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Saturday 18 July · HOTA · Comedy</div>
 <div class="event-name">Melanie Bracewell: Dilly Dallying</div>
@@ -672,7 +740,7 @@
 <div class="events-grid">
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Night food market with string lights" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Currumbin%20Wildlife%20Sanctuary%20Markets%20Evening.jpg?itok=o-gQ8BUO" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop'" alt="Night food market with string lights" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Friday, 4 — 8 PM</div>
 <div class="event-name">Sanctuary Markets</div>
@@ -686,7 +754,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=360&fit=crop" alt="Beachfront market at sunset" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/Surfers-Paradise-Beachfront-Markets%20%281%29.jpg?itok=RctE9Vwn" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=360&fit=crop'" alt="Beachfront market at sunset" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Wed, Fri &amp; Sat, 4 — 9 PM</div>
 <div class="event-name">Surfers Paradise Beachfront Markets</div>
@@ -700,7 +768,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=360&fit=crop" alt="Fresh produce at farmers market" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Hota%20Market%20Hero%20Copyright%20MustdoBrisbane.com%20pty%20ltd%202021.jpg?itok=7mjepl8G" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=360&fit=crop'" alt="Fresh produce at farmers market" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Sunday, 6 AM — 11:30 AM</div>
 <div class="event-name">HOTA Farmers &amp; Artisan Markets</div>
@@ -714,7 +782,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=360&fit=crop" alt="Artisan craft market stalls" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/BurleighBeachsideMarketHero.jpg?itok=SQQAw7F6" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=360&fit=crop'" alt="Artisan craft market stalls" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Last Sunday of each month, 8 AM — 2 PM</div>
 <div class="event-name">Burleigh Heads Beachside Markets</div>
@@ -728,7 +796,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=360&fit=crop" alt="Farm fresh produce and flowers" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Palm%20Beach%20Farmers%20Market%20Hero%20Copyright%20MustdoBrisbane.com%20pty%20ltd%202021.jpg?itok=_7QnzQPh" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=360&fit=crop'" alt="Farm fresh produce and flowers" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Saturday, 6 AM — 11:30 AM</div>
 <div class="event-name">Palm Beach Farmers' Market</div>
@@ -742,7 +810,7 @@
 </div>
 
 <div class="event-card">
-<div class="event-img-wrap"><img class="event-img" src="https://images.unsplash.com/photo-1616363306182-778dcf76a476?w=600&h=360&fit=crop" alt="Busy outdoor market with stalls and canopies" loading="lazy"></div>
+<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Carrara%20Markets%20Hero%20Copyright%20MustdoBrisbane.com%20pty%20ltd%202021.jpg?itok=PIUba2jf" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1616363306182-778dcf76a476?w=600&h=360&fit=crop'" alt="Busy outdoor market with stalls and canopies" loading="lazy"></div>
 <div class="event-body">
 <div class="event-date">Every Sat &amp; Sun, 7 AM — 3 PM</div>
 <div class="event-name">Carrara Markets</div>
@@ -765,6 +833,11 @@
 
 <a href="index.html#booking" class="back-link">&larr; Back to Villa Nobby</a>
 </section>
+
+<div class="book-bridge">
+<p><strong>Ready to explore it for yourself?</strong> Stay in Miami's most desirable beachside pocket — personally hosted, thoughtfully designed.</p>
+<a href="index.html#booking">Book your stay &rarr;</a>
+</div>
 
 <!-- Footer -->
 <footer>
@@ -969,5 +1042,107 @@ fetch("https://assets.mailerlite.com/jsonp/2210061/forms/182525836964922586/take
 })();
 </script>
 <!-- End MailerLite Newsletter Popup -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof L === 'undefined' || !document.getElementById('guideMap')) return;
+  var villa = [-28.07406, 153.44278];
+  var CATS = {
+    cafe:  { color: '#c49a52', label: 'Caf\u00e9s & Sweets' },
+    rest:  { color: '#3a4f3c', label: 'Restaurants' },
+    bar:   { color: '#96603a', label: 'Bars & Breweries' },
+    beach: { color: '#5b7f8f', label: 'Beaches & Nature' },
+    sight: { color: '#8a7d6a', label: 'Markets & Sights' }
+  };
+  // [category, name, lat, lng, note, google-maps query] — all positions OSM-verified
+  var pins = [
+    ['cafe', 'Paddock Bakery', -28.07693, 153.44427, '650m \u00b7 9 min walk', 'Paddock Bakery Burleigh Heads'],
+    ['cafe', 'Tarte Bakery & Caf\u00e9', -28.08847, 153.44984, '2.1km \u00b7 5 min drive', 'Tarte Bakery Burleigh Heads'],
+    ['cafe', 'Nectar Espresso', -28.07433, 153.44653, '700m \u00b7 10 min walk', 'Nectar Espresso Miami Gold Coast'],
+    ['cafe', 'Caffeine Kings', -28.07529, 153.44485, '550m \u00b7 8 min walk', 'Caffeine Kings Miami Gold Coast'],
+    ['cafe', 'Palm Springs Burleigh', -28.07824, 153.44581, '900m \u00b7 12 min walk', 'Palm Springs Cafe Burleigh'],
+    ['cafe', 'Burleigh Gelato Co.', -28.08897, 153.45172, '2.1km \u00b7 5 min drive', 'Burleigh Gelato Co'],
+    ['rest', 'Sushi Train Miami', -28.07432, 153.44446, '450m \u00b7 6 min walk', 'Sushi Train Miami Gold Coast'],
+    ['rest', 'Miami Rice', -28.07502, 153.44541, '600m \u00b7 9 min walk', 'Miami Rice Gold Coast'],
+    ['rest', 'Rick Shores', -28.08945, 153.45473, '2.2km \u00b7 6 min drive', 'Rick Shores Burleigh Heads'],
+    ['rest', 'The Oxley 1823', -28.05929, 153.43893, '2km \u00b7 4 min drive', 'The Oxley 1823 Mermaid Beach'],
+    ['rest', 'Gemellini', -28.05803, 153.43840, '2km \u00b7 4 min drive', 'Gemellini Mermaid Beach'],
+    ['rest', 'More Thai At Nobby', -28.05817, 153.43880, '2km \u00b7 4 min drive', 'More Thai Nobby Beach'],
+    ['rest', 'Baby Mama', -28.05821, 153.43810, '2km \u00b7 4 min drive', 'Baby Mama Nobby Beach'],
+    ['rest', 'Jimmy Wah\'s', -28.08868, 153.45102, '2.1km \u00b7 5 min drive', 'Jimmy Wahs Burleigh Heads'],
+    ['rest', 'Costa Taco', -28.08865, 153.45061, '2.1km \u00b7 5 min drive', 'Costa Taco Burleigh Heads'],
+    ['rest', 'Maman Bar & Kitchen', -28.08897, 153.45003, '2.1km \u00b7 5 min drive', 'Maman Bar Kitchen Burleigh Heads'],
+    ['bar', 'Precinct Brewing', -28.07673, 153.44372, '600m \u00b7 8 min walk', 'Precinct Brewing Miami Gold Coast'],
+    ['bar', 'Black Hops Brewery', -28.07865, 153.44447, '850m \u00b7 12 min walk', 'Black Hops Brewery Burleigh'],
+    ['bar', 'Miami Tavern', -28.07271, 153.44514, '850m \u00b7 12 min walk', 'Miami Tavern Gold Coast'],
+    ['bar', 'The Malibu Racquet Club', -28.08858, 153.45048, '2.1km \u00b7 5 min drive', 'Malibu Racquet Club Burleigh'],
+    ['bar', 'Juju', -28.05854, 153.43855, '2km \u00b7 5 min drive', 'Juju Mermaid Beach'],
+    ['bar', 'The Cambus Wallace', -28.05834, 153.43825, '2km \u00b7 5 min drive', 'The Cambus Wallace Nobby Beach'],
+    ['beach', 'North Burleigh Lookout', -28.07169, 153.44607, '800m \u00b7 10 min walk', 'North Burleigh Lookout'],
+    ['beach', 'Burleigh Head National Park', -28.09397, 153.45825, '2.5km \u00b7 5 min drive', 'Burleigh Head National Park'],
+    ['beach', 'Tallebudgera Creek', -28.10366, 153.44732, '3km \u00b7 6 min drive', 'Tallebudgera Creek'],
+    ['sight', 'Miami Marketta', -28.06381, 153.43578, 'Wed, Fri & Sat nights \u00b7 3 min drive', 'Miami Marketta'],
+    ['sight', 'James Street precinct', -28.08932, 153.45074, 'Boutique shopping \u00b7 5 min drive', 'James Street Burleigh Heads'],
+    ['sight', 'HOTA \u2014 Home of the Arts', -28.00012, 153.41746, 'Gallery & Sunday farmers market \u00b7 10 min drive', 'HOTA Home of the Arts'],
+    ['sight', 'Currumbin Wildlife Sanctuary', -28.13740, 153.48495, 'Koalas & kangaroos \u00b7 8 min drive', 'Currumbin Wildlife Sanctuary'],
+    ['sight', 'Burleigh Beachside Markets', -28.08743, 153.45192, 'Last Sunday monthly \u00b7 Justins Park', 'Justins Park Burleigh Heads'],
+    ['sight', 'The Village Markets', -28.08664, 153.44792, '1st & 3rd Sunday morning', 'The Village Markets Burleigh Heads'],
+    ['sight', 'Carrara Markets', -28.03105, 153.39040, 'Every weekend \u00b7 15 min drive', 'Carrara Markets']
+  ];
+
+  var map = L.map('guideMap', { scrollWheelZoom: false, dragging: !L.Browser.mobile });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 20, subdomains: 'abcd',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  // 10-minute walk ring
+  L.circle(villa, { radius: 800, color: '#c49a52', weight: 1, opacity: 0.6, dashArray: '4 7', fillColor: '#c49a52', fillOpacity: 0.05 }).addTo(map);
+  L.tooltip({ permanent: true, direction: 'top', className: 'ring-label', offset: [0, 0] })
+    .setLatLng([-28.06680, 153.44278]).setContent('10 min walk').addTo(map);
+
+  // Villa marker (pulsing)
+  L.marker(villa, {
+    icon: L.divIcon({ className: 'villa-marker', html: '<span class="logo-badge"><svg viewBox="0 0 100 100" width="34" height="34" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="vnc"><circle cx="50" cy="50" r="47"/></clipPath></defs><g clip-path="url(#vnc)"><circle cx="50" cy="50" r="47" fill="#f3ead9"/><path d="M40 2 C19 9 5 28 4 50 C4 62 8 73 15 81 L23 74 C16 65 13 56 14 46 C16 28 28 13 46 8 Z" fill="#3a4f3c"/><path d="M48 13 C31 19 21 33 20 49 C19 66 29 80 45 88 L53 70 C43 64 38 56 39 46 C40 34 47 25 57 21 Z" fill="#2c3b2a"/><path d="M59 20 C76 21 93 34 96 52 C99 74 84 93 62 97 C48 99 35 94 27 86 C40 89 53 84 59 73 C67 61 63 38 59 20 Z" fill="#d9b688"/><path d="M61 3 L80 9 C84 11 86 15 85 19 L81 30 L59 21 Z" fill="#8a9678"/></g></svg></span>', iconSize: [44, 44], iconAnchor: [22, 22] }),
+    zIndexOffset: 1000
+  }).addTo(map).bindPopup('<div class="pop-cat">Your stay</div><div class="pop-name">Villa Nobby</div><div class="pop-note">Private Japandi suite for two \u2014 approximate location, exact address shared on booking.</div><a href="index.html#booking">Check availability \u2192</a>');
+
+  // Category layers
+  var layers = {};
+  Object.keys(CATS).forEach(function (c) { layers[c] = L.layerGroup().addTo(map); });
+  pins.forEach(function (p) {
+    var m = L.circleMarker([p[2], p[3]], {
+      radius: 6, color: '#ffffff', weight: 1.5, fillColor: CATS[p[0]].color, fillOpacity: 0.92
+    });
+    m.bindTooltip(p[1], { direction: 'top', offset: [0, -7], className: 'vn-tip' });
+    m.bindPopup(
+      '<div class="pop-cat">' + CATS[p[0]].label + '</div>' +
+      '<div class="pop-name">' + p[1] + '</div>' +
+      '<div class="pop-note">' + p[4] + '</div>' +
+      '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(p[5]) + '" target="_blank" rel="noopener">Directions \u2192</a>'
+    );
+    m.on('mouseover', function () { this.setStyle({ radius: 8 }); });
+    m.on('mouseout', function () { this.setStyle({ radius: 6 }); });
+    m.addTo(layers[p[0]]);
+  });
+
+  // Filter chips
+  var chips = document.querySelectorAll('#mapChips .map-chip');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var cat = chip.getAttribute('data-cat');
+      Object.keys(layers).forEach(function (c) {
+        if (cat === 'all' || c === cat) { map.addLayer(layers[c]); }
+        else { map.removeLayer(layers[c]); }
+      });
+    });
+  });
+
+  // Open tight on the immediate neighbourhood; zoom out to reach Burleigh, HOTA & beyond
+  map.setView(villa, 15);
+});
+</script>
 </body>
 </html>
