@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-13T05:58:57.779Z",
-  "rating": 4.98,
-  "totalReviews": 64,
+  "updated": "2026-07-13T23:51:56.227Z",
+  "rating": 5,
+  "totalReviews": 63,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -17,13 +17,6 @@
       "date": "July 2026",
       "rating": 5,
       "text": "A very nice, comfortable and central place with good amenities and very good service."
-    },
-    {
-      "id": "calvin-july-2026",
-      "name": "Calvin",
-      "date": "July 2026",
-      "rating": 4,
-      "text": "Very easy and tidy."
     },
     {
       "id": "samantha-july-2026",
