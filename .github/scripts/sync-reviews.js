@@ -81,6 +81,7 @@ async function main() {
     console.log('No existing reviews file found');
   }
 
+  let changed = false;
   try {
     console.log('Fetching Airbnb reviews page...');
     const html = await fetch(REVIEWS_URL);
@@ -99,27 +100,34 @@ async function main() {
           newCount++;
         }
       }
-      existing.updated = new Date().toISOString();
-      existing.totalReviews = existing.reviews.length;
+      if (newCount > 0) {
+        existing.updated = new Date().toISOString();
+        existing.totalReviews = Math.max(existing.reviews.length, existing.totalReviews);
+        changed = true;
+      }
       console.log(`Added ${newCount} new reviews, total: ${existing.totalReviews}`);
-    } else if (ids.length > existing.reviews.length) {
+    } else if (ids.length > existing.totalReviews) {
       // We found more review IDs than we have stored - update the count
-      console.log(`Review count may have increased: found ${ids.length} IDs vs ${existing.reviews.length} stored`);
-      existing.totalReviews = Math.max(ids.length, existing.totalReviews);
+      console.log(`Review count increased: found ${ids.length} IDs vs ${existing.totalReviews} stored`);
+      existing.totalReviews = ids.length;
       existing.updated = new Date().toISOString();
+      changed = true;
     } else {
       console.log('No new reviews found in HTML (Airbnb may require browser rendering).');
-      console.log('Existing reviews.json kept as-is. For manual update, run with --manual flag.');
-      // Still update the timestamp to show the script ran
-      existing.updated = new Date().toISOString();
     }
   } catch (err) {
     console.log(`Warning: Could not fetch reviews page: ${err.message}`);
     console.log('Keeping existing reviews.json unchanged.');
   }
 
-  fs.writeFileSync(outputPath, JSON.stringify(existing, null, 2));
-  console.log(`Written to ${outputPath}`);
+  // Only write when something real changed - a timestamp-only bump makes the
+  // file look freshly synced while the content is stale.
+  if (changed) {
+    fs.writeFileSync(outputPath, JSON.stringify(existing, null, 2));
+    console.log(`Written to ${outputPath}`);
+  } else {
+    console.log('No review changes - leaving reviews.json untouched.');
+  }
 }
 
 main().catch((err) => {
