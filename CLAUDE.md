@@ -17,7 +17,7 @@ Villa Nobby is a luxury Japandi-inspired guest suite in Miami, Gold Coast, Queen
 | File | Purpose |
 |---|---|
 | `index.html` | Main website — hero, amenities, location, booking, reviews |
-| `explore.html` | Gold Coast guide — interactive Leaflet map (`#map`, 32 OSM-verified venue pins, category filter chips, logo marker), Dining Guide with host-pick notes, Things to Do, What's On (updated weekly), booking-bridge CTAs |
+| `explore.html` | Gold Coast guide — Local Love monthly feature (`#local-love`), interactive Leaflet map (`#map`, 37 OSM-verified pins, gold ring = host pick), Dining Guide (generated from Villa_Nobby_Local_Guide.xlsx, host-pick notes), What's On (updated weekly), booking-bridge CTAs |
 | `Villa_Nobby_Local_Guide.xlsx` | **Source of truth for the Dining Guide** on explore.html (63 venues: name, Instagram, type, distance, walk/drive, section, host pick). When it changes, regenerate the dining panels and map pins from it |
 | `blocked-dates.json` | Airbnb blocked date ranges — powers the availability calendar on the site |
 | `reviews.json` | Airbnb guest reviews — powers the reviews carousel |
@@ -101,7 +101,7 @@ cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
 
 ### 3. Weekly Explore Page Update (Sunday 8:06 AM)
 - Runs as a **remote routine** on claude.ai (model: `claude-sonnet-4-6`), scraping Must Do Gold Coast (https://www.mustdogoldcoast.com/whats-on) and HOTA (https://hota.com.au/whats-on/) via Firecrawl
-- **Edits only the What's On (`#whats-on`) section** of `explore.html` — leaves the interactive map (`#map`), Dining Guide, Things-to-Do sections and their scripts untouched
+- **Edits only the What's On (`#whats-on`) section** of `explore.html` — leaves the Local Love feature (`#local-love`), interactive map (`#map`), Dining Guide and their scripts untouched
 - Removes expired events (end date before today), refreshes the Top 4 picks for the next 7 days, adds new upcoming events to the Arts/Music/Culture grid, and matches the existing event-card HTML structure
 - **Event images use the event's real source image**: og:image for Must Do pages; HOTA thumbnails captured from the listing scrape (`hota.com.au/generated/...`, upgrade `/480w-` → `/1280w-` when it returns 200). Every image is verified (`curl -sI` → 200 + `image/*`) and written as `<img class="event-img" referrerpolicy="no-referrer" src="REAL" onerror="this.onerror=null;this.src='FALLBACK'">` — the no-referrer attribute defeats hotlink protection and the onerror fallback (a distinct topical Unsplash URL) guarantees no broken card. Never repeat an image across cards.
 - **Always keeps** the 6 recurring markets **exactly as-is** (they now carry their real Must Do photos): Sanctuary Markets, Surfers Paradise Beachfront Markets, HOTA Farmers Market, Palm Beach Farmers Market, Carrara Markets, Burleigh Heads Beachside Markets
