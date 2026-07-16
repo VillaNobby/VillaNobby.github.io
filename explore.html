@@ -190,6 +190,10 @@
  .ll-posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
  .ll-post { border: 1px solid var(--border); background: var(--linen); border-radius: 2px; overflow: hidden; min-height: 380px; display: flex; align-items: center; justify-content: center; }
  .ll-post .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; border: none !important; box-shadow: none !important; }
+ .ll-photo { padding: 0; overflow: hidden; position: relative; text-decoration: none; min-height: 380px; display: block; }
+ .ll-photo img { width: 100%; height: 100%; min-height: 380px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+ .ll-photo:hover img { transform: scale(1.045); }
+ .ll-photo .ll-play { position: absolute; left: 10px; bottom: 10px; background: rgba(42,34,24,0.72); color: var(--cream); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 6px 12px; border-radius: 2px; backdrop-filter: blur(4px); }
  .ll-link { text-decoration: none; transition: all 0.25s; }
  .ll-link:hover { border-color: var(--sand); box-shadow: 0 6px 24px var(--shadow); transform: translateY(-2px); }
  .ll-placeholder { text-align: center; padding: 30px 18px; color: var(--mist); }
@@ -367,10 +371,11 @@
 Follow @choubidoucafe</a>
 </div>
 <div class="ll-posts" id="llPosts">
-<a class="ll-post ll-link" href="https://www.instagram.com/reel/DYZPipUz3xm/" target="_blank" rel="noopener"><div class="ll-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="10 8 16 12 10 16 10 8"/><rect x="2" y="2" width="20" height="20" rx="5"/></svg><div class="ph-handle">@choubidoucafe &middot; Reel one</div><div class="ph-note">Watch on Instagram &rarr;</div></div></a>
-<a class="ll-post ll-link" href="https://www.instagram.com/reel/Dat5YDryfAx/" target="_blank" rel="noopener"><div class="ll-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="10 8 16 12 10 16 10 8"/><rect x="2" y="2" width="20" height="20" rx="5"/></svg><div class="ph-handle">@choubidoucafe &middot; Reel two</div><div class="ph-note">Watch on Instagram &rarr;</div></div></a>
-<a class="ll-post ll-link" href="https://www.instagram.com/reel/DawpNlWSBjC/" target="_blank" rel="noopener"><div class="ll-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="10 8 16 12 10 16 10 8"/><rect x="2" y="2" width="20" height="20" rx="5"/></svg><div class="ph-handle">@choubidoucafe &middot; Reel three</div><div class="ph-note">Watch on Instagram &rarr;</div></div></a>
+<a class="ll-post ll-photo" href="https://www.instagram.com/reel/DYZPipUz3xm/" target="_blank" rel="noopener"><img src="social/choubidou-courtyard.webp" alt="The bougainvillea courtyard at Choubidou Cafe" loading="lazy"><span class="ll-play">&#9654;&#xFE0E;&nbsp; Watch on Instagram</span></a>
+<a class="ll-post ll-photo" href="https://www.instagram.com/reel/Dat5YDryfAx/" target="_blank" rel="noopener"><img src="social/choubidou-crepe.webp" alt="French crepe with fried egg at Choubidou Cafe" loading="lazy"><span class="ll-play">&#9654;&#xFE0E;&nbsp; Watch on Instagram</span></a>
+<a class="ll-post ll-photo" href="https://www.instagram.com/reel/DawpNlWSBjC/" target="_blank" rel="noopener"><img src="social/choubidou-sign.jpg" alt="Choubidou Cafe sign, Burleigh Heads" loading="lazy"><span class="ll-play">&#9654;&#xFE0E;&nbsp; Watch on Instagram</span></a>
 </div>
+<div class="map-note">&#128247; Photos &amp; reels via <a href="https://www.instagram.com/choubidoucafe/" target="_blank" rel="noopener" style="color:var(--sand);">@choubidoucafe</a> &amp; <a href="https://www.instagram.com/insidegoldcoast/" target="_blank" rel="noopener" style="color:var(--sand);">@insidegoldcoast</a></div>
 </div>
 </section>
 
