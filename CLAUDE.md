@@ -119,6 +119,26 @@ cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
 - Checks MailerLite embed code is current in index.html
 - Updates if the form embed has changed
 
+### 6. Monthly "Local Love" feature rotation (MANUAL for now)
+The `#local-love` section at the top of `explore.html` spotlights one local venue per month
+(July 2026: Choubidou Café). **No routine edits this section** — the Weekly Explore routine is
+explicitly instructed to leave it alone. To rotate it for a new month:
+
+1. Owner picks the venue (rotate categories: breakfast → dinner → drinks → dessert …; venue
+   should be a ♥ Host Pick from `Villa_Nobby_Local_Guide.xlsx`). Proposed shortlist: Aug Paddock
+   Bakery, Sep Bar Monte, Oct Roji Cat, Nov Gelato Gemelli, Dec Shoto, Jan Choubidou.
+2. Owner drops 3 photos into `social/` and supplies Instagram post/reel links.
+3. Update in `#local-love`: month label, venue name, chips (category · distance · ♥ Host Pick),
+   blurb, Follow button handle, the three `.ll-photo` tiles (img src, alt, click-through hrefs)
+   and the photo/reel credit line.
+4. Verify in preview, push. Optimise photos first (PNG → JPEG ~85 quality; webp fine as-is).
+
+**⚠️ Instagram embed lesson (July 2026):** live IG embeds (`blockquote.instagram-media` +
+embed.js) rendered as empty ~50px stubs for the chosen reels even with Instagram's own embed
+code, in a real browser — reels with licensed audio and accounts with embedding disabled do
+this. Always probe first (render a test page and measure iframe height); if embeds fail, use
+owner-supplied photo tiles with click-through links + credit line — that's the current pattern.
+
 ---
 
 ## Git safety rules — CRITICAL
