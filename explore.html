@@ -107,17 +107,6 @@
  .filter-btn:hover { border-color: var(--sand); color: var(--sand); }
  .filter-btn.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
 
- /* ===== THINGS TO DO ===== */
- .things-to-do { background: var(--linen); }
- .activity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
- .activity-card { background: var(--white); border: 1px solid var(--border); padding: 28px 24px; transition: all 0.3s; position: relative; }
- .activity-card:hover { box-shadow: 0 8px 32px var(--shadow); transform: translateY(-2px); }
- .activity-icon { font-size: 1.6rem; margin-bottom: 14px; }
- .activity-name { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
- .activity-desc { font-size: 0.78rem; color: var(--mist); line-height: 1.6; margin-bottom: 10px; }
- .activity-detail { font-size: 0.68rem; color: var(--sage); letter-spacing: 0.06em; }
- .activity-card.host-pick { border-left: 3px solid var(--sand); }
-
  /* ===== WHAT'S ON ===== */
  .whats-on { background: var(--cream); }
  .whats-on-intro { font-size: 0.9rem; color: var(--mist); line-height: 1.75; max-width: 860px; margin-bottom: 12px; font-weight: 300; }
@@ -183,6 +172,36 @@
  .ft-col a { color: var(--mist); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
  .ft-col a:hover { color: var(--sand); }
  .ft-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; font-size: 0.7rem; }
+
+ /* ===== LOCAL LOVE (monthly feature) ===== */
+ .local-love { background: var(--white); border-top: 3px solid var(--sand); border-bottom: 1px solid var(--border); }
+ .ll-grid { display: grid; grid-template-columns: minmax(300px, 5fr) 7fr; gap: 48px; align-items: center; }
+ .ll-month { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sand); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+ .ll-month::before { content: ''; width: 28px; height: 1px; background: var(--sand); }
+ .ll-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 2.6vw, 2.5rem); font-weight: 300; line-height: 1.15; color: var(--ink); margin-bottom: 14px; }
+ .ll-title em { font-style: italic; color: var(--sand); font-weight: 400; }
+ .ll-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+ .ll-chip { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--border); color: var(--sage); border-radius: 14px; }
+ .ll-chip.pick { background: rgba(196,154,82,0.12); color: var(--sand); border-color: transparent; font-weight: 600; }
+ .ll-blurb { font-size: 0.9rem; color: var(--mist); line-height: 1.75; font-weight: 300; margin-bottom: 22px; max-width: 420px; }
+ .ll-follow { display: inline-flex; align-items: center; gap: 9px; padding: 13px 26px; background: var(--forest); color: var(--cream); text-decoration: none; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 1px; transition: background 0.25s; }
+ .ll-follow:hover { background: var(--sand); }
+ .ll-follow svg { width: 15px; height: 15px; }
+ .ll-posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+ .ll-post { border: 1px solid var(--border); background: var(--linen); border-radius: 2px; overflow: hidden; min-height: 380px; display: flex; align-items: center; justify-content: center; }
+ .ll-post .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; border: none !important; box-shadow: none !important; }
+ .ll-placeholder { text-align: center; padding: 30px 18px; color: var(--mist); }
+ .ll-placeholder svg { width: 30px; height: 30px; stroke: var(--sand); margin-bottom: 12px; }
+ .ll-placeholder .ph-handle { font-size: 0.78rem; font-weight: 500; color: var(--ink); margin-bottom: 5px; }
+ .ll-placeholder .ph-note { font-size: 0.64rem; letter-spacing: 0.05em; line-height: 1.6; }
+ @media (max-width: 1100px) {
+  .ll-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ll-posts { grid-template-columns: repeat(3, 1fr); }
+ }
+ @media (max-width: 700px) {
+  .ll-posts { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 10px; padding-bottom: 8px; }
+  .ll-post { flex: 0 0 82%; scroll-snap-align: center; min-height: 340px; }
+ }
 
  /* ===== LOCAL MAP ===== */
  .local-map { background: var(--white); }
@@ -322,11 +341,47 @@
 
 <!-- Section Navigation -->
 <div class="section-nav">
+<a href="#local-love">Local Love</a>
 <a href="#map">Map</a>
 <a href="#dining">Dining Guide</a>
-<a href="#things-to-do">Things to Do</a>
 <a href="#whats-on">What's On</a>
 </div>
+
+<!-- ===== LOCAL LOVE ===== -->
+<section class="local-love" id="local-love">
+<div class="ll-grid">
+<div class="ll-head">
+<div class="ll-month">Local Love &middot; July</div>
+<div class="ll-title">This month we're loving<br><em>Choubidou Caf&eacute;</em></div>
+<div class="ll-meta">
+<span class="ll-chip">Breakfast &amp; Caf&eacute;s</span>
+<span class="ll-chip">950m &middot; 10 min walk</span>
+<span class="ll-chip pick">&#9829; Host Pick</span>
+</div>
+<p class="ll-blurb">French-inspired pastries and proper coffee, ten minutes' stroll from the villa. Each month we shine a light on one of the local spots we love — supporting the neighbourhood that makes Miami such a special place to stay.</p>
+<a class="ll-follow" href="https://www.instagram.com/choubidoucafe/" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+Follow @choubidoucafe</a>
+</div>
+<div class="ll-posts" id="llPosts">
+<div class="ll-post"><div class="ll-placeholder">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+<div class="ph-handle">@choubidoucafe</div>
+<div class="ph-note">A taste of their feed is landing here soon &mdash; tap follow for the latest</div>
+</div></div>
+<div class="ll-post"><div class="ll-placeholder">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+<div class="ph-handle">@choubidoucafe</div>
+<div class="ph-note">A taste of their feed is landing here soon &mdash; tap follow for the latest</div>
+</div></div>
+<div class="ll-post"><div class="ll-placeholder">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+<div class="ph-handle">@choubidoucafe</div>
+<div class="ph-note">A taste of their feed is landing here soon &mdash; tap follow for the latest</div>
+</div></div>
+</div>
+</div>
+</section>
 
 <!-- ===== LOCAL MAP ===== -->
 <section class="local-map" id="map">
@@ -451,99 +506,7 @@
 <a href="index.html#booking">Check availability &rarr;</a>
 </div>
 
-<!-- ===== THINGS TO DO ===== -->
-<section class="things-to-do" id="things-to-do">
-<div class="eyebrow">Things to Do</div>
-<h2>The best of the Gold Coast,<br>right at your door</h2>
 
-<div class="activity-grid">
-
-<div class="activity-card host-pick">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 0-14h8.5"/><path d="M21 12l-4-4m4 4l-4 4"/></svg></div>
-<div class="activity-name">North Burleigh Beach</div>
-<div class="activity-desc">Your closest beach — a quiet, uncrowded stretch of sand perfect for morning swims and sunset walks. A local favourite.</div>
-<div class="activity-detail">800m · 10 min walk</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-<div class="activity-name">Burleigh Head National Park</div>
-<div class="activity-desc">Stunning coastal rainforest walk with panoramic ocean views. The oceanview trail loop takes about 45 minutes and is well worth it.</div>
-<div class="activity-detail">2.5km · 5 min drive</div>
-</div>
-
-<div class="activity-card host-pick">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-<div class="activity-name"><a href="https://www.instagram.com/miamimarketta/" target="_blank" rel="noopener">Miami Marketta</a></div>
-<div class="activity-desc">The Gold Coast's famous night markets — street food from around the world, live music, and a vibrant atmosphere. Open Wed, Fri &amp; Sat nights.</div>
-<div class="activity-detail">1.5km · 3 min drive</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/></svg></div>
-<div class="activity-name">Village Markets</div>
-<div class="activity-desc">Trendy weekend markets at Burleigh Heads with local designers, handmade goods, fashion, art and delicious food stalls. First &amp; third Sunday of the month.</div>
-<div class="activity-detail">2.5km · 5 min drive</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-<div class="activity-name">Surfing &amp; Lessons</div>
-<div class="activity-desc">World-class breaks at Burleigh, Currumbin and Snapper Rocks. Multiple surf schools offer beginner lessons at nearby beaches.</div>
-<div class="activity-detail">Various locations nearby</div>
-</div>
-
-<div class="activity-card host-pick">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-<div class="activity-name">Tallebudgera Creek</div>
-<div class="activity-desc">A calm, crystal-clear tidal creek ideal for swimming, kayaking and stand-up paddleboarding. Great for all ages and perfect on warmer days.</div>
-<div class="activity-detail">3km · 6 min drive</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-<div class="activity-name">Currumbin Wildlife Sanctuary</div>
-<div class="activity-desc">Meet koalas, kangaroos and native Australian wildlife at this iconic Gold Coast attraction. Includes daily bird feeding and live shows.</div>
-<div class="activity-detail">5km · 8 min drive</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-<div class="activity-name">Brewery Trail</div>
-<div class="activity-desc">Miami is the craft beer capital of the Gold Coast. Walk to Roji Cat, Precinct Brewery, Black Hops and Hard Fizz — all within 12 minutes on foot.</div>
-<div class="activity-detail">450m–850m · All walkable</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
-<div class="activity-name">Gold Coast Oceanway</div>
-<div class="activity-desc">A 36km coastal walking and cycling path stretching from Coolangatta to Main Beach. Join from North Burleigh for stunning ocean views in both directions.</div>
-<div class="activity-detail">Access from 800m · Walk or cycle</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div>
-<div class="activity-name">Springbrook National Park</div>
-<div class="activity-desc">Explore ancient rainforest, waterfalls, and the famous Natural Bridge glow worm cave. A beautiful day trip into the Gold Coast hinterland.</div>
-<div class="activity-detail">35km · 45 min drive</div>
-</div>
-
-<div class="activity-card host-pick">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-<div class="activity-name">James Street &amp; Burleigh Village</div>
-<div class="activity-desc">Boutique shopping, independent stores, homewares and fashion. Browse at your own pace through the Gold Coast's most curated retail precinct.</div>
-<div class="activity-detail">2km · 5 min drive</div>
-</div>
-
-<div class="activity-card">
-<div class="activity-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-<div class="activity-name">Whale Watching (Seasonal)</div>
-<div class="activity-desc">Spot humpback whales on their annual migration along the Gold Coast from June to November. Watch from Burleigh Headland or book a tour.</div>
-<div class="activity-detail">Jun–Nov · Burleigh Headland free</div>
-</div>
-
-</div>
-</section>
 
 <!-- ===== WHAT'S ON ===== -->
 <section class="whats-on" id="whats-on">
