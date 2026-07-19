@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-13T23:51:56.227Z",
+  "updated": "2026-07-19T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 63,
+  "totalReviews": 64,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,13 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "sharlisse-july-2026",
+      "name": "Sharlisse",
+      "date": "July 2026",
+      "rating": 5,
+      "text": "Valentino was extremely welcoming making sure we felt right at home. The place itself was very clean and we didn't want to leave."
+    },
     {
       "id": "marcelo-july-2026",
       "name": "Marcelo",
