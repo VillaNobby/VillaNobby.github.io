@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-19T00:00:00.000Z",
+  "updated": "2026-07-26T21:10:00.000Z",
   "rating": 5,
-  "totalReviews": 64,
+  "totalReviews": 67,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,27 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "tim-july-2026",
+      "name": "Tim",
+      "date": "July 2026",
+      "rating": 5,
+      "text": "Beautiful little spot. Perfect for a quick trip for a wedding! Lots of great eating places close by. Absolutely would stay again! 5⭐ and then some"
+    },
+    {
+      "id": "travis-july-2026",
+      "name": "Travis",
+      "date": "July 2026",
+      "rating": 5,
+      "text": "We had a lovely stay at Villa Nobby and thoroughly enjoyed our time there. The space was clean, cosy, and made us feel right at home. The hosts were communicative throughout our stay and we felt very well looked after. We were welcomed with a personalised letter, which was a thoughtful touch, and the complimentary cocktail on arrival was a lovely surprise. As we had a late flight, the hosts were also incredibly flexible and kindly offered us a late checkout, which we really appreciated. We would happily recommend Villa Nobby to anyone looking for a relaxing stay on the Gold Coast and would love to return."
+    },
+    {
+      "id": "kasey-july-2026",
+      "name": "Kasey",
+      "date": "July 2026",
+      "rating": 5,
+      "text": "Amazing little place to stay! Highly recommended for your stay on the coast."
+    },
     {
       "id": "sharlisse-july-2026",
       "name": "Sharlisse",
