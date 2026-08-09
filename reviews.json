@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-26T21:10:00.000Z",
+  "updated": "2026-08-09T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 67,
+  "totalReviews": 71,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,34 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "morgan-august-2026",
+      "name": "Morgan",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "My partner and I had such an amazing experience spending the weekend in this villa. Incredible location, cosy environment with the most comfortable bed! Outdoor shower was such a nice touch, we felt like we were in our own little slice of heaven. Valentino was very accommodating and made it feel personal and welcoming. We would definitely come back!"
+    },
+    {
+      "id": "zoe-august-2026",
+      "name": "Zoe",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "Villa Nobby was an absolute standout stay on the Gold Coast in Miami Beach. The place was spotlessly clean and it was obvious so much thought had gone into making it feel private, peaceful, and restful. From the moment I arrived - a personalised welcome note that spoke directly to what I was in the area for, such a lovely touch - I felt welcomed. The construction is high end throughout, and every product and amenity in the space felt considered. They've clearly thought about all the little details you don't know you need until they're there. The outdoor shower alone is worth the stay, I'll be dreaming about it for a long time. The hosts were so accommodating too, letting me extend my checkout without any fuss. Everything about this stay was bliss. I'm already planning my next trip back. Thanks Valentino!"
+    },
+    {
+      "id": "amy-august-2026",
+      "name": "Amy",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "I absolutely loved my stay at Villa Nobby. I work a lot, and was encouraged by the relaxing environment to give myself a night away from the computer. I really appreciated the thoughtfulness put into the villa (i.e., the milk options provided, the designated make-up/face cloths, non-alcoholic beverage options, etc.). There was also a custom welcome note provided and neatly placed on the bed when I arrived, and the villa was exactly as described in the photos. I also appreciated the privacy that the villa provided, and the lockable gate gave that extra sense of safety and comfort. Valentino was excellent to communicate with. He was friendly, very responsive, and welcoming. I'd absolutely stay at Villa Nobby again, and highly recommend it!"
+    },
+    {
+      "id": "brandon-august-2026",
+      "name": "Brandon",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "Was a good stay"
+    },
     {
       "id": "tim-july-2026",
       "name": "Tim",
