@@ -1,0 +1,134 @@
+{
+  "updated": "18 August 2026",
+  "period": "Mid August 2026",
+  "intro": "The winter calendar keeps giving — HOTA's dumpling masterclasses roll through their final two Wednesdays, the This Moment dining experience at Palette has been extended into October, and Second Coming plays its final week at La Boite. Saturday brings the songbook of Barbra Streisand to Twin Towns, with Vivaldi at QPAC on Tuesday. On the horizon: SWELL returns to Currumbin's sand in September, Brisbane Festival lights up the river from the 4th, and Anastasia sweeps into QPAC.",
+  "topPicksTitle": "Top Things To Do This Week (18–25 Aug)",
+  "topPicks": [
+    {
+      "date": "Saturday 22 August · Twin Towns",
+      "name": "The Way We Were — Streisand",
+      "desc": "Melinda Schneider celebrates the timeless songbook of Barbra Streisand — a dazzling concert night, 25 minutes down the road.",
+      "href": "https://www.mustdogoldcoast.com/whats-on/music-and-life-barbra-streisand-twin-towns"
+    },
+    {
+      "date": "Final week — until 22 Aug · Brisbane",
+      "name": "Second Coming",
+      "desc": "Last chance for La Boite's love letter to Earth wrapped in corporate salvation — sharp, funny new Australian theatre.",
+      "href": "https://www.mustdogoldcoast.com/whats-on/second-coming-roundhouse-theatre-la-boite"
+    },
+    {
+      "date": "Wed 19 &amp; 26 August · HOTA",
+      "name": "Dumpling Masterclass",
+      "desc": "The final two Wednesdays to roll, pleat and steam your way through dinner at HOTA — book the last spots.",
+      "href": "https://hota.com.au/events/dumpling-masterclass"
+    },
+    {
+      "date": "Tuesday 25 August · QPAC",
+      "name": "Vivaldi's Legacy",
+      "desc": "Baroque brilliance in QPAC's Concert Hall — a dramatic journey through Vivaldi's enduring legacy.",
+      "href": "https://www.mustdogoldcoast.com/whats-on/vivaldis-legacy-concert-hall-qpac"
+    }
+  ],
+  "events": [
+    {
+      "date": "Final Wednesdays — 19 &amp; 26 August · HOTA",
+      "name": "Dumpling Masterclass at HOTA",
+      "desc": "Roll, pleat and steam your way through a hands-on dumpling evening — equal parts workshop and dinner, and a lovely plan for a cooler winter night.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/dumpling-masterclass",
+      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/9628e382-8756-4bf6-b5ce-ef8ceb1dfcbe/docs.jpg?v=36292e47b7cad0dab51a86be6b1c9ff6&w=700&fm=webp",
+      "fallback": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Extended until 10 October · HOTA",
+      "name": "This Moment — Dining at Palette",
+      "desc": "HOTA's This Moment exhibition spills into Palette restaurant — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/this-moment-experience-palette-restaurant",
+      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/746ce23b-abb9-4078-a01c-943c6089db35/docs.jpg?v=7761de8e069aa9f9d815a6d29f3ba31d&w=700&fm=webp",
+      "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Final week — until Saturday 22 August · La Boite, Brisbane",
+      "name": "Second Coming",
+      "desc": "La Boite Theatre presents a love letter to Earth wrapped in the language of corporate salvation — sharp, funny and thought-provoking new Australian theatre.",
+      "location": "Roundhouse Theatre, Brisbane · 75 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/second-coming-roundhouse-theatre-la-boite",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/SECOND_landscape2.jpg?itok=roZA4vfe",
+      "fallback": "https://images.unsplash.com/photo-1503095396549-807759245b35?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Saturday 22 August · Twin Towns",
+      "name": "The Way We Were — The Music of Barbra Streisand",
+      "desc": "Melinda Schneider celebrates the timeless songbook of Barbra Streisand in a dazzling new concert event, just over the border at Twin Towns.",
+      "location": "Twin Towns, Tweed Heads · 25 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/music-and-life-barbra-streisand-twin-towns",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/images/TWWW26-1000x667-MELINDA%26BARBRA_1.jpg?itok=GCXNJkSh",
+      "fallback": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Tuesday 25 August · QPAC, Brisbane",
+      "name": "Vivaldi's Legacy",
+      "desc": "Baroque brilliance at QPAC's Concert Hall — a dramatic journey through Vivaldi's enduring musical legacy. Worth the trip north for classical lovers.",
+      "location": "Concert Hall, QPAC · 75 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/vivaldis-legacy-concert-hall-qpac",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/1000x667_1.jpg?itok=Ck6eOIp5",
+      "fallback": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "11 – 20 September · Currumbin Beach",
+      "name": "SWELL Sculpture Festival",
+      "desc": "The Gold Coast's most-loved outdoor gallery — large-scale sculptures along Currumbin's sand at sunrise, sunset and everything between. Free, iconic, unmissable.",
+      "location": "Currumbin Beach · 10 min drive",
+      "cost": "Free entry",
+      "href": "https://www.mustdogoldcoast.com/whats-on/swell-sculpture-festival-gold-coast",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/SWELL%20Sculpture%20Festival_Alex%20Polo_Global%20Tension_Image%20Katie%20Bennett_20250915-KBennett-6016.jpg?itok=kvrE8i9u",
+      "fallback": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "4 – 26 September · Brisbane",
+      "name": "Brisbane Festival 2026",
+      "desc": "The city's biggest and boldest celebration of art and community — three weeks of theatre, music, dance and riverside spectacle across South Bank and beyond. Worth planning a day trip around.",
+      "location": "South Bank &amp; citywide, Brisbane · 75 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Brisbane%20Festival%20-%20Festival%20Village%20South%20Bank%20-%20Credit%20Sean%20Dowling%20and%20Morgan%20Roberts%20Photography.png?itok=4kCCnIG9",
+      "fallback": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "2 – 19 September · La Boite, Brisbane",
+      "name": "Koreaboo",
+      "desc": "A sharp new comedy at La Boite about identity, fandom and belonging — fresh Australian theatre with serious buzz.",
+      "location": "Roundhouse Theatre, Brisbane · 75 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/koreaboo-la-boite-theatre",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Koreaboo%203.jpg?itok=4R8CsYXT",
+      "fallback": "https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "16 September – 25 October · QPAC, Brisbane",
+      "name": "Anastasia The Musical",
+      "desc": "The sweeping Broadway musical journeys from the twilight of the Russian Empire to 1920s Paris — lavish, romantic and made for a special night out.",
+      "location": "QPAC, Brisbane · 75 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/anastasia-musical-qpac",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/ANASTASIA%208.jpg?itok=B64xEThv",
+      "fallback": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "1 – 11 October · HOTA &amp; citywide",
+      "name": "BLEACH Festival 2026",
+      "desc": "The Gold Coast's signature arts festival returns — eleven days of live music, theatre and large-scale spectacle at HOTA and across the city, headlined by Six60. The Coast at its most alive.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/bleach_17d48d6",
+      "img": "https://hota.com.au/bleach/cover-images/Bleach2026-A-Place-To-Belong%20Cover-compressed.webp",
+      "fallback": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop"
+    }
+  ]
+}

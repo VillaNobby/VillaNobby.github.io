@@ -508,12 +508,12 @@ Follow @acescoffee.miami</a>
 <!-- ===== WHAT'S ON ===== -->
 <section class="whats-on" id="whats-on">
 <div class="eyebrow">What's On</div>
-<h2>Late July 2026 on the Gold Coast</h2>
-<p class="whats-on-intro">Tomorrow, the free It's ON ChevrON Street Party takes over Thomas Drive with live music, local restaurants and market stalls — a brilliant Sunday afternoon barely five minutes from the villa. Later in the week, Heathers the Musical opens at HOTA on Thursday 30 July in its long-awaited Gold Coast premiere, and Celestial Nights returns to Sanctuary Cove for a starlit winter dinner on the 31st. Looking further ahead: the Pacific Airshow roars back to Surfers Paradise beach on 14–16 August, the Gold Coast Show lands at Broadwater Parklands over the public holiday weekend (28–30 August), and Brisbane Festival and BLEACH light up the spring calendar.</p>
-<div class="whats-on-updated">Last updated: 25 July 2026 · Events sourced via <a href="https://www.mustdogoldcoast.com/whats-on" target="_blank" rel="noopener" style="color:var(--sage);text-decoration:underline;">Must Do Gold Coast</a> &amp; <a href="https://hota.com.au/whats-on/" target="_blank" rel="noopener" style="color:var(--sage);text-decoration:underline;">HOTA</a></div>
+<h2 id="woPeriod">Late July 2026 on the Gold Coast</h2>
+<p class="whats-on-intro" id="woIntro">Tomorrow, the free It's ON ChevrON Street Party takes over Thomas Drive with live music, local restaurants and market stalls — a brilliant Sunday afternoon barely five minutes from the villa. Later in the week, Heathers the Musical opens at HOTA on Thursday 30 July in its long-awaited Gold Coast premiere, and Celestial Nights returns to Sanctuary Cove for a starlit winter dinner on the 31st. Looking further ahead: the Pacific Airshow roars back to Surfers Paradise beach on 14–16 August, the Gold Coast Show lands at Broadwater Parklands over the public holiday weekend (28–30 August), and Brisbane Festival and BLEACH light up the spring calendar.</p>
+<div class="whats-on-updated" id="woUpdated">Last updated: 25 July 2026 · Events sourced via <a href="https://www.mustdogoldcoast.com/whats-on" target="_blank" rel="noopener" style="color:var(--sage);text-decoration:underline;">Must Do Gold Coast</a> &amp; <a href="https://hota.com.au/whats-on/" target="_blank" rel="noopener" style="color:var(--sage);text-decoration:underline;">HOTA</a></div>
 
 <!-- TOP THINGS TO DO THIS WEEK -->
-<div class="top-picks">
+<div class="top-picks" id="topPicksMount">
 <div class="top-picks-title">Top Things To Do This Week (25 Jul – 1 Aug)</div>
 <div class="top-picks-grid">
 
@@ -548,7 +548,7 @@ Follow @acescoffee.miami</a>
 </div>
 </div>
 
-<div class="events-category">
+<div class="events-category" id="artsMount">
 <div class="events-category-title">Arts, Music &amp; Culture</div>
 <div class="events-grid">
 
@@ -1127,6 +1127,58 @@ document.addEventListener('DOMContentLoaded', function () {
   // Open tight on the immediate neighbourhood; zoom out to reach Burleigh, HOTA & beyond
   map.setView(villa, 15);
 });
+</script>
+<script>
+/* What's On renders from events.json — the weekly routine updates ONLY that file. */
+(function () {
+  fetch('events.json?v=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) {
+      if (!d || !d.events || !d.events.length || !d.topPicks || d.topPicks.length !== 4) return;
+      var p = document.getElementById('woPeriod');
+      if (p) p.innerHTML = d.period + ' on the Gold Coast';
+      var i = document.getElementById('woIntro');
+      if (i) i.innerHTML = d.intro;
+      var u = document.getElementById('woUpdated');
+      if (u) u.innerHTML = 'Last updated: ' + d.updated + ' &middot; Events sourced via <a href="https://www.mustdogoldcoast.com/whats-on" target="_blank" rel="noopener" style="color:var(--sage);text-decoration:underline;">Must Do Gold Coast</a> &amp; <a href="https://hota.com.au/whats-on/" target="_blank" rel="noopener" style="color:var(--sage);text-decoration:underline;">HOTA</a>';
+
+      var tp = document.getElementById('topPicksMount');
+      if (tp) {
+        tp.innerHTML = '<div class="top-picks-title">' + d.topPicksTitle + '</div><div class="top-picks-grid">' +
+          d.topPicks.map(function (x) {
+            return '<a class="top-pick-card" href="' + x.href + '" target="_blank" rel="noopener">' +
+              '<div class="top-pick-date">' + x.date + '</div>' +
+              '<div class="top-pick-name">' + x.name + '</div>' +
+              '<div class="top-pick-desc">' + x.desc + '</div>' +
+              '<div class="top-pick-cta">Learn more</div></a>';
+          }).join('') + '</div>';
+      }
+
+      var am = document.getElementById('artsMount');
+      if (am) {
+        am.innerHTML = '<div class="events-category-title">Arts, Music &amp; Culture</div><div class="events-grid expanded">' +
+          d.events.map(function (e) {
+            var costClass = e.cost === 'Free entry' ? 'free' : 'paid';
+            var onerr = e.fallback ? ' onerror="this.onerror=null;this.src=\'' + e.fallback + '\'"' : '';
+            return '<div class="event-card">' +
+              '<div class="event-img-wrap"><img class="event-img" referrerpolicy="no-referrer" src="' + e.img + '"' + onerr + ' alt="' + e.name.replace(/"/g, '') + '" loading="lazy"></div>' +
+              '<div class="event-body">' +
+              '<div class="event-date">' + e.date + '</div>' +
+              '<div class="event-name">' + e.name + '</div>' +
+              '<div class="event-desc">' + e.desc + '</div>' +
+              '<div class="event-meta"><span class="event-location">' + e.location + '</span><span class="event-cost ' + costClass + '">' + e.cost + '</span></div>' +
+              '<a class="event-link" href="' + e.href + '" target="_blank" rel="noopener">Learn more</a>' +
+              '</div></div>';
+          }).join('') + '</div>';
+        am.addEventListener('click', function (ev) {
+          if (ev.target.closest('a')) return;
+          var cardEl = ev.target.closest('.event-card');
+          if (cardEl) { var link = cardEl.querySelector('.event-link'); if (link) link.click(); }
+        });
+      }
+    })
+    .catch(function () { /* static fallback content remains */ });
+})();
 </script>
 </body>
 </html>
