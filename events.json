@@ -1,44 +1,44 @@
 {
-  "updated": "18 August 2026",
-  "period": "Mid August 2026",
-  "intro": "The winter calendar keeps giving — HOTA's dumpling masterclasses roll through their final two Wednesdays, the This Moment dining experience at Palette has been extended into October, and Second Coming plays its final week at La Boite. Saturday brings the songbook of Barbra Streisand to Twin Towns, with Vivaldi at QPAC on Tuesday. On the horizon: SWELL returns to Currumbin's sand in September, Brisbane Festival lights up the river from the 4th, and Anastasia sweeps into QPAC.",
-  "topPicksTitle": "Top Things To Do This Week (18–25 Aug)",
+  "updated": "31 August 2026",
+  "period": "Early September 2026",
+  "intro": "September opens with a flourish — the Big Bike Film Night rides into HOTA Cinema on Tuesday, Mamma Mia! makes its Gold Coast debut at The Star on Friday, and the Crafted Beer Festival throws a 10th-birthday party across Kurrawa Park the following weekend. SWELL transforms Currumbin Beach from the 11th, while Kids Take Over lands at HOTA from the 14th for two weeks of school-holiday spectacle. Later in the season: Groundwater Country Music brings Kasey Chambers and friends to free stages across Broadbeach on 16–18 October, and BLEACH* lights up the Coast from the 1st.",
+  "topPicksTitle": "Top Things To Do This Week (31 Aug – 7 Sep)",
   "topPicks": [
     {
-      "date": "Saturday 22 August · Twin Towns",
-      "name": "The Way We Were — Streisand",
-      "desc": "Melinda Schneider celebrates the timeless songbook of Barbra Streisand — a dazzling concert night, 25 minutes down the road.",
-      "href": "https://www.mustdogoldcoast.com/whats-on/music-and-life-barbra-streisand-twin-towns"
+      "date": "Tuesday 1 September · HOTA Cinema",
+      "name": "The Big Bike Film Night",
+      "desc": "Ten international cycling short films — action, drama and humour — on the big screen at HOTA. A pedal-powered evening right on the doorstep.",
+      "href": "https://hota.com.au/events/the-big-bike-film-night-2026"
     },
     {
-      "date": "Final week — until 22 Aug · Brisbane",
-      "name": "Second Coming",
-      "desc": "Last chance for La Boite's love letter to Earth wrapped in corporate salvation — sharp, funny new Australian theatre.",
-      "href": "https://www.mustdogoldcoast.com/whats-on/second-coming-roundhouse-theatre-la-boite"
+      "date": "From Wednesday 2 September · La Boite, Brisbane",
+      "name": "Koreaboo",
+      "desc": "A sharp new comedy about identity, fandom and belonging at La Boite — fresh Australian theatre with serious buzz. Worth the trip north.",
+      "href": "https://www.mustdogoldcoast.com/whats-on/koreaboo-la-boite-theatre"
     },
     {
-      "date": "Wed 19 &amp; 26 August · HOTA",
-      "name": "Dumpling Masterclass",
-      "desc": "The final two Wednesdays to roll, pleat and steam your way through dinner at HOTA — book the last spots.",
-      "href": "https://hota.com.au/events/dumpling-masterclass"
+      "date": "From Friday 4 September · The Star, Gold Coast",
+      "name": "Mamma Mia!",
+      "desc": "ABBA's greatest hits wrapped in sunshine and Greek-island joy — Mamma Mia! opens at The Star Broadbeach for a limited Gold Coast season.",
+      "href": "https://mammamiagoldcoast.com.au/"
     },
     {
-      "date": "Tuesday 25 August · QPAC",
-      "name": "Vivaldi's Legacy",
-      "desc": "Baroque brilliance in QPAC's Concert Hall — a dramatic journey through Vivaldi's enduring legacy.",
-      "href": "https://www.mustdogoldcoast.com/whats-on/vivaldis-legacy-concert-hall-qpac"
+      "date": "From Friday 4 September · Brisbane",
+      "name": "Brisbane Festival 2026",
+      "desc": "Three weeks of theatre, music and riverside spectacle kick off across South Bank. An easy day-trip from the villa when a headline act catches your eye.",
+      "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026"
     }
   ],
   "events": [
     {
-      "date": "Final Wednesdays — 19 &amp; 26 August · HOTA",
-      "name": "Dumpling Masterclass at HOTA",
-      "desc": "Roll, pleat and steam your way through a hands-on dumpling evening — equal parts workshop and dinner, and a lovely plan for a cooler winter night.",
-      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "date": "Tuesday 1 September · HOTA Cinema",
+      "name": "The Big Bike Film Night",
+      "desc": "Ten international cycling short films curated by New Zealand's Brett Cotter — 2.5 hours of action, drama and inspiration on the big screen at HOTA Cinema. A pedal-powered evening 10 minutes from the villa.",
+      "location": "HOTA Cinema, Surfers Paradise · 10 min drive",
       "cost": "Ticketed",
-      "href": "https://hota.com.au/events/dumpling-masterclass",
-      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/9628e382-8756-4bf6-b5ce-ef8ceb1dfcbe/docs.jpg?v=36292e47b7cad0dab51a86be6b1c9ff6&w=700&fm=webp",
-      "fallback": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&h=360&fit=crop"
+      "href": "https://hota.com.au/events/the-big-bike-film-night-2026",
+      "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&h=360&fit=crop"
     },
     {
       "date": "Extended until 10 October · HOTA",
@@ -51,34 +51,24 @@
       "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
     },
     {
-      "date": "Final week — until Saturday 22 August · La Boite, Brisbane",
-      "name": "Second Coming",
-      "desc": "La Boite Theatre presents a love letter to Earth wrapped in the language of corporate salvation — sharp, funny and thought-provoking new Australian theatre.",
-      "location": "Roundhouse Theatre, Brisbane · 75 min drive",
+      "date": "4 – 20 September · The Star, Gold Coast",
+      "name": "Mamma Mia! The Musical",
+      "desc": "25 years of ABBA magic in a lavish Gold Coast debut — feel-good story, dazzling cast, Dancing Queen. Right here in Broadbeach at The Star.",
+      "location": "The Star Gold Coast, Broadbeach · 15 min drive",
       "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/second-coming-roundhouse-theatre-la-boite",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/SECOND_landscape2.jpg?itok=roZA4vfe",
-      "fallback": "https://images.unsplash.com/photo-1503095396549-807759245b35?w=600&h=360&fit=crop"
+      "href": "https://mammamiagoldcoast.com.au/",
+      "img": "https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=360&fit=crop"
     },
     {
-      "date": "Saturday 22 August · Twin Towns",
-      "name": "The Way We Were — The Music of Barbra Streisand",
-      "desc": "Melinda Schneider celebrates the timeless songbook of Barbra Streisand in a dazzling new concert event, just over the border at Twin Towns.",
-      "location": "Twin Towns, Tweed Heads · 25 min drive",
+      "date": "Saturday 12 September · Broadbeach",
+      "name": "Crafted Beer Festival",
+      "desc": "10th birthday bash at Kurrawa Park — 50+ craft breweries, 400+ brews, indie live music (The Vanns and more), gourmet food trucks and a beachside BBQ smokeshow. Five minutes down the road.",
+      "location": "Kurrawa Park, Broadbeach · 15 min drive",
       "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/music-and-life-barbra-streisand-twin-towns",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/images/TWWW26-1000x667-MELINDA%26BARBRA_1.jpg?itok=GCXNJkSh",
-      "fallback": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "Tuesday 25 August · QPAC, Brisbane",
-      "name": "Vivaldi's Legacy",
-      "desc": "Baroque brilliance at QPAC's Concert Hall — a dramatic journey through Vivaldi's enduring musical legacy. Worth the trip north for classical lovers.",
-      "location": "Concert Hall, QPAC · 75 min drive",
-      "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/vivaldis-legacy-concert-hall-qpac",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/1000x667_1.jpg?itok=Ck6eOIp5",
-      "fallback": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&h=360&fit=crop"
+      "href": "https://www.craftedfestival.com.au/goldy",
+      "img": "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=600&h=360&fit=crop"
     },
     {
       "date": "11 – 20 September · Currumbin Beach",
@@ -91,9 +81,19 @@
       "fallback": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=600&h=360&fit=crop"
     },
     {
+      "date": "14 – 26 September · HOTA",
+      "name": "Kids Take Over Festival",
+      "desc": "Spring school holidays launch a space-themed extravaganza at HOTA — Erth's life-like Dinosaurs, the Hot Potato Band, a Galactic Space Wall by 1,000 local students, workshops and free daily activities.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/kids-take-over-2026",
+      "img": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1564767655658-4e36adb3e8d1?w=600&h=360&fit=crop"
+    },
+    {
       "date": "4 – 26 September · Brisbane",
       "name": "Brisbane Festival 2026",
-      "desc": "The city's biggest and boldest celebration of art and community — three weeks of theatre, music, dance and riverside spectacle across South Bank and beyond. Worth planning a day trip around.",
+      "desc": "The city's biggest celebration of art and community — three weeks of theatre, music, dance and riverside spectacle across South Bank and beyond. Worth planning a day trip around.",
       "location": "South Bank &amp; citywide, Brisbane · 75 min drive",
       "cost": "Ticketed",
       "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026",
@@ -119,6 +119,16 @@
       "href": "https://www.mustdogoldcoast.com/whats-on/anastasia-musical-qpac",
       "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/ANASTASIA%208.jpg?itok=B64xEThv",
       "fallback": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "16 – 18 October · Broadbeach",
+      "name": "Groundwater Country Music Festival",
+      "desc": "Free three-day country music celebration across Broadbeach — Kasey Chambers, Kaylee Bell, The Wolfe Brothers and 30+ acts on outdoor stages. No tickets, no fuss, just great music in the sun.",
+      "location": "Broadbeach precinct · 15 min drive",
+      "cost": "Free entry",
+      "href": "https://groundwatercmf.com/",
+      "img": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=360&fit=crop"
     },
     {
       "date": "1 – 11 October · HOTA &amp; citywide",
