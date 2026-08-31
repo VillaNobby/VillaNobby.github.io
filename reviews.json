@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-09T00:00:00.000Z",
+  "updated": "2026-08-31T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 71,
+  "totalReviews": 76,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,41 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "katie-august-2026",
+      "name": "Katie",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "Valentino was an exceptional host and his place was absolutely amazing. Would definitely recommend and stay here again!"
+    },
+    {
+      "id": "nikki-august-2026",
+      "name": "Nikki",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "we so enjoyed our short stay at Villa Nobby & could not recommend this spot enough. Selfishly want to keep this gem a secret but know so many others would be missing out!\n\nBeautiful spot, so private and beautiful! Close to so many spots to eat and a short drive to nearby beaches! I already want to go back!!\n\nValentino is also a phenomenal host 🌟🌟🌟🌟🌟"
+    },
+    {
+      "id": "kasia-august-2026",
+      "name": "Kasia",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "Wow!!! Staying at Villa Nobby was simply amazing; I couldn't think of anything they missed to ensure our stay was 'tip-top'. The hosts were friendly, flexible but most of all have paid so much attention to detail with this spectacular space. We will certainly be back (and will continue to recommend Villa Nobby!)."
+    },
+    {
+      "id": "sophie-august-2026",
+      "name": "Sophie",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "We had the most incredible stay at Villa Nobby! From the moment we walked in it was clear how much thought went into every detail, the place was spotless, and the finishes throughout were done to such a high standard.\n\nThe little touches made it feel so special, complimentary cocktails waiting for us on arrival and a kitchen stocked with snacks and drinks meant we had everything we needed and felt right at home from the second we got there. The lighting and gold finishes throughout the space were absolutely divine, and somehow it felt so private and peaceful despite being so close to everything.\n\nSuch a beautifully designed, thoughtfully put-together space, we'll definitely be back, and we'll be recommending it to everyone we know!"
+    },
+    {
+      "id": "ruby-august-2026",
+      "name": "Ruby",
+      "date": "August 2026",
+      "rating": 5,
+      "text": "Such a wonderful little place had absolutely everything we needed and host went above and beyond making sure we had everything we needed and more!"
+    },
     {
       "id": "morgan-august-2026",
       "name": "Morgan",
