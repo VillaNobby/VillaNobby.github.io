@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-31T00:00:00.000Z",
+  "updated": "2026-09-06T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 76,
+  "totalReviews": 79,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,27 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "sarah-september-2026",
+      "name": "Sarah",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Lovely relaxing stay with everything we could need. Great location, very clean, lots of thoughtful additions. Will be back thanks!"
+    },
+    {
+      "id": "chantel-september-2026",
+      "name": "Chantel",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Valentino was a caring, proactive, personable host who clearly centres his guests by creating a sanctuary of a stay. Thoughtful and personalised touches made it so special. The location is well connected, and the accomodation itself is so comfortable and well appointed."
+    },
+    {
+      "id": "hanako-september-2026",
+      "name": "Hanako",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "We were going to book a hotel for our overnight before our flight but so glad we booked Nobby's Villa instead. Such a peaceful and well set up oasis, so many kind and generous touches - we had a really nourishing stay!"
+    },
     {
       "id": "katie-august-2026",
       "name": "Katie",
