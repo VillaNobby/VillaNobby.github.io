@@ -1,45 +1,35 @@
 {
-  "updated": "31 August 2026",
+  "updated": "5 September 2026",
   "period": "Early September 2026",
-  "intro": "September opens with a flourish — the Big Bike Film Night rides into HOTA Cinema on Tuesday, Mamma Mia! makes its Gold Coast debut at The Star on Friday, and the Crafted Beer Festival throws a 10th-birthday party across Kurrawa Park the following weekend. SWELL transforms Currumbin Beach from the 11th, while Kids Take Over lands at HOTA from the 14th for two weeks of school-holiday spectacle. Later in the season: Groundwater Country Music brings Kasey Chambers and friends to free stages across Broadbeach on 16–18 October, and BLEACH* lights up the Coast from the 1st.",
-  "topPicksTitle": "Top Things To Do This Week (31 Aug – 7 Sep)",
+  "intro": "The next few days bring two major events in quick succession: SWELL Sculpture Festival opens along Currumbin Beach on Friday, and Crafted Beer Festival marks its 10th birthday in Kurrawa Park on Saturday — both unmissable and minutes from the villa. Mamma Mia! continues its limited Gold Coast season at The Star until the 20th, and Kids Take Over descends on HOTA from the 14th for two weeks of school-holiday spectacle. Looking further ahead: BLEACH* opens on 1 October with Lady Blackbird headlining a free outdoor concert on the HOTA stage, and Groundwater Country Music returns to free Broadbeach stages on 16–18 October.",
+  "topPicksTitle": "Top Things To Do This Week (5–12 Sep)",
   "topPicks": [
     {
-      "date": "Tuesday 1 September · HOTA Cinema",
-      "name": "The Big Bike Film Night",
-      "desc": "Ten international cycling short films — action, drama and humour — on the big screen at HOTA. A pedal-powered evening right on the doorstep.",
-      "href": "https://hota.com.au/events/the-big-bike-film-night-2026"
+      "date": "Saturday 12 September · Kurrawa Park, Broadbeach",
+      "name": "Crafted Beer Festival",
+      "desc": "10th birthday bash — 50+ craft breweries, 400+ beers, live indie music headlined by The Vanns, gourmet food trucks and a beachside BBQ smokeshow. Five minutes from the villa.",
+      "href": "https://www.craftedfestival.com.au/goldy"
     },
     {
-      "date": "From Wednesday 2 September · La Boite, Brisbane",
-      "name": "Koreaboo",
-      "desc": "A sharp new comedy about identity, fandom and belonging at La Boite — fresh Australian theatre with serious buzz. Worth the trip north.",
-      "href": "https://www.mustdogoldcoast.com/whats-on/koreaboo-la-boite-theatre"
+      "date": "Opens Friday 11 September · Currumbin Beach",
+      "name": "SWELL Sculpture Festival",
+      "desc": "100+ large-scale sculptures by Australian and international artists line Currumbin Beach for ten free days. Twilight walks, artist talks and live beachside acoustic music.",
+      "href": "https://www.mustdogoldcoast.com/whats-on/swell-sculpture-festival-gold-coast"
     },
     {
-      "date": "From Friday 4 September · The Star, Gold Coast",
-      "name": "Mamma Mia!",
-      "desc": "ABBA's greatest hits wrapped in sunshine and Greek-island joy — Mamma Mia! opens at The Star Broadbeach for a limited Gold Coast season.",
+      "date": "Ongoing until 20 September · The Star, Broadbeach",
+      "name": "Mamma Mia! The Musical",
+      "desc": "ABBA's greatest hits in a lavish Gold Coast debut — feel-good story, dazzling cast and Dancing Queen. Running at The Star Broadbeach for a limited season.",
       "href": "https://mammamiagoldcoast.com.au/"
     },
     {
-      "date": "From Friday 4 September · Brisbane",
+      "date": "Ongoing until 26 September · Brisbane",
       "name": "Brisbane Festival 2026",
-      "desc": "Three weeks of theatre, music and riverside spectacle kick off across South Bank. An easy day-trip from the villa when a headline act catches your eye.",
+      "desc": "Three weeks of theatre, music and riverside spectacle across South Bank and beyond. A brilliant day trip from the villa when a headline act catches your eye.",
       "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026"
     }
   ],
   "events": [
-    {
-      "date": "Tuesday 1 September · HOTA Cinema",
-      "name": "The Big Bike Film Night",
-      "desc": "Ten international cycling short films curated by New Zealand's Brett Cotter — 2.5 hours of action, drama and inspiration on the big screen at HOTA Cinema. A pedal-powered evening 10 minutes from the villa.",
-      "location": "HOTA Cinema, Surfers Paradise · 10 min drive",
-      "cost": "Ticketed",
-      "href": "https://hota.com.au/events/the-big-bike-film-night-2026",
-      "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&h=360&fit=crop"
-    },
     {
       "date": "Extended until 10 October · HOTA",
       "name": "This Moment — Dining at Palette",
@@ -121,14 +111,14 @@
       "fallback": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=600&h=360&fit=crop"
     },
     {
-      "date": "16 – 18 October · Broadbeach",
-      "name": "Groundwater Country Music Festival",
-      "desc": "Free three-day country music celebration across Broadbeach — Kasey Chambers, Kaylee Bell, The Wolfe Brothers and 30+ acts on outdoor stages. No tickets, no fuss, just great music in the sun.",
-      "location": "Broadbeach precinct · 15 min drive",
+      "date": "Friday 2 October · HOTA Outdoor Stage",
+      "name": "Lady Blackbird &amp; Electric Fields",
+      "desc": "BLEACH Festival opens with a free double bill on HOTA's Outdoor Stage — the internationally acclaimed jazz-soul singer Lady Blackbird headlines alongside Electric Fields, whose Zaachariaha Fielding sings in the traditional language of the Anangu People. Free tickets required.",
+      "location": "HOTA Outdoor Stage, Surfers Paradise · 10 min drive",
       "cost": "Free entry",
-      "href": "https://groundwatercmf.com/",
-      "img": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=360&fit=crop"
+      "href": "https://hota.com.au/events/bleach-26-lady-blackbird-electric-fields",
+      "img": "https://images.unsplash.com/photo-1524504388940-b1c1722653e0?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1501386761578-eee4e2c8c0c3?w=600&h=360&fit=crop"
     },
     {
       "date": "1 – 11 October · HOTA &amp; citywide",
@@ -139,6 +129,16 @@
       "href": "https://hota.com.au/events/bleach_17d48d6",
       "img": "https://hota.com.au/bleach/cover-images/Bleach2026-A-Place-To-Belong%20Cover-compressed.webp",
       "fallback": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "16 – 18 October · Broadbeach",
+      "name": "Groundwater Country Music Festival",
+      "desc": "Free three-day country music celebration across Broadbeach — Kasey Chambers, Kaylee Bell, The Wolfe Brothers and 30+ acts on outdoor stages. No tickets, no fuss, just great music in the sun.",
+      "location": "Broadbeach precinct · 15 min drive",
+      "cost": "Free entry",
+      "href": "https://groundwatercmf.com/",
+      "img": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=360&fit=crop"
     }
   ]
 }
