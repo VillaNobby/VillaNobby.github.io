@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-06T00:00:00.000Z",
+  "updated": "2026-09-13T23:03:00.000Z",
   "rating": 5,
-  "totalReviews": 79,
+  "totalReviews": 80,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,13 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "charlise-september-2026",
+      "name": "Charlise",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Great place to stay if you want to be walkable distance from basically everything, great breakfast spots, dinner and so close to the beach. Not to mention the Airbnb itself is spotless very modern and relaxing great for two people. Valentino is very responsive and helpful I would recommend this place!!"
+    },
     {
       "id": "sarah-september-2026",
       "name": "Sarah",
