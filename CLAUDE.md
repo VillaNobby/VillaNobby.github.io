@@ -18,7 +18,7 @@ Villa Nobby is a luxury Japandi-inspired guest suite in Miami, Gold Coast, Queen
 |---|---|
 | `index.html` | Main website — hero, amenities, location, booking, reviews |
 | `explore.html` | Gold Coast guide — Local Love monthly feature (`#local-love`), interactive Leaflet map (`#map`, 37 OSM-verified pins, gold ring = host pick), Dining Guide (generated from Villa_Nobby_Local_Guide.xlsx, host-pick notes), What's On (updated weekly), booking-bridge CTAs |
-| `Villa_Nobby_Local_Guide.xlsx` | **Source of truth for the Dining Guide** on explore.html (64 venues: name, Instagram, type, distance, walk/drive, section, host pick). When it changes, regenerate the dining panels and map pins from it |
+| `Villa_Nobby_Local_Guide.xlsx` | **Source of truth for the Dining Guide** on explore.html (66 venues: name, Instagram, type, distance, walk/drive, section, host pick). When it changes, regenerate the dining panels and map pins from it |
 | `events.json` | **Source of truth for the What's On section** on explore.html (period, intro, 4 top picks, 9-11 event cards with verified images). The page renders it client-side; static HTML in explore.html is only a fallback. The weekly routine edits ONLY this file |
 | `blocked-dates.json` | Airbnb blocked date ranges — powers the availability calendar on the site |
 | `reviews.json` | Airbnb guest reviews — powers the reviews carousel |
