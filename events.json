@@ -1,74 +1,54 @@
 {
-  "updated": "5 September 2026",
-  "period": "Early September 2026",
-  "intro": "The next few days bring two major events in quick succession: SWELL Sculpture Festival opens along Currumbin Beach on Friday, and Crafted Beer Festival marks its 10th birthday in Kurrawa Park on Saturday — both unmissable and minutes from the villa. Mamma Mia! continues its limited Gold Coast season at The Star until the 20th, and Kids Take Over descends on HOTA from the 14th for two weeks of school-holiday spectacle. Looking further ahead: BLEACH* opens on 1 October with Lady Blackbird headlining a free outdoor concert on the HOTA stage, and Groundwater Country Music returns to free Broadbeach stages on 16–18 October.",
-  "topPicksTitle": "Top Things To Do This Week (5–12 Sep)",
+  "updated": "20 September 2026",
+  "period": "Late September 2026",
+  "intro": "Today is the final day for both SWELL Sculpture Festival along Currumbin Beach and Mamma Mia! at The Star — if you haven&rsquo;t been, this morning or afternoon is the last chance. Through to the 26th, Kids Take Over brings a school-holiday spectacle to HOTA and Brisbane Festival 2026 continues its three-week run of theatre and music across South Bank. Anastasia The Musical has just opened at QPAC and runs through October — a beautiful excuse for a Brisbane evening. On the horizon: BLEACH* opens 1 October with Lady Blackbird headlining a free show on the HOTA outdoor stage, followed by Groundwater Country Music on free Broadbeach stages 16&ndash;18 October.",
+  "topPicksTitle": "Top Things To Do This Week (20–27 Sep)",
   "topPicks": [
     {
-      "date": "Saturday 12 September · Kurrawa Park, Broadbeach",
-      "name": "Crafted Beer Festival",
-      "desc": "10th birthday bash — 50+ craft breweries, 400+ beers, live indie music headlined by The Vanns, gourmet food trucks and a beachside BBQ smokeshow. Five minutes from the villa.",
-      "href": "https://www.craftedfestival.com.au/goldy"
-    },
-    {
-      "date": "Opens Friday 11 September · Currumbin Beach",
+      "date": "Final day — Sunday 20 September · Currumbin Beach",
       "name": "SWELL Sculpture Festival",
-      "desc": "100+ large-scale sculptures by Australian and international artists line Currumbin Beach for ten free days. Twilight walks, artist talks and live beachside acoustic music.",
+      "desc": "The Gold Coast's most-loved outdoor gallery closes today — 100+ large-scale sculptures along Currumbin's sand with twilight walks and artist talks. Free, iconic, last chance.",
       "href": "https://www.mustdogoldcoast.com/whats-on/swell-sculpture-festival-gold-coast"
     },
     {
-      "date": "Ongoing until 20 September · The Star, Broadbeach",
+      "date": "Final day — Sunday 20 September · The Star, Broadbeach",
       "name": "Mamma Mia! The Musical",
-      "desc": "ABBA's greatest hits in a lavish Gold Coast debut — feel-good story, dazzling cast and Dancing Queen. Running at The Star Broadbeach for a limited season.",
+      "desc": "The Gold Coast season of ABBA's greatest musical closes tonight. A lavish feel-good show — Dancing Queen, dazzling cast, last performance this evening.",
       "href": "https://mammamiagoldcoast.com.au/"
+    },
+    {
+      "date": "Ongoing until 26 September · HOTA",
+      "name": "Kids Take Over Festival",
+      "desc": "Spring school holidays and a space-themed extravaganza at HOTA — Erth's Dinosaurs, the Hot Potato Band, a Galactic Space Wall by 1,000 local students, workshops and free daily activities.",
+      "href": "https://hota.com.au/events/kids-take-over-2026"
     },
     {
       "date": "Ongoing until 26 September · Brisbane",
       "name": "Brisbane Festival 2026",
-      "desc": "Three weeks of theatre, music and riverside spectacle across South Bank and beyond. A brilliant day trip from the villa when a headline act catches your eye.",
+      "desc": "Three weeks of theatre, music and riverside spectacle across South Bank and beyond. The final week is often the best — worth planning a day trip around a headline act.",
       "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026"
     }
   ],
   "events": [
     {
-      "date": "Extended until 10 October · HOTA",
-      "name": "This Moment — Dining at Palette",
-      "desc": "HOTA's This Moment exhibition spills into Palette restaurant — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
-      "location": "HOTA, Surfers Paradise · 10 min drive",
-      "cost": "Ticketed",
-      "href": "https://hota.com.au/events/this-moment-experience-palette-restaurant",
-      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/746ce23b-abb9-4078-a01c-943c6089db35/docs.jpg?v=7761de8e069aa9f9d815a6d29f3ba31d&w=700&fm=webp",
-      "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "4 – 20 September · The Star, Gold Coast",
-      "name": "Mamma Mia! The Musical",
-      "desc": "25 years of ABBA magic in a lavish Gold Coast debut — feel-good story, dazzling cast, Dancing Queen. Right here in Broadbeach at The Star.",
-      "location": "The Star Gold Coast, Broadbeach · 15 min drive",
-      "cost": "Ticketed",
-      "href": "https://mammamiagoldcoast.com.au/",
-      "img": "https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "Saturday 12 September · Broadbeach",
-      "name": "Crafted Beer Festival",
-      "desc": "10th birthday bash at Kurrawa Park — 50+ craft breweries, 400+ brews, indie live music (The Vanns and more), gourmet food trucks and a beachside BBQ smokeshow. Five minutes down the road.",
-      "location": "Kurrawa Park, Broadbeach · 15 min drive",
-      "cost": "Ticketed",
-      "href": "https://www.craftedfestival.com.au/goldy",
-      "img": "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "11 – 20 September · Currumbin Beach",
+      "date": "Final day — Sunday 20 September · Currumbin Beach",
       "name": "SWELL Sculpture Festival",
-      "desc": "The Gold Coast's most-loved outdoor gallery — large-scale sculptures along Currumbin's sand at sunrise, sunset and everything between. Free, iconic, unmissable.",
+      "desc": "The Gold Coast's most-loved outdoor gallery — large-scale sculptures along Currumbin's sand at sunrise, sunset and everything between. Free, iconic, last day today.",
       "location": "Currumbin Beach · 10 min drive",
       "cost": "Free entry",
       "href": "https://www.mustdogoldcoast.com/whats-on/swell-sculpture-festival-gold-coast",
       "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/SWELL%20Sculpture%20Festival_Alex%20Polo_Global%20Tension_Image%20Katie%20Bennett_20250915-KBennett-6016.jpg?itok=kvrE8i9u",
       "fallback": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Final day — Sunday 20 September · The Star, Gold Coast",
+      "name": "Mamma Mia! The Musical",
+      "desc": "25 years of ABBA magic — feel-good story, dazzling cast, Dancing Queen. Final performance tonight at The Star Broadbeach.",
+      "location": "The Star Gold Coast, Broadbeach · 15 min drive",
+      "cost": "Ticketed",
+      "href": "https://mammamiagoldcoast.com.au/",
+      "img": "https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=360&fit=crop"
     },
     {
       "date": "14 – 26 September · HOTA",
@@ -91,14 +71,14 @@
       "fallback": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=360&fit=crop"
     },
     {
-      "date": "2 – 19 September · La Boite, Brisbane",
-      "name": "Koreaboo",
-      "desc": "A sharp new comedy at La Boite about identity, fandom and belonging — fresh Australian theatre with serious buzz.",
-      "location": "Roundhouse Theatre, Brisbane · 75 min drive",
+      "date": "Extended until 10 October · HOTA",
+      "name": "This Moment — Dining at Palette",
+      "desc": "HOTA's This Moment exhibition spills into Palette restaurant — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
       "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/koreaboo-la-boite-theatre",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Koreaboo%203.jpg?itok=4R8CsYXT",
-      "fallback": "https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=600&h=360&fit=crop"
+      "href": "https://hota.com.au/events/this-moment-experience-palette-restaurant",
+      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/746ce23b-abb9-4078-a01c-943c6089db35/docs.jpg?v=7761de8e069aa9f9d815a6d29f3ba31d&w=700&fm=webp",
+      "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
     },
     {
       "date": "16 September – 25 October · QPAC, Brisbane",
@@ -113,7 +93,7 @@
     {
       "date": "Friday 2 October · HOTA Outdoor Stage",
       "name": "Lady Blackbird &amp; Electric Fields",
-      "desc": "BLEACH Festival opens with a free double bill on HOTA's Outdoor Stage — the internationally acclaimed jazz-soul singer Lady Blackbird headlines alongside Electric Fields, whose Zaachariaha Fielding sings in the traditional language of the Anangu People. Free tickets required.",
+      "desc": "BLEACH Festival opens with a free double bill on HOTA's Outdoor Stage — internationally acclaimed jazz-soul singer Lady Blackbird headlines alongside Electric Fields, whose Zaachariaha Fielding sings in the traditional language of the Anangu People. Free tickets required.",
       "location": "HOTA Outdoor Stage, Surfers Paradise · 10 min drive",
       "cost": "Free entry",
       "href": "https://hota.com.au/events/bleach-26-lady-blackbird-electric-fields",
