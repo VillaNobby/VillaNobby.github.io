@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-13T23:03:00.000Z",
+  "updated": "2026-09-20T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 80,
+  "totalReviews": 82,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,20 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "levi-september-2026",
+      "name": "Levi",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Very nice and well kept place. Great location for walking to the beach and cafes"
+    },
+    {
+      "id": "tess-september-2026",
+      "name": "Tess",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Villa Nobby was the perfect coastal getaway, perfectly located just a short walk from the beach! Valentino was a fantastic host and went out of his way to ensure our stay was amazing. Would highly recommend to anyone looking for an intimate and relaxing getaway on the GC."
+    },
     {
       "id": "charlise-september-2026",
       "name": "Charlise",
