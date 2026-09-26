@@ -1,95 +1,35 @@
 {
-  "updated": "20 September 2026",
+  "updated": "26 September 2026",
   "period": "Late September 2026",
-  "intro": "Today is the final day for both SWELL Sculpture Festival along Currumbin Beach and Mamma Mia! at The Star — if you haven&rsquo;t been, this morning or afternoon is the last chance. Through to the 26th, Kids Take Over brings a school-holiday spectacle to HOTA and Brisbane Festival 2026 continues its three-week run of theatre and music across South Bank. Anastasia The Musical has just opened at QPAC and runs through October — a beautiful excuse for a Brisbane evening. On the horizon: BLEACH* opens 1 October with Lady Blackbird headlining a free show on the HOTA outdoor stage, followed by Groundwater Country Music on free Broadbeach stages 16&ndash;18 October.",
-  "topPicksTitle": "Top Things To Do This Week (20–27 Sep)",
+  "intro": "BLEACH Festival launches this Thursday across the Gold Coast — eleven days of live music, art and theatre at HOTA and Kurrawa Park, opening with a free Lady Blackbird concert Friday night and Six60 on Saturday. Kids Take Over closes at HOTA today (its final day), and Anastasia The Musical continues its enchanting Brisbane season through to 18 October. Groundwater Country Music Festival fills free Broadbeach stages with 60+ artists on 16&ndash;18 October, and the Boost Mobile Gold Coast 500 transforms Surfers Paradise into a world-class street circuit 23&ndash;25 October.",
+  "topPicksTitle": "Top Things To Do This Week (26 Sep – 3 Oct)",
   "topPicks": [
     {
-      "date": "Final day — Sunday 20 September · Currumbin Beach",
-      "name": "SWELL Sculpture Festival",
-      "desc": "The Gold Coast's most-loved outdoor gallery closes today — 100+ large-scale sculptures along Currumbin's sand with twilight walks and artist talks. Free, iconic, last chance.",
-      "href": "https://www.mustdogoldcoast.com/whats-on/swell-sculpture-festival-gold-coast"
-    },
-    {
-      "date": "Final day — Sunday 20 September · The Star, Broadbeach",
-      "name": "Mamma Mia! The Musical",
-      "desc": "The Gold Coast season of ABBA's greatest musical closes tonight. A lavish feel-good show — Dancing Queen, dazzling cast, last performance this evening.",
-      "href": "https://mammamiagoldcoast.com.au/"
-    },
-    {
-      "date": "Ongoing until 26 September · HOTA",
+      "date": "Final day — Saturday 26 September · HOTA",
       "name": "Kids Take Over Festival",
-      "desc": "Spring school holidays and a space-themed extravaganza at HOTA — Erth's Dinosaurs, the Hot Potato Band, a Galactic Space Wall by 1,000 local students, workshops and free daily activities.",
+      "desc": "Last chance today — HOTA's space-themed school-holiday spectacular wraps up this afternoon. Erth's Dinosaurs, Hot Potato Band, the Galactic Space Wall and free daily activities for the whole family.",
       "href": "https://hota.com.au/events/kids-take-over-2026"
     },
     {
-      "date": "Ongoing until 26 September · Brisbane",
-      "name": "Brisbane Festival 2026",
-      "desc": "Three weeks of theatre, music and riverside spectacle across South Bank and beyond. The final week is often the best — worth planning a day trip around a headline act.",
-      "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026"
+      "date": "Thursday 1 October · HOTA &amp; citywide",
+      "name": "BLEACH Festival Opens",
+      "desc": "The Gold Coast's signature arts festival launches Thursday — eleven days of free and ticketed shows, live music, installations and theatre. Free family programming daily at HOTA from day one.",
+      "href": "https://hota.com.au/bleach-festival"
+    },
+    {
+      "date": "Friday 2 October · HOTA Outdoor Stage",
+      "name": "Lady Blackbird &amp; Electric Fields — Free",
+      "desc": "BLEACH's unmissable free opening concert: internationally acclaimed US soul vocalist Lady Blackbird headlines alongside Electric Fields. All ages, free tickets required — book before they go.",
+      "href": "https://hota.com.au/events/bleach-26-lady-blackbird-electric-fields"
+    },
+    {
+      "date": "Saturday 3 October · HOTA Outdoor Stage",
+      "name": "Six60 at BLEACH",
+      "desc": "New Zealand's highest-selling live band headline HOTA's Outdoor Stage on Saturday night, joined by Sub-Tribe. Roots, soul and dubstep under the stars — $89 tickets, all ages, standing.",
+      "href": "https://hota.com.au/events/bleach-26-six60"
     }
   ],
   "events": [
-    {
-      "date": "Final day — Sunday 20 September · Currumbin Beach",
-      "name": "SWELL Sculpture Festival",
-      "desc": "The Gold Coast's most-loved outdoor gallery — large-scale sculptures along Currumbin's sand at sunrise, sunset and everything between. Free, iconic, last day today.",
-      "location": "Currumbin Beach · 10 min drive",
-      "cost": "Free entry",
-      "href": "https://www.mustdogoldcoast.com/whats-on/swell-sculpture-festival-gold-coast",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/SWELL%20Sculpture%20Festival_Alex%20Polo_Global%20Tension_Image%20Katie%20Bennett_20250915-KBennett-6016.jpg?itok=kvrE8i9u",
-      "fallback": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "Final day — Sunday 20 September · The Star, Gold Coast",
-      "name": "Mamma Mia! The Musical",
-      "desc": "25 years of ABBA magic — feel-good story, dazzling cast, Dancing Queen. Final performance tonight at The Star Broadbeach.",
-      "location": "The Star Gold Coast, Broadbeach · 15 min drive",
-      "cost": "Ticketed",
-      "href": "https://mammamiagoldcoast.com.au/",
-      "img": "https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "14 – 26 September · HOTA",
-      "name": "Kids Take Over Festival",
-      "desc": "Spring school holidays launch a space-themed extravaganza at HOTA — Erth's life-like Dinosaurs, the Hot Potato Band, a Galactic Space Wall by 1,000 local students, workshops and free daily activities.",
-      "location": "HOTA, Surfers Paradise · 10 min drive",
-      "cost": "Ticketed",
-      "href": "https://hota.com.au/events/kids-take-over-2026",
-      "img": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1564767655658-4e36adb3e8d1?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "4 – 26 September · Brisbane",
-      "name": "Brisbane Festival 2026",
-      "desc": "The city's biggest celebration of art and community — three weeks of theatre, music, dance and riverside spectacle across South Bank and beyond. Worth planning a day trip around.",
-      "location": "South Bank &amp; citywide, Brisbane · 75 min drive",
-      "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/brisbane-festival-2026",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/Brisbane%20Festival%20-%20Festival%20Village%20South%20Bank%20-%20Credit%20Sean%20Dowling%20and%20Morgan%20Roberts%20Photography.png?itok=4kCCnIG9",
-      "fallback": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "Extended until 10 October · HOTA",
-      "name": "This Moment — Dining at Palette",
-      "desc": "HOTA's This Moment exhibition spills into Palette restaurant — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
-      "location": "HOTA, Surfers Paradise · 10 min drive",
-      "cost": "Ticketed",
-      "href": "https://hota.com.au/events/this-moment-experience-palette-restaurant",
-      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/746ce23b-abb9-4078-a01c-943c6089db35/docs.jpg?v=7761de8e069aa9f9d815a6d29f3ba31d&w=700&fm=webp",
-      "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
-    },
-    {
-      "date": "16 September – 25 October · QPAC, Brisbane",
-      "name": "Anastasia The Musical",
-      "desc": "The sweeping Broadway musical journeys from the twilight of the Russian Empire to 1920s Paris — lavish, romantic and made for a special night out.",
-      "location": "QPAC, Brisbane · 75 min drive",
-      "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/anastasia-musical-qpac",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/ANASTASIA%208.jpg?itok=B64xEThv",
-      "fallback": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=600&h=360&fit=crop"
-    },
     {
       "date": "Friday 2 October · HOTA Outdoor Stage",
       "name": "Lady Blackbird &amp; Electric Fields",
@@ -111,14 +51,74 @@
       "fallback": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop"
     },
     {
+      "date": "Saturday 3 October · HOTA Outdoor Stage",
+      "name": "Six60 at BLEACH Festival",
+      "desc": "New Zealand's highest-selling live band bring their electrifying blend of roots, soul and dubstep to HOTA's Outdoor Stage, with Sub-Tribe in support. An all-ages, all-standing show from 6 pm — $89 tickets.",
+      "location": "HOTA Outdoor Stage, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/bleach-26-six60",
+      "img": "https://images.unsplash.com/photo-1540039155733-5bb30b4f13ce?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "3 – 5 October · HOTA Gallery",
+      "name": "100 Keyboards",
+      "desc": "Japanese sound artist ASUNA fills HOTA Gallery 3 with over 100 toy keyboards — a meditative, shimmering wall of sound exploring acoustic interference, resonance and imperfect tuning. 1 hr 20 min, ages 16+.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/bleach-26-100-keyboards",
+      "img": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Extended until 10 October · HOTA",
+      "name": "This Moment — Dining at Palette",
+      "desc": "HOTA's This Moment exhibition spills into Palette restaurant — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Ticketed",
+      "href": "https://hota.com.au/events/this-moment-experience-palette-restaurant",
+      "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/746ce23b-abb9-4078-a01c-943c6089db35/docs.jpg?v=7761de8e069aa9f9d815a6d29f3ba31d&w=700&fm=webp",
+      "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "10 – 11 October · Gold Coast citywide",
+      "name": "Gold Coast Open House",
+      "desc": "A free weekend of architectural access — private homes, landmark infrastructure and award-winning public buildings open their doors. Highlights include Palm Beach Aquatic Centre, Hinze Dam tours and the Gold Coast Desalination Plant. Self-guided, city-wide.",
+      "location": "Citywide, Gold Coast · various",
+      "cost": "Free entry",
+      "href": "https://goldcoastopenhouse.com.au/",
+      "img": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "16 September – 18 October · QPAC, Brisbane",
+      "name": "Anastasia The Musical",
+      "desc": "The sweeping Broadway musical journeys from the twilight of the Russian Empire to 1920s Paris — lavish, romantic and made for a special night out.",
+      "location": "QPAC, Brisbane · 75 min drive",
+      "cost": "Ticketed",
+      "href": "https://www.mustdogoldcoast.com/whats-on/anastasia-musical-qpac",
+      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/ANASTASIA%208.jpg?itok=B64xEThv",
+      "fallback": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=600&h=360&fit=crop"
+    },
+    {
       "date": "16 – 18 October · Broadbeach",
       "name": "Groundwater Country Music Festival",
-      "desc": "Free three-day country music celebration across Broadbeach — Kasey Chambers, Kaylee Bell, The Wolfe Brothers and 30+ acts on outdoor stages. No tickets, no fuss, just great music in the sun.",
+      "desc": "Free three-day country music celebration across Broadbeach — Kasey Chambers, Kaylee Bell, The Wolfe Brothers and 60+ acts on outdoor stages. No tickets, no fuss, just great music in the sun.",
       "location": "Broadbeach precinct · 15 min drive",
       "cost": "Free entry",
       "href": "https://groundwatercmf.com/",
       "img": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=360&fit=crop",
       "fallback": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "23 – 25 October · Surfers Paradise",
+      "name": "Boost Mobile Gold Coast 500",
+      "desc": "Surfers Paradise transforms into a world-class street circuit for Round 12 of the Repco Supercars Championship — 10 drivers in title contention, beachside grandstands and non-stop entertainment. Kids 12 and under free with a paying adult.",
+      "location": "Surfers Paradise Street Circuit · 15 min drive",
+      "cost": "Ticketed",
+      "href": "https://experiencegoldcoast.com/events/2026-boost-mobile-gold-coast-500",
+      "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&h=360&fit=crop"
     }
   ]
 }
