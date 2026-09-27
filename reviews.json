@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-20T00:00:00.000Z",
+  "updated": "2026-09-27T23:05:00.000Z",
   "rating": 5,
-  "totalReviews": 82,
+  "totalReviews": 85,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,27 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "ryan-september-2026",
+      "name": "Ryan",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Villa Nobby is absolutely everything and more if you're looking for a peaceful and re-energising stay in Burleigh. Every detail was thought out beautifully! Valentino was amazing in allowing us an early check in and out. Extremely close to the beach and light rail stop! We will be back."
+    },
+    {
+      "id": "elise-september-2026",
+      "name": "Elise",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "Absolutely phenomenal stay I would definitely stay here again. It was clean very comfortable and had everything we need just minutes away from some incredible restaurants and amenities."
+    },
+    {
+      "id": "bailey-september-2026",
+      "name": "Bailey",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "The Villa was fantastic. Super peaceful, relaxing and clean. Every detail made our stay feel more personalised. We felt very cared for the whole time. We loved how close to the beach, restaurants and public transport it is. We will definitely be coming back."
+    },
     {
       "id": "levi-september-2026",
       "name": "Levi",
