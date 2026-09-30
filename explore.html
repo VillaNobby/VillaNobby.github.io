@@ -218,7 +218,7 @@
  .map-chip:hover { border-color: var(--sand); color: var(--ink); }
  .map-chip.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
  #guideMap { height: 500px; border: 1px solid var(--border); border-radius: 2px; z-index: 1; background: var(--cream); }
- #guideMap .leaflet-tile-pane { filter: sepia(0.15) saturate(1.02) contrast(0.98); }
+ #guideMap .leaflet-tile-pane { filter: grayscale(0.5) sepia(0.22) saturate(0.85) contrast(0.97) brightness(1.03); }
  #guideMap .leaflet-control-attribution { font-size: 9px; background: rgba(253,249,243,0.8); color: var(--mist); }
  .leaflet-popup-content-wrapper { font-family: 'Jost', sans-serif; border-radius: 2px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(42,34,24,0.16); }
  .leaflet-popup-content { margin: 13px 15px; font-size: 0.76rem; line-height: 1.5; }
@@ -431,6 +431,7 @@ Follow @blendgreenness</a>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/prettyhandsome_gc/" target="_blank" rel="noopener">Pretty Handsome</a></div><div class="dining-type">Breakfast / Lunch / Caf&eacute;</div><div class="dining-dist">550m &middot; 8 min walk</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/caffeinekings/" target="_blank" rel="noopener">Caffeine Kings</a></div><div class="dining-type">Breakfast / Lunch / Caf&eacute;</div><div class="dining-dist">550m &middot; 8 min walk</div></div>
 <div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/acescoffee.miami/" target="_blank" rel="noopener">Ace&#39;s Coffee</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast / Coffee</div><div class="dining-dist">350m &middot; 4 min walk</div><div class="pick-note">The closest coffee to the villa — barely four minutes from your door.</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/dalas_kitchen/" target="_blank" rel="noopener">Dalas Kitchen - Salad Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Breakfast</div><div class="dining-dist">450m &middot; 5 min walk</div><div class="pick-note">Built-to-order salads and honest breakfasts — fresh and fast.</div></div>
 </div>
 
 <!-- LUNCH -->
@@ -438,11 +439,13 @@ Follow @blendgreenness</a>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/grilldburgers/" target="_blank" rel="noopener">Grill&#39;d Burger</a></div><div class="dining-type">Burgers</div><div class="dining-dist">2km &middot; 4 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/mrhizolas/" target="_blank" rel="noopener">Mr Hizola&#39;s</a></div><div class="dining-type">Contemporary Cantonese</div><div class="dining-dist">2.1km &middot; 5 min drive</div></div>
 <div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/theoxley1823/" target="_blank" rel="noopener">The Oxley 1823</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Food Precinct</div><div class="dining-dist">2km &middot; 4 min drive</div><div class="pick-note">A laneway full of eats on the Nobby Beach strip.</div></div>
-<div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/piadaco/" target="_blank" rel="noopener">Piada Co</a></div><div class="dining-type">Italian Street Food</div><div class="dining-dist">2.1km &middot; 5 min drive</div></div>
-<div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/sushitrainmiamione/" target="_blank" rel="noopener">Sushi Train</a></div><div class="dining-type">Japanese Sushi</div><div class="dining-dist">450m &middot; 6 min walk</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/piadaco/" target="_blank" rel="noopener">Piada Co</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Italian Street Food</div><div class="dining-dist">2.1km &middot; 5 min drive</div><div class="pick-note">Handmade piadine done properly — Italian street food worth the drive.</div></div>
+<div class="dining-card" data-distance="walk"><div class="dining-name">Sushi Daruma</div><div class="dining-type">Japanese Sushi</div><div class="dining-dist">450m &middot; 5 min walk</div></div>
+<div class="dining-card" data-distance="walk"><div class="dining-name">Miami Rice</div><div class="dining-type">Malaysian Chinese</div><div class="dining-dist">600m &middot; 9 min walk</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/krunchcluck/" target="_blank" rel="noopener">Krunch Cluck</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Korean Chicken</div><div class="dining-dist">450m &middot; 5 min walk</div><div class="pick-note">Crackling Korean fried chicken, five minutes from the villa.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/okazu_sushibar/" target="_blank" rel="noopener">Okazu Sushi Bar</a></div><div class="dining-type">Lunch / Japanese</div><div class="dining-dist">2km &middot; 4 min drive</div></div>
-<div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/costa_taco/" target="_blank" rel="noopener">Costa Taco Burleigh</a></div><div class="dining-type">Lunch / Mexican</div><div class="dining-dist">2.1km &middot; 5 min drive</div></div>
-<div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/miamisubs_goldcoast/" target="_blank" rel="noopener">Miami Sub</a></div><div class="dining-type">Lunch / Sandwiches</div><div class="dining-dist">400m &middot; 6 min walk</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/costa_taco/" target="_blank" rel="noopener">Costa Taco Burleigh</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Mexican</div><div class="dining-dist">2.1km &middot; 5 min drive</div><div class="pick-note">Fresh, fast and punchy tacos on the Burleigh strip.</div></div>
+<div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/miamisubs_goldcoast/" target="_blank" rel="noopener">Miami Sub</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Sandwiches</div><div class="dining-dist">400m &middot; 6 min walk</div><div class="pick-note">Stacked subs a six-minute stroll away — lunch sorted.</div></div>
 <div class="dining-card" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/streetfryer/" target="_blank" rel="noopener">Street Fryer</a></div><div class="dining-type">Lunch / Thai</div><div class="dining-dist">400m &middot; 6 min walk</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/morethai.restaurants/" target="_blank" rel="noopener">More Thai At Nobby</a></div><div class="dining-type">Lunch / Thai</div><div class="dining-dist">2km &middot; 4 min drive</div></div>
 <div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/blendgreenness/" target="_blank" rel="noopener">Blend Greenness</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Lunch / Sandwiches</div><div class="dining-dist">450m &middot; 6 min walk</div><div class="pick-note">Fresh juices, matcha clouds and Asian-inspired sandos — our green corner of Miami.</div></div>
@@ -480,6 +483,7 @@ Follow @blendgreenness</a>
 <div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/themalibu.burleigh/" target="_blank" rel="noopener">The Malibu Racquet Club</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km &middot; 5 min drive</div><div class="pick-note">Retro-cool cocktails, straight out of a Slim Aarons photo.</div></div>
 <div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/sueno.rooftop/" target="_blank" rel="noopener">Sueno Rooftop</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km &middot; 4 min drive</div><div class="pick-note">Sundowners with ocean air.</div></div>
 <div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/m.o.u.s.t.a.c.h.e/" target="_blank" rel="noopener">Moustache</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km &middot; 4 min drive</div><div class="pick-note">Moody little cocktail den — great for a nightcap.</div></div>
+<div class="dining-card host-pick" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/terronia.burleigh/" target="_blank" rel="noopener">Terronia Cocktail Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2.1km &middot; 5 min drive</div><div class="pick-note">An intimate Burleigh cocktail room — date-night material.</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/jujumermaidbeach/" target="_blank" rel="noopener">Juju</a></div><div class="dining-type">Cocktail Bar</div><div class="dining-dist">2km &middot; 4 min drive</div></div>
 <div class="dining-card" data-distance="drive"><div class="dining-name"><a href="https://www.instagram.com/cambuswallace/" target="_blank" rel="noopener">The Cambus Wallace</a></div><div class="dining-type">Cocktail Bar w. live music</div><div class="dining-dist">2km &middot; 4 min drive</div></div>
 <div class="dining-card host-pick" data-distance="walk"><div class="dining-name"><a href="https://www.instagram.com/rojicat.beer/" target="_blank" rel="noopener">Roji Cat Beer Bar</a> <span class="pick-badge">&#9829; Host Pick</span></div><div class="dining-type">Japanese Brewery</div><div class="dining-dist">450m &middot; 6 min walk</div><div class="pick-note">A tiny Japanese beer bar with big character — start your evening here.</div></div>
@@ -1054,9 +1058,10 @@ document.addEventListener('DOMContentLoaded', function () {
     ['rest', 'Rick Shore', -28.08945, 153.45473, 'Fine Dining / Asian Fusion \u00b7 2.2km drive', 'Rick Shore Gold Coast', 1],
     ['rest', 'The Oxley 1823', -28.05929, 153.43893, 'Food Precinct \u00b7 2km drive', 'The Oxley 1823 Gold Coast', 1],
     ['cafe', 'Burleigh Gelato Co.', -28.08897, 153.45172, 'Gelato \u00b7 2.1km drive', 'Burleigh Gelato Co. Gold Coast', 0],
-    ['rest', 'Sushi Train', -28.07432, 153.44446, 'Japanese Sushi \u00b7 450m walk', 'Sushi Train Gold Coast', 0],
+    ["rest", "Sushi Daruma", -28.07432, 153.44446, "Japanese Sushi · 450m walk", "Sushi Daruma Miami Gold Coast", 0],
+    ["rest", "Miami Rice", -28.07502, 153.44541, "Malaysian Chinese · 600m walk", "Miami Rice Miami Gold Coast", 0],
     ['rest', 'Okazu Sushi Bar', -28.05908, 153.43855, 'Lunch / Japanese \u00b7 2km drive', 'Okazu Sushi Bar Gold Coast', 0],
-    ['rest', 'Costa Taco Burleigh', -28.08865, 153.45061, 'Lunch / Mexican \u00b7 2.1km drive', 'Costa Taco Burleigh Gold Coast', 0],
+    ['rest', 'Costa Taco Burleigh', -28.08865, 153.45061, 'Lunch / Mexican \u00b7 2.1km drive', 'Costa Taco Burleigh Gold Coast', 1],
     ['rest', 'More Thai At Nobby', -28.05817, 153.4388, 'Lunch / Thai \u00b7 2km drive', 'More Thai At Nobby Gold Coast', 0],
     ['rest', 'Maman Bar & Kitchen', -28.08897, 153.45003, 'Mediterranean \u00b7 2.1km drive', 'Maman Bar & Kitchen Gold Coast', 1],
     ['rest', 'Jimmy Wah\'s', -28.08868, 153.45102, 'Modern Asian Fusion \u00b7 2.1km drive', 'Jimmy Wah\'s Gold Coast', 0],
@@ -1076,9 +1081,9 @@ document.addEventListener('DOMContentLoaded', function () {
   ];
 
   var map = L.map('guideMap', { scrollWheelZoom: false, dragging: !L.Browser.mobile });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 20, subdomains: 'abcd',
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
   // 10-minute walk ring
