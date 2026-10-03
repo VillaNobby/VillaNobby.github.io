@@ -1,49 +1,39 @@
 {
-  "updated": "26 September 2026",
-  "period": "Late September 2026",
-  "intro": "BLEACH Festival launches this Thursday across the Gold Coast — eleven days of live music, art and theatre at HOTA and Kurrawa Park, opening with a free Lady Blackbird concert Friday night and Six60 on Saturday. Kids Take Over closes at HOTA today (its final day), and Anastasia The Musical continues its enchanting Brisbane season through to 18 October. Groundwater Country Music Festival fills free Broadbeach stages with 60+ artists on 16&ndash;18 October, and the Boost Mobile Gold Coast 500 transforms Surfers Paradise into a world-class street circuit 23&ndash;25 October.",
-  "topPicksTitle": "Top Things To Do This Week (26 Sep – 3 Oct)",
+  "updated": "3 October 2026",
+  "period": "Early October 2026",
+  "intro": "BLEACH Festival fills HOTA through Sunday 11 October &mdash; free live music on the Lake Stage all week, with the spectacular High Tide closing night featuring jetpack performers above the lake and 100 giant jellyfish puppets descending on the parklands. Gold Coast Open House opens private buildings and landmark infrastructure free this coming weekend (10&ndash;11 October), and the Coolangatta Gold surf lifesaving endurance race draws the state&apos;s finest athletes to the beach on 17&ndash;18 October. Groundwater Country Music Festival then floods Broadbeach with 60+ free acts across three stages (16&ndash;18 October), before the Boost Mobile Gold Coast 500 street circuit takes over Surfers Paradise at month&apos;s end. The Pan Pacific Masters Games bring over 16,000 athletes from 30 countries to the Gold Coast for two weeks from 6 November.",
+  "topPicksTitle": "Top Things To Do This Week (3–10 Oct)",
   "topPicks": [
     {
-      "date": "Final day — Saturday 26 September · HOTA",
-      "name": "Kids Take Over Festival",
-      "desc": "Last chance today — HOTA's space-themed school-holiday spectacular wraps up this afternoon. Erth's Dinosaurs, Hot Potato Band, the Galactic Space Wall and free daily activities for the whole family.",
-      "href": "https://hota.com.au/events/kids-take-over-2026"
-    },
-    {
-      "date": "Thursday 1 October · HOTA &amp; citywide",
-      "name": "BLEACH Festival Opens",
-      "desc": "The Gold Coast's signature arts festival launches Thursday — eleven days of free and ticketed shows, live music, installations and theatre. Free family programming daily at HOTA from day one.",
-      "href": "https://hota.com.au/bleach-festival"
-    },
-    {
-      "date": "Friday 2 October · HOTA Outdoor Stage",
-      "name": "Lady Blackbird &amp; Electric Fields — Free",
-      "desc": "BLEACH's unmissable free opening concert: internationally acclaimed US soul vocalist Lady Blackbird headlines alongside Electric Fields. All ages, free tickets required — book before they go.",
-      "href": "https://hota.com.au/events/bleach-26-lady-blackbird-electric-fields"
-    },
-    {
-      "date": "Saturday 3 October · HOTA Outdoor Stage",
-      "name": "Six60 at BLEACH",
-      "desc": "New Zealand's highest-selling live band headline HOTA's Outdoor Stage on Saturday night, joined by Sub-Tribe. Roots, soul and dubstep under the stars — $89 tickets, all ages, standing.",
+      "date": "Final night — tonight, Saturday 3 October · HOTA Outdoor Stage",
+      "name": "Six60 at BLEACH — Last Chance Tonight",
+      "desc": "Last chance tonight — New Zealand's highest-selling live band headline HOTA's Outdoor Stage with Sub-Tribe in support. Roots, soul and dubstep under the stars as part of BLEACH Festival. $89 tickets, all ages, standing.",
       "href": "https://hota.com.au/events/bleach-26-six60"
+    },
+    {
+      "date": "Until 5 October · HOTA Gallery",
+      "name": "100 Keyboards by ASUNA",
+      "desc": "Final days for Japanese sound artist ASUNA's meditative installation — 100+ toy keyboards creating a shimmering wall of acoustic interference and imperfect tuning in HOTA Gallery 3. Deeply unusual; ages 16+.",
+      "href": "https://hota.com.au/events/bleach-26-100-keyboards"
+    },
+    {
+      "date": "All week until 11 October · HOTA Lake Precinct",
+      "name": "BLEACH Live Music Stage — Free",
+      "desc": "Over 18 artists performing free all week on HOTA's Lake Stage as part of BLEACH Festival — Jerome Williams, Ella Fence, Karl S. Williams, Laurel Hill and more. No tickets, just walk up and enjoy.",
+      "href": "https://hota.com.au/events/bleach-26-live-music-stage"
+    },
+    {
+      "date": "Saturday 10 – Sunday 11 October · Gold Coast citywide",
+      "name": "Gold Coast Open House — Free",
+      "desc": "A free weekend of architectural access — private homes, landmark infrastructure and award-winning public buildings open their doors. Palm Beach Aquatic Centre, Hinze Dam and the Desalination Plant among the highlights. Self-guided, city-wide.",
+      "href": "https://goldcoastopenhouse.com.au/"
     }
   ],
   "events": [
     {
-      "date": "Friday 2 October · HOTA Outdoor Stage",
-      "name": "Lady Blackbird &amp; Electric Fields",
-      "desc": "BLEACH Festival opens with a free double bill on HOTA's Outdoor Stage — internationally acclaimed jazz-soul singer Lady Blackbird headlines alongside Electric Fields, whose Zaachariaha Fielding sings in the traditional language of the Anangu People. Free tickets required.",
-      "location": "HOTA Outdoor Stage, Surfers Paradise · 10 min drive",
-      "cost": "Free entry",
-      "href": "https://hota.com.au/events/bleach-26-lady-blackbird-electric-fields",
-      "img": "https://images.unsplash.com/photo-1524504388940-b1c1722653e0?w=600&h=360&fit=crop",
-      "fallback": "https://images.unsplash.com/photo-1501386761578-eee4e2c8c0c3?w=600&h=360&fit=crop"
-    },
-    {
       "date": "1 – 11 October · HOTA &amp; citywide",
       "name": "BLEACH Festival 2026",
-      "desc": "The Gold Coast's signature arts festival returns — eleven days of live music, theatre and large-scale spectacle at HOTA and across the city, headlined by Six60. The Coast at its most alive.",
+      "desc": "The Gold Coast's signature arts festival runs through 11 October — eleven days of free and ticketed live music, theatre, dance and large-scale spectacle at HOTA and across the city. Free family programming daily at the HOTA Lake Precinct.",
       "location": "HOTA, Surfers Paradise · 10 min drive",
       "cost": "Ticketed",
       "href": "https://hota.com.au/events/bleach_17d48d6",
@@ -51,9 +41,9 @@
       "fallback": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop"
     },
     {
-      "date": "Saturday 3 October · HOTA Outdoor Stage",
+      "date": "Final night — Saturday 3 October · HOTA Outdoor Stage",
       "name": "Six60 at BLEACH Festival",
-      "desc": "New Zealand's highest-selling live band bring their electrifying blend of roots, soul and dubstep to HOTA's Outdoor Stage, with Sub-Tribe in support. An all-ages, all-standing show from 6 pm — $89 tickets.",
+      "desc": "New Zealand's highest-selling live band bring their electrifying blend of roots, soul and dubstep to HOTA's Outdoor Stage tonight, with Sub-Tribe in support. An all-ages, all-standing show from 6 pm — $89 tickets.",
       "location": "HOTA Outdoor Stage, Surfers Paradise · 10 min drive",
       "cost": "Ticketed",
       "href": "https://hota.com.au/events/bleach-26-six60",
@@ -71,14 +61,24 @@
       "fallback": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?w=600&h=360&fit=crop"
     },
     {
-      "date": "Extended until 10 October · HOTA",
+      "date": "Final days — until 10 October · HOTA",
       "name": "This Moment — Dining at Palette",
-      "desc": "HOTA's This Moment exhibition spills into Palette restaurant — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
+      "desc": "HOTA's This Moment exhibition spills into Palette restaurant in its final days — art-inspired dining where the menu answers the gallery. A refined long lunch, ten minutes from the villa.",
       "location": "HOTA, Surfers Paradise · 10 min drive",
       "cost": "Ticketed",
       "href": "https://hota.com.au/events/this-moment-experience-palette-restaurant",
       "img": "https://hota.com.au/api/img/05c92aac-03d1-0235-0767-bdf54020d78e/746ce23b-abb9-4078-a01c-943c6089db35/docs.jpg?v=7761de8e069aa9f9d815a6d29f3ba31d&w=700&fm=webp",
       "fallback": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "Closing night — Sunday 11 October · HOTA Lake",
+      "name": "High Tide — BLEACH Closing Night",
+      "desc": "BLEACH Festival's spectacular finale — jetpack performers taking flight above the HOTA Lake, 100 giant jellyfish puppets descending on the parklands and a family-friendly outdoor rave to close eleven days of creativity. A free sendoff not to be missed.",
+      "location": "HOTA, Surfers Paradise · 10 min drive",
+      "cost": "Free entry",
+      "href": "https://hota.com.au/whats-on/live/festivals-and-series/bleach-2026",
+      "img": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=360&fit=crop"
     },
     {
       "date": "10 – 11 October · Gold Coast citywide",
@@ -91,16 +91,6 @@
       "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=360&fit=crop"
     },
     {
-      "date": "16 September – 18 October · QPAC, Brisbane",
-      "name": "Anastasia The Musical",
-      "desc": "The sweeping Broadway musical journeys from the twilight of the Russian Empire to 1920s Paris — lavish, romantic and made for a special night out.",
-      "location": "QPAC, Brisbane · 75 min drive",
-      "cost": "Ticketed",
-      "href": "https://www.mustdogoldcoast.com/whats-on/anastasia-musical-qpac",
-      "img": "https://www.mustdogoldcoast.com/sites/mustdogoldcoast/files/styles/mdb_full_width/public/featured/ANASTASIA%208.jpg?itok=B64xEThv",
-      "fallback": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?w=600&h=360&fit=crop"
-    },
-    {
       "date": "16 – 18 October · Broadbeach",
       "name": "Groundwater Country Music Festival",
       "desc": "Free three-day country music celebration across Broadbeach — Kasey Chambers, Kaylee Bell, The Wolfe Brothers and 60+ acts on outdoor stages. No tickets, no fuss, just great music in the sun.",
@@ -111,6 +101,16 @@
       "fallback": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=360&fit=crop"
     },
     {
+      "date": "17 – 18 October · Coolangatta Beach",
+      "name": "Coolangatta Gold",
+      "desc": "The Gold Coast's great surf lifesaving endurance race — the iconic 25.6 km course challenges the state's finest athletes across ocean swim, board paddle and beach run legs from Surfers Paradise to Coolangatta. Free to spectate from the sand.",
+      "location": "Coolangatta Beach · 25 min drive",
+      "cost": "Free entry",
+      "href": "https://sls.com.au/coolangattagold/",
+      "img": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=360&fit=crop"
+    },
+    {
       "date": "23 – 25 October · Surfers Paradise",
       "name": "Boost Mobile Gold Coast 500",
       "desc": "Surfers Paradise transforms into a world-class street circuit for Round 12 of the Repco Supercars Championship — 10 drivers in title contention, beachside grandstands and non-stop entertainment. Kids 12 and under free with a paying adult.",
@@ -119,6 +119,16 @@
       "href": "https://experiencegoldcoast.com/events/2026-boost-mobile-gold-coast-500",
       "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=360&fit=crop",
       "fallback": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&h=360&fit=crop"
+    },
+    {
+      "date": "6 – 15 November · Gold Coast",
+      "name": "Pan Pacific Masters Games",
+      "desc": "Over 16,000 athletes from 30+ countries compete across 42 sports in this massive biennial Masters Games — anchored at the Gold Coast Convention Centre in Broadbeach with competition spread citywide. Spectating is free at many venues across the Gold Coast.",
+      "location": "Gold Coast Convention Centre, Broadbeach &amp; citywide · 15 min drive",
+      "cost": "Free entry",
+      "href": "https://mastersgames.com.au/",
+      "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=360&fit=crop",
+      "fallback": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=360&fit=crop"
     }
   ]
 }
