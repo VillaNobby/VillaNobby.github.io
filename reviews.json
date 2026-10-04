@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-27T23:05:00.000Z",
+  "updated": "2026-10-04T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 85,
+  "totalReviews": 87,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,20 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "anita-october-2026",
+      "name": "Anita",
+      "date": "October 2026",
+      "rating": 5,
+      "text": "The Villa Nobby was absolutely fantastic. My partner and I really loved the feel of the place as soon as we entered through the gate. We really appreciated the little personal touches that were made for us during our stay. It had everything we needed for our stay and Valentino was real welcoming and very responsive to messages. It was my partners first time in an Airbnb and he was real impressed. The beach and local shops are literally within walking distance which was a bonus. It's a shame we couldn't stay longer. We definitely will be back and we highly recommend this beautiful place to others."
+    },
+    {
+      "id": "pao-yi-september-2026",
+      "name": "Pao Yi",
+      "date": "September 2026",
+      "rating": 5,
+      "text": "We absolutely loved Villa Nobby! The cozy and beautifully scented space, along with the super comfortable bed, made our stay wonderful and relaxing.\n\nHighly recommend !!!"
+    },
     {
       "id": "ryan-september-2026",
       "name": "Ryan",
