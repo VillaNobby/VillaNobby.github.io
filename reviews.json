@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-04T00:00:00.000Z",
+  "updated": "2026-10-11T00:00:00.000Z",
   "rating": 5,
-  "totalReviews": 87,
+  "totalReviews": 89,
   "categories": {
     "cleanliness": 5,
     "accuracy": 5,
@@ -11,6 +11,20 @@
     "value": 5
   },
   "reviews": [
+    {
+      "id": "ella-october-2026",
+      "name": "Ella",
+      "date": "October 2026",
+      "rating": 5,
+      "text": "We have such a lovely night staying at Valentinos Airbnb! It feels like a luxury 5 star hotel, would definitely recommend and stay there again! Everything is so well thought out and the place looks stunning!"
+    },
+    {
+      "id": "lauren-october-2026",
+      "name": "Lauren",
+      "date": "October 2026",
+      "rating": 5,
+      "text": "Villa Nobby was so cute and beautiful! The styling inside and out was amazing. Would definitely stay there again if we come back to the Gold Coast."
+    },
     {
       "id": "anita-october-2026",
       "name": "Anita",
