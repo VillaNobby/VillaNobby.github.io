@@ -44,7 +44,7 @@ Villa Nobby is a luxury Japandi-inspired guest suite in Miami, Gold Coast, Queen
 
 - `start` = check-in day (first occupied night, inclusive)
 - `end` = checkout day (exclusive — first free day)
-- **NEVER remove the long owner block (Nov 2026 – Jun 2027)** — deliberately blocked by owner
+- Owner blocks arrive through the Airbnb iCal feed like bookings do (as of Oct 2026 the long owner block runs Mar–Oct 2027; the old Nov 2026–Jun 2027 block was lifted by the owner). **Never hand-edit ranges** — fix the calendar on Airbnb and let the sync propagate it
 
 ### How the website renders dates (night-occupancy model)
 
@@ -86,13 +86,9 @@ cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
 
 ## Automated routines
 
-### 1. Daily Availability Sync (7:03 AM every day)
-- Runs as a **remote routine** on claude.ai, scraping Airbnb via **Firecrawl** (listing page + `?modal=AVAILABILITY_CALENDAR`)
-- Maps Airbnb's **three** day-states: both **fully blocked** (`_emqv0i7`/`_1ytdkbl5`, strikethrough) **and checkout-only** (`_18qb17hx`/`_1rl50hqv`, light grey) count as **occupied nights** — checkout-only days must NOT be treated as available (doing so splits/shortens bookings)
-- Builds the occupied-nights set, then collapses each maximal consecutive run into `{ start: firstNight, end: lastNight + 1 day }`
-- Preserves the owner block exactly; makes **no** changes if the scrape returns no usable calendar data
-- Writes `blocked-dates.json`, validates JSON, auto-fixes conflict markers, commits and pushes
-- The iCal-based GitHub Action (`sync-availability.yml`, every 6 h) remains as a backup source
+### 1. Daily Availability Sync (7:03 AM every day) — REDESIGNED 27 Oct 2026
+- **Primary data source is the iCal GitHub Action** (`sync-availability.yml`, every 6 h): parses Airbnb's official iCal feed (secret `AIRBNB_ICAL_URL`) and commits `blocked-dates.json`. Bookings AND owner blocks both flow through the feed; the night-occupancy model derives checkout-only display automatically, so no scraping or day-state mapping is needed.
+- The 7:03 AM claude.ai routine is now a **health check only** (Firecrawl removed 27 Oct 2026 — it was failing and its API key sat in the prompt): pulls the repo, validates JSON, auto-fixes conflict markers, and raises an "ALERT:" summary if `updated` is staler than 12 h (meaning the Action broke — check github.com/VillaNobby/VillaNobby.github.io/actions). It never rewrites availability data itself.
 
 ### 2. Weekly Reviews Sync (Monday 9:01 AM)
 - Uses Firecrawl to scrape https://www.airbnb.com.au/rooms/1554938675549327457
