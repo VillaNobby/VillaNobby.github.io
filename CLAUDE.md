@@ -90,11 +90,12 @@ cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
 - **Primary data source is the iCal GitHub Action** (`sync-availability.yml`, every 6 h): parses Airbnb's official iCal feed (secret `AIRBNB_ICAL_URL`) and commits `blocked-dates.json`. Bookings AND owner blocks both flow through the feed; the night-occupancy model derives checkout-only display automatically, so no scraping or day-state mapping is needed.
 - The 7:03 AM claude.ai routine is now a **health check only** (Firecrawl removed 27 Oct 2026 — it was failing and its API key sat in the prompt): pulls the repo, validates JSON, auto-fixes conflict markers, and raises an "ALERT:" summary if `updated` is staler than 12 h (meaning the Action broke — check github.com/VillaNobby/VillaNobby.github.io/actions). It never rewrites availability data itself.
 
-### 2. Weekly Reviews Sync (Monday 9:01 AM)
-- Uses Firecrawl to scrape https://www.airbnb.com.au/rooms/1554938675549327457
-- Compares scraped reviewer names against existing reviews.json
-- Adds new reviews to the top of the array, updates totalReviews and timestamp
-- Validates JSON, commits and pushes
+### 2. Weekly Reviews Sync (Monday 9:01 AM) — REDESIGNED 29 Oct 2026, Firecrawl removed
+- No reliable automated source exists for Airbnb reviews (no official feed; Airbnb blocks cloud fetches), so the routine is now opportunistic + reminder-based:
+  - Validates reviews.json (auto-fixes conflict markers)
+  - Tries ONE plain fetch of the listing; if readable reviews appear, adds genuinely new ones verbatim to the top (never invents/paraphrases), updates totalReviews/timestamp AND the JSON-LD aggregateRating in index.html, commits, pushes
+  - If reviews.json is staler than 21 days, notifies the owner ("REMINDER:") to screenshot new reviews into a Claude Code session — the owner-screenshot workflow is the primary update path
+- ⚠️ Never embed credentials in routine prompts (the old prompt carried a Firecrawl key and a GitHub PAT in plain text; both removed 29 Oct 2026 — PAT to be revoked). The cloud env's repo checkout is already authenticated; plain `git push` works.
 
 ### 3. Weekly Explore Events Update (Sunday 8:06 AM)
 - Runs as a **remote routine** on claude.ai (model: `claude-sonnet-4-6`), scraping Must Do Gold Coast and HOTA via the Firecrawl **API key over curl** (never the MCP connector — different account)
