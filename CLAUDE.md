@@ -97,11 +97,11 @@ cache-busted (`?v=<timestamp>`) so updated data shows on the next page load.
   - If reviews.json is staler than 21 days, notifies the owner ("REMINDER:") to screenshot new reviews into a Claude Code session — the owner-screenshot workflow is the primary update path
 - ⚠️ Never embed credentials in routine prompts (the old prompt carried a Firecrawl key and a GitHub PAT in plain text; both removed 29 Oct 2026 — PAT to be revoked). The cloud env's repo checkout is already authenticated; plain `git push` works.
 
-### 3. Weekly Explore Events Update (Sunday 8:06 AM)
-- Runs as a **remote routine** on claude.ai (model: `claude-sonnet-4-6`), scraping Must Do Gold Coast and HOTA via the Firecrawl **API key over curl** (never the MCP connector — different account)
-- **Writes ONLY `events.json`** — never touches explore.html. The What's On section renders from that JSON client-side (architecture changed 18 Aug 2026: the routine previously edited the 100KB+ explore.html directly and silently failed on every run after 25 Jul; small-JSON workflow matches the reliable reviews/availability routines)
-- Drops expired events, rolls the Top 4 picks window, adds new events with real verified source images (og:image / HOTA api/img thumbnails, `referrerpolicy no-referrer` + Unsplash fallback pattern, no duplicate images), validates the JSON shape before committing
-- Commits only when content changed; on rebase conflicts in other JSON files it keeps the remote version
+### 3. Weekly Explore Events Update (Sunday 8:06 AM) — REDESIGNED 29 Oct 2026, Firecrawl removed
+- The What's On section renders from **events.json** (repo root) — the routine refreshes ONLY that file and never edits explore.html
+- Sources fetched directly with curl + a browser User-Agent (Must Do Gold Coast whats-on + HOTA whats-on); if both are unreachable it changes nothing and reports "ALERT"
+- Keeps: drop expired events, exactly 4 topPicks for the current 7-day window, 9-11 events, real verified images (og:image / HOTA api/img, curl -sI 200 + image/*, no duplicates, distinct Unsplash fallbacks), schema validation via node before commit, commit-only-on-change
+- ⚠️ Prompts must never embed credentials (the old prompt carried the Firecrawl key and a GitHub PAT; PAT revoked 29 Oct 2026; env checkout auth handles pushes)
 
 ### 4. Weekly Analytics Report (Monday 6:08 AM)
 - Runs `node analytics-dashboard.js`
